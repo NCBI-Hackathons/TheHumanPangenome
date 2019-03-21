@@ -110,6 +110,7 @@ This is a description of the human read sets that will be used to build the "gra
 
 ## Genome in a bottle data in SRA
 
+|BioSample|Gold_Sample|Origin|TrioMember|SRA_Accession|Assembly_Accession|Comment|
 |----|----|----|----|----|----|----|
 |SAMN03283347|NA24385/HG002|Ashkenazi|child|NA|GCA_001542345.1|de novo assembly|
 |SAMN03283347|NA24385/HG002|Ashkenazi|child|188 experiments|NA|https://www.ncbi.nlm.nih.gov/sra?LinkName=biosample_sra&from_uid=3283347|
@@ -123,6 +124,9 @@ This is a description of the human read sets that will be used to build the "gra
 
 ## Other Data in SRA:
 
+
+|BioSample|Gold_Sample|Origin|TrioMember|SRA_Accession|Assembly_Accession|Comment|
+|----|----|----|----|----|----|----|
 |SAMEA104349931|NA12878|Utah/CEPH|mother|NA|GCA_900232925.2|de novo assembly; not haplotype resolved. ONT sequencing.|
 |SAMEA104349931|NA12878|Utah/CEPH|mother|53 experiments|NA|https://www.ncbi.nlm.nih.gov/sra?LinkName=biosample_sra&from_uid=7787279|
 
