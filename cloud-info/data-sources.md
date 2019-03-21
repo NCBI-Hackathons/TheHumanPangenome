@@ -119,6 +119,7 @@ This is a description of the human read sets that will be used to build the "gra
 |SAMN03283350 |NA24631/HG005|Chinese|child|SRX4739017|NA|Chinese trio PacBio Sequel data|
 |SAMN03283348 |NA24694/HG006|Chinese|father|SRX4739121|NA|Chinese trio PacBio Sequel data|
 |SAMN03283349 |NA24695/HG007|Chinese|mother|SRX4739122|NA|Chinese trio PacBio Sequel data|
+
 ## Other Data in SRA:
 
 |SAMEA104349931|NA12878|Utah/CEPH|mother|NA|GCA_900232925.2|de novo assembly; not haplotype resolved. ONT sequencing.|
