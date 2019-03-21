@@ -110,6 +110,7 @@ This is a description of the human read sets that will be used to build the "gra
 
 ## Genome in a bottle data in SRA
 
+|----|----|----|----|----|----|----|
 |SAMN03283347|NA24385/HG002|Ashkenazi|child|NA|GCA_001542345.1|de novo assembly|
 |SAMN03283347|NA24385/HG002|Ashkenazi|child|188 experiments|NA|https://www.ncbi.nlm.nih.gov/sra?LinkName=biosample_sra&from_uid=3283347|
 |SAMN03283345|NA24149/HG003|Ashkenazi|father|NA|GCA_001549605.1|de novo assembly|
