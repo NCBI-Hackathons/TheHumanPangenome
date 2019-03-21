@@ -109,6 +109,7 @@ This is a description of the human read sets that will be used to build the "gra
 |SAMN03255769|CHM13|NA|NA|128 experiments|NA|https://www.ncbi.nlm.nih.gov/sra?linkname=bioproject_sra_all&from_uid=269593|
 
 ## Genome in a bottle data in SRA
+
 |SAMN03283347|NA24385/HG002|Ashkenazi|child|NA|GCA_001542345.1|de novo assembly|
 |SAMN03283347|NA24385/HG002|Ashkenazi|child|188 experiments|NA|https://www.ncbi.nlm.nih.gov/sra?LinkName=biosample_sra&from_uid=3283347|
 |SAMN03283345|NA24149/HG003|Ashkenazi|father|NA|GCA_001549605.1|de novo assembly|
@@ -118,13 +119,16 @@ This is a description of the human read sets that will be used to build the "gra
 |SAMN03283350 |NA24631/HG005|Chinese|child|SRX4739017|NA|Chinese trio PacBio Sequel data|
 |SAMN03283348 |NA24694/HG006|Chinese|father|SRX4739121|NA|Chinese trio PacBio Sequel data|
 |SAMN03283349 |NA24695/HG007|Chinese|mother|SRX4739122|NA|Chinese trio PacBio Sequel data|
+
 ## Other Data in SRA:
+
 |SAMEA104349931|NA12878|Utah/CEPH|mother|NA|GCA_900232925.2|de novo assembly; not haplotype resolved. ONT sequencing.|
 |SAMEA104349931|NA12878|Utah/CEPH|mother|53 experiments|NA|https://www.ncbi.nlm.nih.gov/sra?LinkName=biosample_sra&from_uid=7787279|
 
 ## Haplotype Resolved BioNano Maps
 Links to the public BioNano map files can be found in this file on [the FTP site](http://ftp.ncbi.nlm.nih.gov/pub/supplementary_data/bionanomaps.csv)
 (That file contains the SUPPF_accns).
+
 |BioSample|Gold_Sample|Origin|BioProject|Suppfile_Accn|File Types|
 |----|----|----|----|----|----|
 |SAMN10026989|HG03807|Bengali|PRJNA490190|SUPPF_0000002915; SUPPF_0000002926|.bnx, .cmap|
