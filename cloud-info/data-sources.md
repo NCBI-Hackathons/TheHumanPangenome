@@ -107,3 +107,33 @@ This is a description of the human read sets that will be used to build the "gra
 |SAMN02744161|CHM1|NA|NA|SRX533609|NA|Pacific Biosciences Model Organism Genome Sequencing-Human 54X (P5/C3)|
 |SAMN03255769|CHM13|NA|NA|NA|GCA_000983455.2|de novo assembly (Pilon corrected); there are additional uncorrected assemblies from the SRA experiments noted below|
 |SAMN03255769|CHM13|NA|NA|128 experiments|NA|https://www.ncbi.nlm.nih.gov/sra?linkname=bioproject_sra_all&from_uid=269593|
+
+## Genome in a bottle data in SRA
+|SAMN03283347|NA24385/HG002|Ashkenazi|child|NA|GCA_001542345.1|de novo assembly|
+|SAMN03283347|NA24385/HG002|Ashkenazi|child|188 experiments|NA|https://www.ncbi.nlm.nih.gov/sra?LinkName=biosample_sra&from_uid=3283347|
+|SAMN03283345|NA24149/HG003|Ashkenazi|father|NA|GCA_001549605.1|de novo assembly|
+|SAMN03283345|NA24149/HG003|Ashkenazi|father|193 experiments|NA|https://www.ncbi.nlm.nih.gov/sra?LinkName=biosample_sra&from_uid=3283345|
+|SAMN03283346|NA24143/HG004|Ashkenazi|mother|NA|GCA_001549595.1|de novo assembly|
+|SAMN03283346|NA24143/HG004|Ashkenazi|mother|186 experiments|NA|https://www.ncbi.nlm.nih.gov/sra?LinkName=biosample_sra&from_uid=3283346|
+|SAMN03283350 |NA24631/HG005|Chinese|child|SRX4739017|NA|Chinese trio PacBio Sequel data|
+|SAMN03283348 |NA24694/HG006|Chinese|father|SRX4739121|NA|Chinese trio PacBio Sequel data|
+|SAMN03283349 |NA24695/HG007|Chinese|mother|SRX4739122|NA|Chinese trio PacBio Sequel data|
+## Other Data in SRA:
+|SAMEA104349931|NA12878|Utah/CEPH|mother|NA|GCA_900232925.2|de novo assembly; not haplotype resolved. ONT sequencing.|
+|SAMEA104349931|NA12878|Utah/CEPH|mother|53 experiments|NA|https://www.ncbi.nlm.nih.gov/sra?LinkName=biosample_sra&from_uid=7787279|
+
+## Haplotype Resolved BioNano Maps
+Links to the public BioNano map files can be found in this file on [the FTP site](http://ftp.ncbi.nlm.nih.gov/pub/supplementary_data/bionanomaps.csv)
+(That file contains the SUPPF_accns).
+|BioSample|Gold_Sample|Origin|BioProject|Suppfile_Accn|File Types|
+|----|----|----|----|----|----|
+|SAMN10026989|HG03807|Bengali|PRJNA490190|SUPPF_0000002915; SUPPF_0000002926|.bnx, .cmap|
+|SAMN08723473|HG03486|Mende|PRJNA438669|SUPPF_0000002914; SUPPF_0000002924|.bnx, .cmap|
+|SAMN06885952|NA19434|Luhya|PRJNA385272|SUPPF_0000002909; SUPPF_0000002919|.bnx, .cmap|
+|SAMN05603847|HG02059|Kinh-Vietnamese|PRJNA339726|SUPPF_0000002913; SUPPF_0000002923|.bnx, .cmap|
+|SAMN05603745|HG02818|Gambian|PRJNA339722|SUPPF_0000002915; SUPPF_0000002925|.bnx, .cmap|
+|SAMN05603729|HG01352|Columbian|PRJNA339719|SUPPF_0000002912; SUPPF_0000002922|.bnx, .cmap|
+|SAMN04229552|HG00514|Han Chinese|PRJNA300843|SUPPF_0000002910; SUPPF_0000002920|.bnx, .cmap|
+|SAMN04229548|HG00733|Puerto Rican|PRJNA300840|SUPPF_0000002911; SUPPF_0000002921|.bnx, .cmap|
+|SAMN03838746|NA19240|Yoruban|PRJNA288807|SUPPF_0000002908; SUPPF_0000002918|.bnx, .cmap|
+|SAMN03255769|CHM13|NA|PRJNA269593|SUPPF_0000002917|.bnx, .cmap|
