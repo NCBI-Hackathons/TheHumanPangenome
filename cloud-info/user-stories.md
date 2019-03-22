@@ -1,5 +1,5 @@
 # Pangenomics Hackathon Team Focus Questions and User Stories
-## Graph Building (general)
+## Graph Building (from the GRC/NCBI, at this point, please add/modify)
   * User story: As the GRC, we can curate the pan-genome, so that it provides the most up-to-date and accurate data representation 
     * What is the mechanism for adding (or removing) an entire assembly from the graph? 
       [] Can this be done incrementally, or must everything start from scratch?
