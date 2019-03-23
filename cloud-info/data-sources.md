@@ -119,6 +119,7 @@ This is a description of the human read sets that will be used to build the "gra
 |SAMN03283346|NA24143/HG004|Ashkenazi|mother|NA|GCA_001549595.1|de novo assembly|
 |SAMN03283346|NA24143/HG004|Ashkenazi|mother|186 experiments|NA|https://www.ncbi.nlm.nih.gov/sra?LinkName=biosample_sra&from_uid=3283346|
 |SAMN03283350 |NA24631/HG005|Chinese|child|SRX4739017|NA|Chinese trio PacBio Sequel data|
+|SAMN03283350 |NA24631/HG005|Chinese|child|91 experiments|NA|https://www.ncbi.nlm.nih.gov/sra/?term=SAMN03283350 <br>NOTE: This includes SRX4739017, which has already been loaded (remainder have not)|
 |SAMN03283348 |NA24694/HG006|Chinese|father|SRX4739121|NA|Chinese trio PacBio Sequel data|
 |SAMN03283349 |NA24695/HG007|Chinese|mother|SRX4739122|NA|Chinese trio PacBio Sequel data|
 
