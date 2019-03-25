@@ -24,8 +24,14 @@
 
 ## 6. Define "Haplotype-Guided Novel Transcripts" (stretch)
 
+## 6a. Possibly integrate: 
+
 ## 7. Wrap it all in WDL!
 
+![Alt text](?raw=true "Title")
 
+![Alt text](?raw=true "Title")
+
+![Alt text](?raw=true "Title")
 
 
