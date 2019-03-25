@@ -24,13 +24,13 @@
 
 ## 5. Eval Phasing with Isoseq
 
-## 5. Compare 'RSEM' with Isoseq
+## 6. Compare 'RSEM' with Isoseq
 
-## 6. Define "Haplotype-Guided Novel Transcripts" (stretch)
+## 7. Define "Haplotype-Guided Novel Transcripts" (stretch)
 
-### 6a. Possibly integrate: https://github.com/NCBI-Hackathons/RNA-Seq-in-the-Cloud/tree/master/Splice
+### 7a. Possibly integrate: https://github.com/NCBI-Hackathons/RNA-Seq-in-the-Cloud/tree/master/Splice
 
-## 7. Wrap it all in WDL!
+## 8. Wrap it all in WDL!
 
 ![Alt text](https://github.com/NCBI-Hackathons/TheHumanPangenome/blob/master/RNA/rna_project_Page_1.jpg?raw=true "Title")
 
