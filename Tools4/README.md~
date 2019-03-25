@@ -1,0 +1,7 @@
+# Annotation in reference genome graphs
+
+## Motivation
+
+Current method of annotating genomes rely on genomic intervals as a core formalism. There are some difficulties in generalizing this formalism to reference graphs. A genomic interval corresponds to a path in the graph. However, if we restrict the annotation to one path in the graph, the alternate alleles included in the graph are not included in the annotation. We argue that connected subgraphs are a more appropriate formalism for genome graphs.
+
+
