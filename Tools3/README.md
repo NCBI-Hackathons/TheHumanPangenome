@@ -1,9 +1,10 @@
 
-Specific aim: short-read mapper with hit chaining
+## Specific aim:
+faster, better short-read mapper with hit chaining
 
-Stretch goal:
--fast clustering
--haplotype-based hit joining
+## Stretch goal:
+* fast clustering
+* haplotype-based hit joining
 
-Fallback goal:
--dump hit coverage by node
+## Fallback goal:
+dump hit coverage by node
