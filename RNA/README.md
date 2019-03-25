@@ -1,8 +1,8 @@
 # Goals
 
-## 1. Verify Phasing in Genic Regions
+## 1. Estimate Haplotype-Specific Expression
 
-## 2. Estimate Haplotype-Specific Expression
+## 2. Verify Phasing in Genic Regions
 
 ## 3. Define Novel Transcripts (stretch goal)
 
