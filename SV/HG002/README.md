@@ -22,7 +22,7 @@ If we had the SVs, e.g. insertions, annotated as paths in the graph we could dir
 If we don't have the SVs annotated as path, vg outputs the inserted sequence in the ALT.
 To get internal SNPs and compare datasets we will have to compare the inserted sequences.
 
-### Cluster insertions
+#### Cluster insertions
 
 Before comparing the sequences we must decide which insertions to compare. 
 To be considered the same insertions, two insertions should be:
