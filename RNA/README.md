@@ -24,14 +24,14 @@
 
 ## 6. Define "Haplotype-Guided Novel Transcripts" (stretch)
 
-## 6a. Possibly integrate: 
+## 6a. Possibly integrate: https://github.com/NCBI-Hackathons/RNA-Seq-in-the-Cloud/tree/master/Splice
 
 ## 7. Wrap it all in WDL!
 
-![Alt text](?raw=true "Title")
+![Alt text](https://github.com/NCBI-Hackathons/TheHumanPangenome/blob/master/RNA/rna_project_Page_1.jpg?raw=true "Title")
 
-![Alt text](?raw=true "Title")
+![Alt text](https://github.com/NCBI-Hackathons/TheHumanPangenome/blob/master/RNA/rna_project_Page_2.jpg?raw=true "Title")
 
-![Alt text](?raw=true "Title")
+![Alt text](https://github.com/NCBI-Hackathons/TheHumanPangenome/blob/master/RNA/rna_project_Page_3.jpg?raw=true "Title")
 
 
