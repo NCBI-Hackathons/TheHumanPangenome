@@ -2,7 +2,7 @@
 
 ## 1. Verify Phasing in Genic Regions
 
-## 2. Observe Haplotype Specific Expression
+## 2. Estimate Haplotype-Specific Expression
 
 ## 3. Define Novel Transcripts (stretch goal)
 
@@ -10,23 +10,27 @@
 
 # Workflow
 
-## 0. Extract all CDS +/- 1000 bp from HG002, Chromosome 21
+## 1. Contruct spliced variant graphs from HG002, Chromosome 21
 
-## 1. Map Isoseq
+## 1a. Single whole genome graph
+
+## 1b. Multiple disjoint gene graph
 
 ## 2. Map Short Reads 
 
 ## 3. Run RSEM or similar (maybe HISAT2-gene)
 
-## 4. Eval Phasing with Isoseq
+## 4. Map Isoseq
+
+## 5. Eval Phasing with Isoseq
 
 ## 5. Compare 'RSEM' with Isoseq
 
 ## 6. Define "Haplotype-Guided Novel Transcripts" (stretch)
 
-## 6a. Possibly integrate: https://github.com/NCBI-Hackathons/RNA-Seq-in-the-Cloud/tree/master/Splice
+## 7a. Possibly integrate: https://github.com/NCBI-Hackathons/RNA-Seq-in-the-Cloud/tree/master/Splice
 
-## 7. Wrap it all in WDL!
+## 8. Wrap it all in WDL!
 
 ![Alt text](https://github.com/NCBI-Hackathons/TheHumanPangenome/blob/master/RNA/rna_project_Page_1.jpg?raw=true "Title")
 
