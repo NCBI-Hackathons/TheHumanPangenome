@@ -1,0 +1,75 @@
+cd /home/paudano/work/projects/20190325_PanGenomeHackathon/sv/cell15/DataTable/
+
+
+### Python ###
+
+import numpy as np
+import pandas as pd
+
+import collections
+
+import os
+
+# Definitions
+sv_tab_file_name = '/home/paudano/projects/pub/refupdate/analysis/DataTable/grid/results/table/SVSummaryTable.tab.gz'
+
+ebi_bed_file_name = '/home/paudano/projects/pub/refupdate/analysis/EBI/grid/ebi_files/VariantCalls_EEE_SV-Pop_1/EEE_SV-Pop_1.ALL.sites.20181204.bed.gz'
+
+df_pop_file_name = '../tables/cell15_pop_table.tab'
+
+
+# Read tables
+df = pd.read_table(sv_tab_file_name)
+
+pub_name_tr = pd.read_table(ebi_bed_file_name, usecols=('ID', 'PUBLISHED_ID'), index_col='PUBLISHED_ID', squeeze=True)
+
+df_pop = pd.read_table(df_pop_file_name).set_index('SAMPLE')
+
+# Annotat EUR_ONLY
+df['IS_EUR'] = df['MERGE_SAMPLES'].apply(lambda val: np.any([df_pop.loc[sample, 'SUPERPOP'] == 'EUR' for sample in val.split(',')]))
+df['IS_AFR'] = df['MERGE_SAMPLES'].apply(lambda val: np.any([df_pop.loc[sample, 'SUPERPOP'] == 'AFR' for sample in val.split(',')]))
+df['IS_NOT_EUR_AFR'] = df['MERGE_SAMPLES'].apply(lambda val: not np.any([df_pop.loc[sample, 'SUPERPOP'] == 'AFR' or df_pop.loc[sample, 'SUPERPOP'] == 'EUR' for sample in val.split(',')]))
+
+# Subset and switch variants (for removed AK1)
+# Removed 2,019 AK1-only variants, switches IDs for AK1/HX1 variants
+
+df = df.loc[df['ID'].apply(lambda val: val in pub_name_tr.index)]
+
+df['ID'] = df['ID'].apply(lambda val: pub_name_tr[val])
+
+
+# Remove duplicates
+
+dup_id_set = {name for name, count in collections.Counter(df['ID']).items() if count > 1}
+
+rm_index_list = [
+    index for index_list in df.loc[
+        df['ID'].apply(lambda val: val in dup_id_set)
+    ].groupby(
+        'ID'
+    ).apply(
+        lambda subdf: subdf[1:].index.values
+    ) for index in index_list
+]
+
+df.drop(rm_index_list, inplace=True)
+
+
+# Write
+os.makedirs('results', exist_ok=True)
+
+df.to_csv('results/SVSummaryPop.tab.gz', sep='\t', index=False, compression='gzip')
+
+
+
+### Quick Analysis: See same start POS insertions ###
+
+df.groupby('#CHROM').apply(lambda subdf: 
+    sum([count > 1 for pos, count in collections.Counter(subdf.loc[subdf['SVTYPE'] == 'INS', 'POS']).items()])
+)
+
+
+### Sync ###
+
+scp results/SVSummaryPop.tab.gz pgsv:/data/grc15_data
+scp table_fields.tab pgsv:/data/grc15_data
