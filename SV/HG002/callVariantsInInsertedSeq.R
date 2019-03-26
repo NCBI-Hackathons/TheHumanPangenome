@@ -36,13 +36,26 @@ call = readSVvcf(call.vcf, keep.ins.seq=TRUE)
 ## Keep insertions
 call = call[which(call$type=='INS')]
 
-## Optional: Keep only variants around the subset insersions (+- 1kbp)
+## Optional: Keep only variants around the subset insersions (+- 100)
 if(!is.null(regions.bed)){
   bed = read.table(regions.bed, as.is=TRUE, sep='\t')
   colnames(bed)[1:3] = c('chr','start','end')
   bed = makeGRangesFromDataFrame(bed)
-  svpop = subsetByOverlaps(svpop, bed, maxgap=1e3)
-  call = subsetByOverlaps(call, bed, maxgap=1e3)
+  svpop = subsetByOverlaps(svpop, bed, maxgap=100)
+  call = subsetByOverlaps(call, bed, maxgap=100)
+}
+
+## Remove insertions that are too large to align (by the pairwiseAlignment function)
+## Max 45kbp (only a couple of insertions)
+message(sum(svpop$size >= 45000), ' large insertions filtereds because too large to align.')
+svpop = svpop[which(svpop$size < 45000)]
+
+## Make sure ALT sequences are in a consistent format (oh the joys of R types...)
+if(class(call$ALT)=='DNAStringSet'){
+  call$ALT = split(call$ALT, 1:length(call$ALT))
+}
+if(class(svpop$ALT)=='DNAStringSet'){
+  svpop$ALT = split(svpop$ALT, 1:length(svpop$ALT))
 }
 
 ## Match original insertions with called insertions by location and size
@@ -58,6 +71,7 @@ ol.df = as.data.frame(ol) %>%
 svpop.seq = svpop$ALT[ol.df$queryHits]
 calls.seq = call$ALT[ol.df$subjectHits]
 vars.df = mclapply(1:nrow(ol.df), function(ii){
+  ## message(ii)
   ## Alignment
   svpop.seq = svpop.seq[[ii]][[1]]
   calls.seq = calls.seq[[ii]][[1]]
@@ -71,7 +85,8 @@ vars.df = mclapply(1:nrow(ol.df), function(ii){
   if(nrow(al.mm)>0){
     vars = rbind(vars, tibble(pos=al.mm$PatternStart, ref=al.mm$PatternSubstring, alt=al.mm$SubjectSubstring, type='SNV'))
   }
-  ## Gaps for indels
+  ## Looking at gaps to get indels
+  ## Match positions in alignment with positions in input sequences
   al.svpop = as.character(pattern(pas))
   al.call = as.character(subject(pas))
   al.df = tibble(svpop.pos=rep(NA, nchar(al.svpop)), call.pos=rep(NA, nchar(al.svpop)))
@@ -87,17 +102,21 @@ vars.df = mclapply(1:nrow(ol.df), function(ii){
   }
   nogap.idx = which(is.na(al.df$call.pos))
   al.df$call.pos[nogap.idx] = 1:length(nogap.idx) + pas@subject@range@start - 1
-  ## Insertions
+  ## Insertions: consecutive gaps in the query
+  ## merge consecutive gap status, i.e. segment of consecutive gaps (or sequence)
   ins = rle(al.df$svpop.pos=='-')
   ins.df = tibble(x=cumsum(c(1,ins$lengths[-length(ins$lengths)])), width=ins$lengths, gap=ins$values)
+  ## Remove gaps at the beginning/end of the alignment
   if(ins.df$gap[1]){
     ins.df = ins.df[-1]
   }
   if(ins.df$gap[nrow(ins.df)]){
     ins.df = ins.df[-nrow(ins.df)]
   }
+  ## Keep only the gaps
   ins.df = subset(ins.df, gap)
   if(nrow(ins.df)){
+    ## If any, get position and alleles
     ins.pos = as.numeric(al.df$svpop.pos[ins.df$x-1])
     refs = sapply(ins.pos, function(pos) as.character(svpop.seq[pos]))
     alts = sapply(1:nrow(ins.df), function(ii){
@@ -107,17 +126,21 @@ vars.df = mclapply(1:nrow(ol.df), function(ii){
     })
     vars = rbind(vars, tibble(pos=ins.pos, ref=refs, alt=alts, type='INS'))
   }
-  ## Deletions
+  ## Deletions: gaps in the subject
+  ## merge consecutive gap status, i.e. segment of consecutive gaps (or sequence)
   del = rle(al.df$call.pos=='-')
   del.df = tibble(x=cumsum(c(1,del$lengths[-length(del$lengths)])), width=del$lengths, gap=del$values)
+  ## Remove gaps at the beginning/end of the alignment
   if(del.df$gap[1]){
     del.df = del.df[-1]
   }
   if(del.df$gap[nrow(del.df)]){
     del.df = del.df[-nrow(del.df)]
   }
+  ## Keep only the gaps
   del.df = subset(del.df, gap)
   if(nrow(del.df)){
+    ## If any, get position and alleles
     del.pos = as.numeric(al.df$svpop.pos[del.df$x-1])
     alts = sapply(del.pos, function(pos) as.character(svpop.seq[pos]))
     refs = sapply(1:nrow(del.df), function(ii){
@@ -132,14 +155,27 @@ vars.df = mclapply(1:nrow(ol.df), function(ii){
   }
   ## How well were the sequence aligned (potentially for post-filtering)
   vars$align.prop.match = nmatch(pas) / max(ol.df$svpop.size[ii], ol.df$call.size[ii])
+  vars$align.prop.match = round(vars$align.prop.match, 4)
   ## Annotate variants with original insertion information
   vars$ins.chr = as.character(seqnames(svpop))[ol.df$queryHits[ii]]
   vars$ins.pos = start(svpop[ol.df$queryHits[ii]])
   vars$ins.size = nchar(svpop.seq)
   vars$id = names(svpop)[ol.df$queryHits[ii]]
+  vars$ins.gt = call$GT[ol.df$subjectHits[ii]]
   return(vars)
 }, mc.cores=nb.cores)
+
 vars.df = do.call(rbind, vars.df)
 
 ## Output variants
 write.table(vars.df, file=output.file, sep='\t', quote=FALSE, row.names=FALSE)
+
+## Columns in output
+## pos: position of the variant relative to the inserted sequence (in the original VCF)
+## ref: reference allele (like in VCF)
+## alt: alternate allele (like in VCF)
+## type: type of variant (SNV, DEL, INS)
+## id: id of the insertion, e.g. NA19240_chr1-136935-INS-244
+## ins.chr/ins.pos: location of the insertion in the genome
+## ins.gt: genotype of the called insertion.
+## align.prop.match: proportion of matches when aligning inserted sequence (for filtering maybe)
