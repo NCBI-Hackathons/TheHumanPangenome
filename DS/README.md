@@ -32,3 +32,16 @@ ISSUES:
 
 See slides linked above.
 
+
+## Contributors
+|Name         |Email        |
+| ----------- | ----------- |
+| Benedict Paten | bpaten@ucsc.edu |
+| Arkarachai Fungtammasan | arkarachai.af@gmail.com |
+| Medhat Mahmoud | helmy.medhat@gmail.com |
+| Jana Ebler |jebler@mpi-inf.mpg.de |
+| Yassine Souilmi | yassine.souilmi@adelaide.edu.au |
+| Valerie Schneider | schneiva@ncbi.nlm.nih.gov |
+| Zev Kronenberg | zkronenberg@pacificbiosciences.com |
+| Allison Regier | aregier@wustl.edu |
+| Ilia Minkin | ivminkin@gmail.com |
