@@ -11,7 +11,7 @@ We created a graph based on sequences from chromosome 21 from GRCh38 (CM000683.2
 
 We use vg view and index to convert the GFAv1 graph into vg format and build the different required indexes (Fig. 1).
 
-<insert pipeline here>
+(insert pipeline here)
 
 2) [SibeliaZ](https://github.com/medvedevgroup/SibeliaZ) [in progress]
 We are creating a graph using chromosome 1 of the Japanese *de novo* assembly jg1 and GRCh38. We use SibeliaZ a fast 
