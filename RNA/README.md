@@ -32,6 +32,8 @@
 
 ## 8. Wrap it all in WDL!
 
+Day 2 presentation: https://docs.google.com/presentation/d/1wWK4d39ZiJW09IytHxArcYOA3xTiF3rgxKcM5b62BmA/edit?usp=sharing
+
 ![Alt text](https://github.com/NCBI-Hackathons/TheHumanPangenome/blob/master/RNA/RNA%20project-4.jpg?raw=true "Title")
 
 ![Alt text](https://github.com/NCBI-Hackathons/TheHumanPangenome/blob/master/RNA/RNA%20project-3.jpg?raw=true "Title")
