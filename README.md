@@ -4,6 +4,10 @@
 
 #### The path of GRCh38 through a graph! For details check the DS folder!
 
-![Alt text](?raw=true "Title")
+![Alt text](https://github.com/NCBI-Hackathons/TheHumanPangenome/blob/master/Giraffe/images/01.png?raw=true "Title")
+
+#### A Faster, Better Short-Read Mapper with Hit Chaining. Now with more corn! See the Giraffe folder for details!
+
+
 
 
