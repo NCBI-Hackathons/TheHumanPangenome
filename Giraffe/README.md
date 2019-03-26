@@ -1,5 +1,6 @@
 
-## Specific aim: A Faster, Better Short-Read Mapper with Hit Chaining!
+## Specific aim:
+A Faster, Better Short-Read Mapper with Hit Chaining.
 
 #### Fast Clustering (Stretch Goal #1)
 When creating an alignment from numerous graph pathways, the speed of alignment is slowed exponentially with each node present in "snarl" regions.  These "snarl" regions constitute a bubble on the graph where multiple nodes can be chosen.  Each of these nodes can exponentially increase the number of paths within the "snarl", and thus the alignment time.  We attempt to improve upon this by excluding nodes not associated with a given haplotype.
