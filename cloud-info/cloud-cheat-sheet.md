@@ -83,6 +83,12 @@ To get cloud server access, you need to provide your ssh public key to the serve
 2. Once your key is added, a friendly NCBI cloud admin will reply in Slack with a test command you can use to verify server access.  It'll be something like: `ssh yourusername@1.2.3.4 whoami`
 3. Run that commnd in a terminal; it should respond with your username. 
 
+
+* Server IP information is listed in the `#help-desk` channel in slack (pinned message).
+
+* If you have trouble connecting, check the username, and try first with a simple command-line `ssh` client.
+
+
 ### Markdown, for writing and formatting ReadMe and other documents on GitHub (like this document!)
 
 * [Markdown Help](https://commonmark.org/help/)
@@ -207,17 +213,6 @@ Hybrid Selection
             
   * Pull a message from the subscription: `gcloud pubsub subscriptions pull sub1`
 
-# Server Access
-
-For server access, create an SSH key using `ssh-keygen -t rsa -b 4096 -C "your-email@domain.edu"`, then post the public key in the`#public_keys' slack channel.  
-
-Server IP information is listed in the `#help-desk` channel in slack (pinned message).
-
-For most servers, access them using `ssh your-email@1.2.3.4` where `your-email` is the name part of the email address you used when generating your SSH key, and `1.2.3.4` is the IP address of the server
-
-* A quick way to verify access is to use the command `ssh your-email@1.2.3.4 whoami` - this will echo back your username if successful.
-
-* If you have trouble connecting, check the username, and try first with a simple command-line `ssh` client.
 
 ## Premade servers
 
