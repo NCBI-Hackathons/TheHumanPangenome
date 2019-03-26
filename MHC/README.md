@@ -1,8 +1,13 @@
 Resolve MHC regions from HG002
 ===============================
 
-General Goal During the hackathon:
+Day 2 Presentation
+==================
+https://docs.google.com/presentation/d/1cueyPgZLsPW1Fyimu5dt3OgsTj3KM0xL3h6fKJvWcXI/edit?usp=sharing
 
+
+General Goal During the hackathon
+=================================
 Focus on developing diploid assemblies of MHC in HG002 – these could be only the third and fourth authoritative 
 haplotype assemblies produced for MHC!
 
