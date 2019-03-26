@@ -1,7 +1,5 @@
 from heapq import *
 from collections import defaultdict
-from alignment import AlignedSegment 
-from utils import reverse_complement
 
 class Node:
 	def __init__(self, node_id, orientation):
@@ -35,6 +33,7 @@ class GFAGraph:
 		if filename is not None:
 			# read graph from file
 			self._read_from_file(filename)
+		self._paths = defaultdict(list)
 
 	def _get_id(self, node_name):
 		"""
@@ -162,28 +161,6 @@ class GFAGraph:
 			if (end_name == to_name) and (end_orientation == to_orientation):
 				return True
 		return False
-		
-
-	def print_graph(self):
-		"""
-		Print the graph.
-		"""
-		print('Nodes:')
-		for node_id,sequence in self._nodes.items():
-			node_name = self._get_name(node_id)
-			print(str(node_name) + ' ' + sequence)
-		print('Links:')
-		for node,links in self._graph.items():
-			node_name = self._get_name(node.node_id)
-			node_orientation = '-' if node.orientation else '+'
-			for link in links:
-				if self._varying_overlaps:
-					overlap = str(self._edge_overlaps[(node, link)]) + 'M'
-				else:
-					overlap = str(self._const_overlap) + 'M'
-				end_name = self._get_name(link.node_id)
-				end_orientation = '-' if link.orientation else '+'
-				print(node_name + ' (' + node_orientation + ') --> ' + end_name + ' (' + end_orientation + ') ' + overlap)
 
 	def _read_from_file(self, filename):
 		"""
@@ -212,6 +189,15 @@ class GFAGraph:
 				to_orientation = reverse[fields[4]]
 				self.add_link(fields[1], from_orientation, fields[3], to_orientation, overlap)
 				continue
+			if line.startswith('P'):
+				fields = line.split()
+				path_name = fields[1]
+				path_nodes = fields[2].split(',')
+				for path_node in path_nodes:
+					node_name = path_node[:-1]
+					node_orientation = path_node[-1] == '-'
+					node_id = self._name_to_id[node_name]
+					self._paths[path_name].append(Node(node_id, node_orientation))
 		if not self._varying_overlaps:
 			assert len(self._edge_overlaps) == 0
 		print('Verify ...')
@@ -259,91 +245,6 @@ class GFAGraph:
 					line = '\t'.join(['L', node_name, reverse[True], end_name, reverse[end_orientation], cigar]) + '\n'
 					outfile.write(line)
 
-	def extract_subgraph(self, node_names, validate_input=True):
-		"""
-		extract a subgraph consisting only of the given nodes and edges between them.
-		node_names -- list of nodes to include
-		"""
-		if validate_input:
-			for node_name in node_names:
-				if not node_name in self:
-					raise RuntimeError('Node ' + node_name + ' does not exist.')
-		subgraph = GFAGraph(self._varying_overlaps)
-		subgraph.set_header(self._header)
-		# write all nodes
-		inserted_nodes = set([])
-		for node_name in node_names:
-			node_id = self._name_to_id[node_name]
-			subgraph.add_node(node_name, self._nodes[node_id])
-			inserted_nodes.add(node_name)
-			# write forward edges
-			forward_node = Node(node_id, False)
-			for end_node in self._graph[forward_node]:
-				end_id = end_node.node_id
-				end_orientation = end_node.orientation
-				end_name = self._id_to_name[end_id]
-				if end_name in node_names:
-					overlap = self._edge_overlaps[(forward_node, end_node)] if self._varying_overlaps else self._const_overlap
-					subgraph.add_link(node_name, False, end_name, end_orientation, overlap)
-					if end_name not in inserted_nodes:
-						subgraph.add_node(end_name, self._nodes[end_id])
-						inserted_nodes.add(end_name)
-			# write backward edges
-			reverse_node = Node(node_id, True)
-			for end_node in self._graph[reverse_node]:
-				end_id = end_node.node_id
-				end_orientation = end_node.orientation
-				end_name = self._id_to_name[end_id]
-				if end_name in node_names:
-					overlap = self._edge_overlaps[(reverse_node, end_node)] if self._varying_overlaps else self._const_overlap
-					subgraph.add_link(node_name, True, end_name, end_orientation, overlap)
-					if end_name not in inserted_nodes:
-						subgraph.add_node(end_name, self._nodes[end_id])
-						inserted_nodes.add(end_name)
-		assert subgraph.valid()
-		return subgraph
-
-	def extract_neighborhood_subgraph(self, node_names, max_distance, validate_input=True):
-		"""
-		extract a subgraph consisting of given nodes and their neighborhood.
-		node_names -- list of nodes to include
-		distance -- size of the neighborhood
-		validate_input -- make sure the given nodes all occur in the graph
-		"""
-		nodes_to_consider = []
-		if validate_input:
-			print('Check if given nodes exist in graph ...')
-			if not self.contains_all(node_names):
-				raise RuntimeError('Not all nodes exist in the graph.')
-		# assume all nodes are present in graph
-		print('Get node_ids for all nodes ...')
-		for node_name in node_names:
-			node_id = self._name_to_id[node_name]
-			heappush(nodes_to_consider, (0, node_id))
-		processed_nodes = set([])
-		print('Extract neighboring nodes ...')
-		while nodes_to_consider:
-			node = heappop(nodes_to_consider)
-			distance = node[0]
-			assert distance <= max_distance
-			node_id = node[1]
-			if node_id in processed_nodes:
-				continue
-			processed_nodes.add(node_id)	
-			# get all neighboring nodes
-			forward_node = Node(node_id, False)
-			for end_node in self._graph[forward_node]:
-				end_id = end_node.node_id
-				if (not end_id in processed_nodes) and (max_distance > distance):
-					heappush(nodes_to_consider, (distance + 1, end_id))
-			reverse_node = Node(node_id, True)
-			for end_node in self._graph[reverse_node]:
-				end_id = end_node.node_id
-				if (not end_id in processed_nodes) and (max_distance > distance):
-					heappush(nodes_to_consider, (distance + 1, end_id))
-		nodes_to_include = [self._id_to_name[i] for i in processed_nodes]
-		print('Extract subgraph ..')
-		return self.extract_subgraph(nodes_to_include, validate_input=False)
 
 	def double_edges(self):
 		"""
@@ -386,36 +287,6 @@ class GFAGraph:
 		else:
 			return False
 
-	# TODO: test this!!!
-	def extract_sequence(self, alignment):
-		"""
-		Extract the sequence associated with the given list of nodes.
-		alignment -- read alignment along which to extract the sequence
-		"""
-		sequence = ''
-		nodes = alignment.get_nodes()
-		previous_node = None
-		previous_orientation = None
-		for node in nodes:
-			node_name = node['position']['node_id']
-			try:
-				is_reverse = node['position']['is_reverse']
-			except KeyError:
-				is_reverse = False
-			node_sequence = self.get_sequence(node_name)
-			if is_reverse:
-				node_sequence = reverse_complement(node_sequence)
-			# get overlap
-			overlap = 0
-			if previous_node is not None:
-				overlap = self.get_overlap(previous_node, previous_orientation, node_name, is_reverse)
-			if sequence[-overlap:] != node_sequence[:overlap]:
-				raise RuntimeError('Sequences must be exactly overlapping.')
-			sequence = node_sequence[overlap:]
-			previous_node = node_name
-			previous_orientation = is_reverse
-		return sequence
-
 	def valid(self):
 		"""
 		Verify the graph. All nodes defined in edges should
@@ -428,3 +299,24 @@ class GFAGraph:
 				if to_node.node_id not in self._nodes.keys():
 					return False
 		return True
+
+	# TODO
+	def generate_paths(self, primary_name):
+		"""
+		Traverse the graph and generate paths.
+		"""
+		start_id = self._paths[primary_name][0].node_id
+		end_id = self._paths[primary_name][-1].node_id
+		start_name = self._id_to_name[start_id]
+		# perform DFS
+		nodes_to_process = [start_id, [primary_name, start_name]]
+		paths = []
+		while nodes_to_process:
+			(node, path) = nodes_to_process.pop()
+			for end_node in self._graph[node]:
+				end_node_id = self._name_to_id[end_node.node_id]
+				if end_id == end_node_id:
+					paths.append(path)
+				else:
+					nodes_to_process.append((end_id, [end_node]))
+		print(paths)
