@@ -10,3 +10,6 @@ A useful graphical pangenome would also be able to perform this functionality wh
 3. Map RNAseq reads to the graph (`vg map`)
 4. Count coverage with `vg pack`
 5. Quantify coverage per gene
+
+![Gene-level RNAseq quantification pipeline workflow diagram](fig/gene_quant_pipeline.svg)
+
