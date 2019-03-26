@@ -22,6 +22,8 @@ If we had the SVs, e.g. insertions, annotated as paths in the graph we could dir
 If we don't have the SVs annotated as path, vg outputs the inserted sequence in the ALT.
 To get internal SNPs and compare datasets we will have to compare the inserted sequences.
 
+Code in `callVariantsInInsertedSeq.R`.
+
 #### Cluster insertions
 
 Before comparing the sequences we must decide which insertions to compare. 
@@ -34,6 +36,6 @@ We could also catch wrongly assigned pairs of insertions when the sequences don'
 
 This kind of operations were already implemented to compare SVs in [sveval](https://github.com/jmonlong/sveval).
 
-#### MUMMER + show-snps
+#### Smith-Waterman
 
-#### Regular Smith-Waterman
+The inserted sequence called and in the original VCF are aligned to detect SNVs and indels.
