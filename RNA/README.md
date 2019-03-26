@@ -32,11 +32,11 @@
 
 ## 8. Wrap it all in WDL!
 
-![Alt text](https://github.com/NCBI-Hackathons/TheHumanPangenome/blob/master/RNA/RNA%20project-2.jpg?raw=true "Title")
+![Alt text](https://github.com/NCBI-Hackathons/TheHumanPangenome/blob/master/RNA/RNA%20project-4.jpg?raw=true "Title")
 
 ![Alt text](https://github.com/NCBI-Hackathons/TheHumanPangenome/blob/master/RNA/RNA%20project-3.jpg.jpg?raw=true "Title")
 
-![Alt text](https://github.com/NCBI-Hackathons/TheHumanPangenome/blob/master/RNA/RNA%20project-4.jpg?raw=true "Title")
+![Alt text](https://github.com/NCBI-Hackathons/TheHumanPangenome/blob/master/RNA/RNA%20project-2.jpg?raw=true "Title")
 
 ![Alt text](https://github.com/NCBI-Hackathons/TheHumanPangenome/blob/master/RNA/RNA%20project.jpg?raw=true "Title")
 
