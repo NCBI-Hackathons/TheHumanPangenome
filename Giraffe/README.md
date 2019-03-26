@@ -4,11 +4,11 @@ faster, better short-read mapper with hit chaining
 
 ## Slides
 
-![Image](images/Screenshot from 2019-03-26 12-17-10.png)
-![Image](images/Screenshot from 2019-03-26 12-17-17.png)
-![Image](images/Screenshot from 2019-03-26 12-17-23.png)
-![Image](images/Screenshot from 2019-03-26 12-17-29.png)
-![Image](images/Screenshot from 2019-03-26 12-17-34.png)
+![Image00](/images/00.png)
+![Image01](/images/01.png)
+![Image02](/images/02.png)
+![Image03](/images/03.png)
+![Image04](/images/04.png)
 
 ## Stretch goal:
 * fast clustering
