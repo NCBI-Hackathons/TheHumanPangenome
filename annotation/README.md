@@ -22,8 +22,22 @@ We are proposing to develop a proof-of-concept system for utilizing continuous-v
 * Augment VG to produce and work with these data
 * Hook the file format into an existing graph visualization tool
 
-## Slides
+## Updates
 
-###Day 2
+### Day 2
 
-https://docs.google.com/presentation/d/1UqPvWb7xUCGaKIv6qgX95_uLZxRAZOzXvDO4IkpGn6U/edit?usp=sharing
+#### Annotation Import - Easy Case
+
+![Annotation Import, The Easy Case](fig/annotation_easy_case.svg)
+
+#### Annotation Import - Harder Cases
+
+![Annotation Import, The Harder Cases](fig/annotation_harder_cases.svg)
+
+#### Gene-level RNAseq quantification pipeline
+
+See the subproject-specific [README](gene_quant/README.md).
+
+#### Visualization using MoMIG
+
+![MoMIG Genome Graph Visualization software screenshot](fig/momig_screenshot.png)

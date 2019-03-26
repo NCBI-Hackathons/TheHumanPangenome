@@ -1,0 +1,52 @@
+#CHROM	Chromosome name using hg38 conventions
+POS	Start position in chromosome where the first base is at position 0 (BED coordinates)
+END	One base past the end position in chromosome where the first base is at position 0 (BED coordinates)
+ID	Unique variant id formatted with the discovery sample, chromosome, 1-based start position, variant type, and variant length
+SVTYPE	Variant type
+SVLEN	Variant length
+CONTIG_SUPPORT	Number of SMRT-SV local-assembly contigs supporting the variant call
+CONTIG_DEPTH	Number of SMRT-SV local-assembly contigs overlapping the variant call locus
+CONTIG	Name of the SMRT-SV contig
+CONTIG_NCBI	Name of CONTIG on SRA (PRJNA481779); name was transformed to NCBI standards
+CONTIG_START	Left breakpoint of the variant on the contig
+CONTIG_END	Right breakpoint of the variant on the contig
+REPEAT_TYPE	Repeat type merged from TRF and RepeatMasker annotations
+MERGE_SOURCE	Sample containing the representative variant
+MERGE_AC	Number of samples with a compatible variant call
+MERGE_AF	Frequency of this variant in the discovery set (MERGE_AC / 15 samples)
+MERGE_SAMPLES	Comma-separated sample names the variant was found in where MERGE_SOURCE is the first sample in the list
+DISC_CLASS	Assigned discovery class (SHARED: All samples (MERGE_AF = 1), MAJOR: 50% or more, POLY: Less than 50% and more than one, SINGLE: One sample only)
+BAND	Chromosome band
+GC	GC proportion of inserted or deleted sequence
+SD	True if variant intersects a known segmental duplication in hg38 (UCSC track)
+TRF	True if variant intersects a known tandem repeat in hg38 (UCSC track)
+TANDEM	Mapping position (chrom:pos-end, 1-based coordinates) for insertions if inserted sequence maps back to the same chromosome within 2x SVLEN distance from the insertion and is within 90% to 110% of the variant length
+FULL_REPEAT	Large full-length interspersed repeats found within the SV
+REFSEQ_CDS	Coding genes variant intersects (RefSeq)
+REFSEQ_NCRNA	Non-coding genes variant intersects (RefSeq)
+REFSEQ_UTR3	Genes where variant intersects its 3' UTR (RefSeq)
+REFSEQ_UTR5	Genes where variant intersects its 5' UTR (RefSeq)
+REFSEQ_INTRON	Genes where variant intersects an intron (RefSeq)
+REFSEQ_UP	Genes where variant is within a 2 kbp window upstream of its 5' end (RefSeq)
+REFSEQ_DN	Genes where variant is within a 2 kbp window downstream of its 3' end (RefSeq)
+ENCODE	Comma-separated list of ENCODE marks H3K27Ac, H3K4Me3, H3K4Me1, and DHS (DNase hypersensitivity) that variant intersects (UCSC track)
+CPG	True if variant intersects a known CpG island (UCSC track)
+OREGANNO	ORegAnno annotated region variant intersects (UCSC track)
+OMIM_NUMBER	OMIM number for RefSeq genes variant intersects (CDS, ncRNA, 5' UTR, or 3' UTR)
+OMIM_NAME	OMIM name for RefSeq genes variant intersects (CDS, ncRNA, 5' UTR, or 3' UTR)
+GRC_PATCH	"FIX" or "ALT" if variant intersects GRC fix or novel (ALT) patches
+AGP_SWITCH	Comma-separated list of contig switchpoints (each is an upstream contig name and a downstream contig name separated by a colon) where the variant is within 200 bp of the AGP switchpoint (where two contigs were joined to form the GRCh38 primary assembly)
+GT_PROP_CALL	Proportion of 440 high-coverage population samples where a genotype call was made.
+GT_AN	Number of alleles where a genotype call was made.
+GT_AF	Allele frequency from genotype calls.
+FST_AFR	African fixation index (Fst, Weir & Cockerham) based on genotypes in 440 high-coverage population samples
+FST_EUR	European fixation index (Fst, Weir & Cockerham) based on genotypes in 440 high-coverage population samples
+FST_EAS	East Asian fixation index (Fst, Weir & Cockerham) based on genotypes in 440 high-coverage population samples
+FST_SAS	South Asian fixation index (Fst, Weir & Cockerham) based on genotypes in 440 high-coverage population samples
+FST_AMR	Americas fixation index (Fst, Weir & Cockerham) based on genotypes in 440 high-coverage population samples
+FST_OCN	Oceanic fixation index (Fst, Weir & Cockerham) based on genotypes in 440 high-coverage population samples
+FST_ME	Middle Eastern fixation index (Fst, Weir & Cockerham) based on genotypes in 440 high-coverage population samples
+VALIDATION	A comma-separated list of each clone targeted for validation with a status ("No Clone Assembly" if a clone could not be assembled, "Not Validated" if validation failed, or "Validated" if validated) followed by the clone name in parenthesis
+IS_EUR	Was identified in at least one European sample.
+IS_AFR	Was identified in at least one African sample.
+IS_NOT_EUR_AFR	Was not identified in any European or african sample
