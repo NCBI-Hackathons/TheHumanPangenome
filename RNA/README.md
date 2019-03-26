@@ -1,12 +1,11 @@
 # Goals
 
-## 1. Estimate Haplotype-Specific Expression
+## 1. Create proof of concept pipeline for estimating allele-specific expression
 
 ## 2. Verify Phasing in Genic Regions
 
-## 3. Define Novel Transcripts (stretch goal)
+## 3. Wrap it all in WDL
 
-## 4. Wrap it all in WDL
 
 # Workflow
 
@@ -32,10 +31,10 @@
 
 ## 8. Wrap it all in WDL!
 
-![Alt text](https://github.com/NCBI-Hackathons/TheHumanPangenome/blob/master/RNA/rna_project_Page_1.jpg?raw=true "Title")
 
-![Alt text](https://github.com/NCBI-Hackathons/TheHumanPangenome/blob/master/RNA/rna_project_Page_2.jpg?raw=true "Title")
+# Presentations
 
-![Alt text](https://github.com/NCBI-Hackathons/TheHumanPangenome/blob/master/RNA/rna_project_Page_3.jpg?raw=true "Title")
+### Day 2 presentation
+https://docs.google.com/presentation/d/1wWK4d39ZiJW09IytHxArcYOA3xTiF3rgxKcM5b62BmA/edit?usp=sharing
 
 

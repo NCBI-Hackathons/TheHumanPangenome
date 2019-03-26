@@ -1,2 +1,13 @@
-# TheHumanPangenome
-Creation and Toolsets for a Long-Read Trio Based Human Pangenome
+# TheHumanPangenome -- Creation of and Toolsets for Human Pangenomic Analysis
+
+![Alt text](https://github.com/NCBI-Hackathons/TheHumanPangenome/blob/master/DS/ds-vis1.png?raw=true "Title")
+
+#### The path of GRCh38 through a graph! For details check the DS folder!
+
+![Alt text](https://github.com/NCBI-Hackathons/TheHumanPangenome/blob/master/Giraffe/images/01.png?raw=true "Title")
+
+#### A Faster, Better Short-Read Mapper with Hit Chaining. Now with more corn! See the Giraffe folder for details!
+
+
+
+
