@@ -9,7 +9,7 @@ The goal of our team is to establish pipelines to build graph genomes from *de n
 
 ## Projects
 ### 1) define the best strategy to build genome graphs from *de novo* assemblies.
-To explore the best strategy to build genome graphs from *de novo* assembled genomes, we designed two experiments. The first one is a simple proof of concept graph build using the Japanese genome assembly jg1 and GRCh38, and the second graph is a great-Apes graph using GRCh38, the Chimp (Clint), and Orangutan (Susie). We are comparing the graphs built using three different strategies: 
+To explore the best strategy to build genome graphs from *de novo* assembled genomes, we designed two experiments. The first one is a simple proof of concept graph build using the Japanese genome assembly jg1 and GRCh38 (chromosome 21), and the second graph is a great-Apes graph using GRCh38, the Chimp (Clint), and Orangutan (Susie) (Also using chromosome 21). We are comparing the graphs built using three different strategies: 
 
 ![flowchart](https://github.com/NCBI-Hackathons/TheHumanPangenome/blob/master/DS/graph/graph2xg_all.png?raw=true)
 
