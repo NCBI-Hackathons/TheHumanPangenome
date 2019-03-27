@@ -75,7 +75,7 @@ The snarls can be computed from a `.vg` file with the `vg snarls` subcommand, an
 * Travis Wrightsman (tw493@cornell.edu)
 * Jordan Eizenga (jeizenga@ucsc.edu)
 * Rajeeva Musunuri (rmusunuri@nygenome.org)
-* Toshiyuki Yokoyama
+* Toshiyuki Yokoyama (toshiyuki.t.yokoyama@gmail.com)
 
 ## Future Directions
 
