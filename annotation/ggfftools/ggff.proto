@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package ggff.pb;
+
+option cc_enable_arenas = true;
+
+enum Strand {
+    UNSPECIFIED_STRAND = 0;
+    FORWARD_STRAND = 1;
+    REVERSE_STRAND = 2;
+}
+
+message NodeSlice {
+    uint64 start = 1;
+    uint64 end = 2;
+}
+
+message SubGraph {
+    repeated uint64 ids = 1;
+    repeated NodeSlice offsets = 2;
+    repeated Strand strands = 3;
+}
+
+message GGFFRecord {
+    SubGraph sub_graph = 1;
+    // GFF3 source
+    string ggff_source = 2;
+    // GFF3 type
+    string ggff_type = 3;
+    // the whole GFF3 line
+    string ggff_line = 4;
+}
+
+message GGFF {
+    string file_name = 1;
+    repeated GGFFRecord records = 2;
+}
+
