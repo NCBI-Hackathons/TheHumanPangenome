@@ -75,7 +75,7 @@ See the subproject-specific [README](ggfftools/README.md).
 
 #### Visualization of `vg pack` format on MoMI-G
 
-Before this hackathon, MoMI-G can visualize coverages only on a reference path. But, by using `vg pack` format, we have enabled MoMI-G to visualize coverages on every node so that we can see read coverages mapped against graph reference. Also, it will be useful for visualization of gGFF format as a binary annotation on each base on nodes.
+Before this hackathon, MoMI-G can visualize coverages only on a reference path. Using `vg pack` format, we have enabled MoMI-G to visualize coverages on every node so that we can see read coverages mapped against graph reference. Also, we have added an interface to retrieve a subset of `vg pack` format in this [branch](https://github.com/vgteam/vg/pull/2185). It will be useful for visualization of gGFF format as a binary annotation on each base on nodes.
 
 ![MoMIG Genome Graph Visualization software screenshot](fig/momig_final_screenshot.png)
 
