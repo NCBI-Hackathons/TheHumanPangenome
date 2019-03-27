@@ -1,4 +1,10 @@
-# Goals
+# Motivation
+
+## Association of Enhancers and Promoter Regions with Specifically Expressed Alleles
+
+## Unambiguous elucidation of both cis- and trans- eQTLs
+
+# Summary
 
 ## 1. Create proof of concept pipeline for estimating allele-specific expression
 
@@ -6,8 +12,13 @@
 
 ## 3. Wrap it all in WDL
 
+# Implementation
+
+```Heres how we run this pipeline```
 
 # Workflow
+
+![Alt text](https://github.com/NCBI-Hackathons/TheHumanPangenome/blob/master/RNA/RNA%20project-5.jpg?raw=true "Title")
 
 ## 1. Contruct spliced variant graphs from HG002, Chromosome 21
 
@@ -31,6 +42,9 @@
 
 ## 8. Wrap it all in WDL!
 
+# Results
+
+![Alt text](https://github.com/NCBI-Hackathons/TheHumanPangenome/blob/master/RNA/RNA%20project-6.jpg?raw=true "Title")
 
 # Presentations
 
