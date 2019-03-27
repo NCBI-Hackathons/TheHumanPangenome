@@ -1,0 +1,54 @@
+---
+title: Quality control of the variants found from aligning inserted sequences
+output:
+   md_document:
+     fig_width: 10
+     fig_height: 5
+     variant: markdown_github
+---
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE)
+```
+
+# Quality control of the variants found from aligning inserted sequences
+
+```{r}
+library(ggplot2)
+library(dplyr)
+vars = read.table('variantsInInsertions.SR.tsv', as.is=TRUE, header=TRUE)
+```
+
+## Alignment quality
+
+These calls are based on alignment of the inserted sequences (original insertion vs called insertion that contains variants).
+Insertions were first matched by location and size and then aligned.
+Even if they were matched we might want to remove situations were the alignment was poor.
+What should we use as threshold?
+Will it affect the mutation rate experiment that we will use these variants for?
+
+First, a look at the distribution of the alignment quality
+
+
+```{r}
+vars %>% select(id, align.prop.match) %>% unique %>% 
+  ggplot(aes(align.prop.match)) + geom_histogram() + theme_bw() + xlab('propotion of matches in alignment') +
+  geom_vline(xintercept=.7, linetype=2)
+```
+
+We see a long tail. Could we use 0.7 as a minimum alignment identity?
+Does it affect the mutation rate?
+
+Using a quick calculation as `number of variants / insertion size`:
+
+```{r}
+vars.s = vars %>% group_by(align.prop.match, id, type) %>% mutate(mut.rate=n()/ins.size)
+
+ggplot(vars.s, aes(x=align.prop.match, y=mut.rate)) + geom_point(alpha=.5) +
+  xlab('propotion of matches in alignment') + ylab('quick mutation rate') + 
+  geom_smooth() + theme_bw() + facet_wrap(~type, scales='free') +
+  geom_vline(xintercept=.7, linetype=2)
+```
+
+We could filter alignments that where below 70% identity. 
+They might not be trustworthy and the quickly estimated mutation rate plateaus around this point so it shouldn't affect the rest of the analysis that much.
