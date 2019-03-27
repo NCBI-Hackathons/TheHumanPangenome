@@ -35,12 +35,12 @@ var2.snps = subset(var2, type=='SNV')
 var1.snps$var.id = paste(var1.snps$pos, var1.snps$seq, var1.snps$id, var1.snps$ins.gt, sep='_')
 var2.snps$var.id = paste(var2.snps$pos, var2.snps$seq, var2.snps$id, var2.snps$ins.gt, sep='_')
 
-venn.diagram(list(all=var1.snps$var.id, regional=var2.snps$var.id),
-             filename='venn-snps-all-regional.tiff',
+vd = venn.diagram(list(all=var1.snps$var.id, regional=var2.snps$var.id),
+             filename='venn-snps-all-regional.png', imagetype='png',
              col='transparent', fill=c('steelblue', 'indianred2'))
 ```
 
-[See diagram](venn-snps-all-regional.tiff)
+![](venn-snps-all-regional.png)
 
 ## Indels
 
@@ -52,12 +52,12 @@ var2.indels = subset(var2, type!='SNV')
 var1.indels$var.id = paste(var1.indels$pos, var1.indels$seq, var1.indels$id, var1.indels$ins.gt, sep='_')
 var2.indels$var.id = paste(var2.indels$pos, var2.indels$seq, var2.indels$id, var2.indels$ins.gt, sep='_')
 
-venn.diagram(list(all=var1.indels$var.id, regional=var2.indels$var.id),
-             filename='venn-indels-all-regional.tiff',
+vd = venn.diagram(list(all=var1.indels$var.id, regional=var2.indels$var.id),
+             filename='venn-indels-all-regional.png', imagetype='png',
              col='transparent', fill=c('steelblue', 'indianred2'))
 ```
 
-[See diagram](venn-indels-all-regional.tiff)
+![](venn-indels-all-regional.png)
 
 ## Example of variants specific to the regional
 

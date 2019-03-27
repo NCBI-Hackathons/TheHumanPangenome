@@ -4,16 +4,12 @@ Comparison of variants called using all reads vs regionally downsampled reads
 SNPs
 ----
 
-    ## [1] 1
-
-[See diagram](venn-snps-all-regional.tiff)
+![](venn-snps-all-regional.png)
 
 Indels
 ------
 
-    ## [1] 1
-
-[See diagram](venn-indels-all-regional.tiff)
+![](venn-indels-all-regional.png)
 
 Example of variants specific to the regional
 --------------------------------------------
