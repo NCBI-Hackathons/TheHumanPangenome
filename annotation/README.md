@@ -70,6 +70,9 @@ vg annotate -x graph.xg -s graph.snarls -f annotations.gff3 -g > annotations.ggf
 
 The snarls can be computed from a `.vg` file with the `vg snarls` subcommand, and the XG index can be created from a `.vg` file using the `vg index` subcommand.
 
+#### Operating on gGFF files
+See the subproject-specific [README](ggfftools/README.md).
+
 #### Visualization of `vg pack` format on MoMI-G
 
 Before this hackathon, MoMI-G can visualize coverages only on a reference path. But, by using `vg pack` format, we have enabled MoMI-G to visualize coverages on every node so that we can see read coverages mapped against graph reference. Also, it will be useful for visualization of gGFF format as a binary annotation on each base on nodes.
