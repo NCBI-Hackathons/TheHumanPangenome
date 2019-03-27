@@ -1,10 +1,6 @@
 Resolve MHC regions from HG002
 ===============================
 
-Day 2 Presentation
-==================
-https://docs.google.com/presentation/d/1cueyPgZLsPW1Fyimu5dt3OgsTj3KM0xL3h6fKJvWcXI/edit?usp=sharing
-
 
 General Goal During the hackathon
 =================================
@@ -85,6 +81,10 @@ After the hackathon
 
 
 
+
+Presentation
+==================
+https://docs.google.com/presentation/d/1cueyPgZLsPW1Fyimu5dt3OgsTj3KM0xL3h6fKJvWcXI/edit?usp=sharing
 
 
 
