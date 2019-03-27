@@ -57,6 +57,14 @@ Now that `vg` is installed, you can run the following using the sample data abov
     > mapped.gam
 ```
 
+Then to annotate, run:
+
+`./bin/vg annotate -p -x snp1kg-CHR21_filter.xg -a mapped.gam > annotated.gam`
+
+Finally, to compare the annotated reads to the truth and set the mapped_correctly field:
+
+`./bin/vg gamcompare  -r 100 annotated.gam reads/sim.gam > compared.gam`
+
 ## Slides
 ![Image00](https://raw.githubusercontent.com/NCBI-Hackathons/TheHumanPangenome/master/Giraffe/images/00.png)
 ![Image01](https://raw.githubusercontent.com/NCBI-Hackathons/TheHumanPangenome/master/Giraffe/images/01.png)
