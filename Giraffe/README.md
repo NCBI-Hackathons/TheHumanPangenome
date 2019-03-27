@@ -71,7 +71,7 @@ Finally, to compare the annotated reads to the truth and set the mapped_correctl
 
 ```
 valgrind --tool=callgrind --instr-atstart=no \
-    ./bin/vg gamcompare  -r 100 data/annotated.gam data/reads/sim.gam > data/compared.gam
+    ./bin/vg gamcompare -r 100 data/annotated.gam data/reads/sim.gam > data/compared.gam
 ```
 
 ## Slides
