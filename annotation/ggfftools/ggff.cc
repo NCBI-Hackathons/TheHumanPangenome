@@ -1,11 +1,12 @@
 #include <cstddef>
 #include <cstdlib>
 #include <fstream>
+#include <iostream>
 #include <utility>
-#include <vector>
 
 #include "absl/container/flat_hash_map.h"
 #include "absl/memory/memory.h"
+#include "absl/strings/str_join.h"
 #include "absl/strings/str_split.h"
 #include "fmt/format.h"
 #include "leveldb/write_batch.h"
@@ -27,13 +28,18 @@ void populate_subgraph(const std::string &ggff_col1, pb::SubGraph *sg) {
     const std::vector<std::string> nodeTokens =
         absl::StrSplit(token, absl::ByAnyChar("[:]"), absl::SkipEmpty());
 
-    sg->add_ids(toI64(std::strtoull(tokens[0].c_str(), nullptr, 10)));
+    if (nodeTokens.size() != 4) {
+      std::cerr << ggff_col1 << std::endl;
+    }
+
+    sg->add_ids(toI64(std::strtoull(nodeTokens[0].c_str(), nullptr, 10)));
     auto slice = sg->add_offsets();
-    slice->set_start(toI64(std::strtoull(tokens[1].c_str(), nullptr, 10)));
-    slice->set_end(toI64(std::strtoull(tokens[2].c_str(), nullptr, 10)));
-    sg->add_strands(tokens[3] == "?" ? pb::UNSPECIFIED_STRAND
-                                     : tokens[3] == "-" ? pb::REVERSE_STRAND
-                                                        : pb::FORWARD_STRAND);
+    slice->set_start(toI64(std::strtoull(nodeTokens[1].c_str(), nullptr, 10)));
+    slice->set_end(toI64(std::strtoull(nodeTokens[2].c_str(), nullptr, 10)));
+    sg->add_strands(nodeTokens[3] == "?"
+                        ? pb::UNSPECIFIED_STRAND
+                        : nodeTokens[3] == "-" ? pb::REVERSE_STRAND
+                                               : pb::FORWARD_STRAND);
   }
 }
 
@@ -42,20 +48,69 @@ pb::GGFF parse_ggff(const std::string &ggff_path) {
   std::string ggffLine;
 
   pb::GGFF result;
-  result.set_file_name(ggff_path);
-
   while (std::getline(fileHandle, ggffLine)) {
-    const std::vector<std::string> tokens =
+    std::vector<std::string> tokens =
         absl::StrSplit(ggffLine, absl::ByChar('\t'), absl::SkipEmpty());
 
     auto rec = result.add_records();
     populate_subgraph(tokens[0], rec->mutable_sub_graph());
     rec->set_ggff_source(tokens[1]);
     rec->set_ggff_type(tokens[2]);
-    rec->set_ggff_line(ggffLine);
+
+    tokens.erase(tokens.begin());
+    rec->set_ggff_line(absl::StrJoin(tokens.cbegin(), tokens.cend(), "\t"));
   }
 
   return result;
+}
+
+void write_ggff(const pb::GGFF &g, std::ostream &oss) {
+  std::string result;
+  for (const auto &rec : g.records()) {
+    const auto &sg = rec.sub_graph();
+    const auto numNodes = sg.ids_size();
+
+    for (auto idx = 0; idx < numNodes; idx++) {
+      result +=
+          fmt::format("{}[{}:{}]{}", sg.ids(idx), sg.offsets(idx).start(),
+                      sg.offsets(idx).end(),
+                      sg.strands(idx) == pb::UNSPECIFIED_STRAND
+                          ? '?'
+                          : sg.strands(idx) == pb::REVERSE_STRAND ? '-' : '+');
+    }
+
+    if (!result.empty()) {
+      result.pop_back();
+    }
+
+    result += fmt::format("\t{}\n", rec.ggff_line());
+  }
+
+  oss << result;
+}
+
+void write_subgraphs(const std::vector<pb::SubGraph> &graphs,
+                     std::ostream &oss) {
+  std::string result;
+  for (const auto &sg : graphs) {
+    const auto numNodes = sg.ids_size();
+
+    for (auto idx = 0; idx < numNodes; idx++) {
+      result +=
+          fmt::format("{}[{}:{}]{}", sg.ids(idx), sg.offsets(idx).start(),
+                      sg.offsets(idx).end(),
+                      sg.strands(idx) == pb::UNSPECIFIED_STRAND
+                          ? '?'
+                          : sg.strands(idx) == pb::REVERSE_STRAND ? '-' : '+');
+    }
+
+    if (!result.empty()) {
+      result.pop_back();
+      result += '\n';
+    }
+  }
+
+  oss << result;
 }
 
 std::string record_key(const pb::GGFFRecord &rec) {
@@ -280,5 +335,75 @@ void GGFFIndex::add_ggff(const std::string &ggff_path) {
 
   const auto status = index->Write(leveldb::WriteOptions(), &batch);
   assert(status.ok());
+}
+
+void GGFFIndex::iterate(GGFFIndex::HandleRecord &handle_func,
+                        const std::string &record_key_prefix) {
+  auto itr = absl::WrapUnique(index->NewIterator(leveldb::ReadOptions()));
+  record_key_prefix.empty() ? itr->SeekToFirst() : itr->Seek(record_key_prefix);
+  pb::GGFFRecord rec;
+  for (; itr->Valid(); itr->Next()) {
+    assert(rec.ParseFromString(itr->value().ToString()));
+    handle_func(rec);
+  }
+}
+
+std::vector<pb::SubGraph>
+GGFFIndex::intersect_of(const pb::SubGraph &g,
+                        const std::string &record_key_prefix) {
+  std::vector<pb::SubGraph> results;
+  HandleRecord handler = [&g, &results](const pb::GGFFRecord &current) {
+    const auto result = g & current.sub_graph();
+    if (!result.ids().empty()) {
+      results.push_back(result);
+    }
+  };
+
+  iterate(handler, record_key_prefix);
+  return results;
+}
+
+std::vector<pb::SubGraph>
+GGFFIndex::difference_of(const pb::SubGraph &g,
+                         const std::string &record_key_prefix) {
+  std::vector<pb::SubGraph> results;
+  HandleRecord handler = [&g, &results](const pb::GGFFRecord &current) {
+    const auto result = g - current.sub_graph();
+    if (!result.ids().empty()) {
+      results.push_back(result);
+    }
+  };
+
+  iterate(handler, record_key_prefix);
+  return results;
+}
+
+std::vector<pb::SubGraph>
+GGFFIndex::union_of(const pb::SubGraph &g,
+                    const std::string &record_key_prefix) {
+  std::vector<pb::SubGraph> results;
+  HandleRecord handler = [&g, &results](const pb::GGFFRecord &current) {
+    const auto result = g | current.sub_graph();
+    if (!result.ids().empty()) {
+      results.push_back(result);
+    }
+  };
+
+  iterate(handler, record_key_prefix);
+  return results;
+}
+
+std::vector<pb::SubGraph>
+GGFFIndex::xor_of(const pb::SubGraph &g, const std::string &record_key_prefix) {
+  std::vector<pb::SubGraph> results;
+  HandleRecord handler = [&g, &results](const pb::GGFFRecord &current) {
+    const auto result = g ^ current.sub_graph();
+    if (!result.ids().empty()) {
+      results.push_back(result);
+    }
+  };
+
+  iterate(handler, record_key_prefix);
+  return results;
 }
 } // namespace ggff

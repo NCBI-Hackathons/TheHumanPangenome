@@ -20,7 +20,7 @@ target_include_directories(ggff_proto SYSTEM PUBLIC ${CMAKE_BINARY_DIR} PRIVATE 
 target_link_libraries(ggff_proto PUBLIC ${LIBPROTOBUF})
 
 add_library(ggff STATIC ggff.h ggff.cc)
-target_link_libraries(ggff PUBLIC leveldb roaring_cpp absl::strings ggff_proto PRIVATE fmt absl::memory absl::flat_hash_map)
+target_link_libraries(ggff PUBLIC leveldb roaring_cpp roaring absl::strings ggff_proto PRIVATE fmt absl::memory absl::flat_hash_map)
 target_include_directories(ggff PUBLIC ${PROJECT_SOURCE_DIR} PRIVATE ${CMAKE_BINARY_DIR} ${croaring_SOURCE_DIR}/include)
 set_target_properties(ggff PROPERTIES CXX_STANDARD 14 CXX_STANDARD_REQUIRED ON POSITION_INDEPENDENT_CODE 1)
 
