@@ -74,15 +74,9 @@ Finally, to compare the annotated reads to the truth and set the mapped_correctl
  
 ![Image00](https://raw.githubusercontent.com/NCBI-Hackathons/TheHumanPangenome/master/Giraffe/images/00.png)
 ![Image01](https://raw.githubusercontent.com/NCBI-Hackathons/TheHumanPangenome/master/Giraffe/images/01.png)
-![Image02](https://raw.githubusercontent.com/NCBI-Hackathons/TheHumanPangenome/master/Giraffe/images/02.png)
-![Image04](https://raw.githubusercontent.com/NCBI-Hackathons/TheHumanPangenome/master/Giraffe/images/04.png)
-![Image04](https://raw.githubusercontent.com/NCBI-Hackathons/TheHumanPangenome/master/Giraffe/images/05.png)
 
-### Clusterer Speedup
- * The clustere is not slower.
- * The clusterer is twice as fast!
- 
 ### Maize Graph
+![Image02](https://raw.githubusercontent.com/NCBI-Hackathons/TheHumanPangenome/master/Giraffe/images/02.png)
  * A maize graph has been built.
  * It contains a snarl with ~107,000 nodes, which is too big for the distance index to handle.
  * `odgi` draws this beautiful picture:
@@ -90,6 +84,8 @@ Finally, to compare the annotated reads to the truth and set the mapped_correctl
 ![ODGI](https://raw.githubusercontent.com/NCBI-Hackathons/TheHumanPangenome/master/Giraffe/images/odgi.png)
 
 ### Extension Chaining
+![Image04](https://raw.githubusercontent.com/NCBI-Hackathons/TheHumanPangenome/master/Giraffe/images/04.png)
+
  * Implemented
  * Does not work
  
@@ -107,6 +103,14 @@ Assertion failed: (0), function traceback_internal, file src/banded_global_align
 ERROR: Signal 6 occurred. VG has crashed. Run 'vg bugs --new' to report a bug.
 Stack trace path: /tmp/vg_crash_i5SNDK/stacktrace.txt
 ```
+
+### Clusterer Speedup
+![Image05](https://raw.githubusercontent.com/NCBI-Hackathons/TheHumanPangenome/master/Giraffe/images/05.png)
+ * The clustere is not slower.
+ * The clusterer is twice as fast!
+ 
+
+
 
 ## Stretch Goals:
 - Fast Clustering (Stretch Goal #1)
