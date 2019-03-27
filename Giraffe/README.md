@@ -29,6 +29,7 @@ Data files for testing are [located here](http://public.gi.ucsc.edu/~anovak/grap
 ```
 #!/usr/bin/env bash
 
+mkdir reads
 curl -o snp1kg-CHR21_filter.dist http://public.gi.ucsc.edu/~anovak/graphs/gaffe/basic-testing/snp1kg-CHR21_filter.dist
 curl -o snp1kg-CHR21_filter.gbwt http://public.gi.ucsc.edu/~anovak/graphs/gaffe/basic-testing/snp1kg-CHR21_filter.gbwt
 curl -o snp1kg-CHR21_filter.gcsa http://public.gi.ucsc.edu/~anovak/graphs/gaffe/basic-testing/snp1kg-CHR21_filter.gcsa
