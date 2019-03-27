@@ -79,7 +79,9 @@ Finally, to compare the annotated reads to the truth and set the mapped_correctl
 ### Maize Graph
  * A maize graph has been built.
  * It contains a snarl with ~107,000 nodes, which is too big for the distance index to handle.
- * `odgi` draws this beautiful picture: ![ODGI maize graph hairball](https://raw.githubusercontent.com/NCBI-Hackathons/TheHumanPangenome/master/Giraffe/images/odgi.png)
+ * `odgi` draws this beautiful picture:
+ 
+![ODGI](https://raw.githubusercontent.com/NCBI-Hackathons/TheHumanPangenome/master/Giraffe/images/odgi.png)
  
 
 ## Day 1 Slides
