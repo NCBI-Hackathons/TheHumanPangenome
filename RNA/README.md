@@ -8,9 +8,9 @@
 
 ## 1. Create proof of concept pipeline for estimating allele-specific expression
 
-## 2. Verify Phasing in Genic Regions
+## 2. Wrap it all in WDL
 
-## 3. Wrap it all in WDL
+![Alt text](https://github.com/NCBI-Hackathons/TheHumanPangenome/blob/master/RNA/RNA_project_day3_aims.jpg)
 
 # Implementation
 
@@ -42,8 +42,6 @@ sudo java -jar cromwell-36.1.jar run vg_rna.wdl -i vg_rna.inputs.json
 
 # Workflow
 
-![Alt text](https://github.com/NCBI-Hackathons/TheHumanPangenome/blob/master/RNA/RNA%20project%20-%20day%203.jpg?raw=true "Title")
-
 ## 1. Contruct spliced variant graphs from HG002, Chromosome 21
 
 ### 1a. Single whole genome graph
@@ -52,19 +50,11 @@ sudo java -jar cromwell-36.1.jar run vg_rna.wdl -i vg_rna.inputs.json
 
 ## 2. Map Short Reads 
 
-## 3. Run RSEM or similar (maybe HISAT2-gene)
+## 3. Run RSEM or similar
 
-## 4. Map Isoseq
+## 4. Wrap it all in WDL!
 
-## 5. Eval Phasing with Isoseq
-
-## 6. Compare 'RSEM' with Isoseq
-
-## 7. Define "Haplotype-Guided Novel Transcripts" (stretch)
-
-### 7a. Possibly integrate: https://github.com/NCBI-Hackathons/RNA-Seq-in-the-Cloud/tree/master/Splice
-
-## 8. Wrap it all in WDL!
+![Alt text](https://github.com/NCBI-Hackathons/TheHumanPangenome/blob/master/RNA/RNA_project_day3_pipeline.jpg)
 
 # Results
 
