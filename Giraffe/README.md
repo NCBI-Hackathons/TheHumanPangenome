@@ -17,7 +17,7 @@ Our algorithm speeds up the clustering after the search hits are gathered.
 
 You will need to run `vg` to see the updated function at work.
 
-We'll be using `valgrind` which can be installed with: `sudo apt install valgrind`
+We'll be using `valgrind` which can be installed with: `sudo apt install valgrind kcachegrind`
 
 Next, clone `vg` with: `git clone https://github.com/vgteam/vg.git`
 
