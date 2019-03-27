@@ -3,15 +3,9 @@
 
 Our work modifies [this function](https://github.com/vgteam/vg/blob/master/src/subcommand/gaffe_main.cpp) in `vg`.
 
-#### A BETTER Short-Read Mapper
-This allows us to deal with cross-overs and indels.  Anything that we can't deal with on the first pass.
+Improve a prototype minimizer-based mapper, by adding a faster clustering function to cluster minimizer hits, and hit extension logic for handling clusters that have no good full-length gapless alignment.
 
-The current behavior is to ignore indels and cross-overs and only provide gapless alignments (the default allows for four mismatched bases).
-
-#### A FASTER Short-Read Mapper
-When creating an alignment from numerous graph pathways, the speed of alignment is slowed exponentially with each node present in "snarl" regions.  These "snarl" regions constitute a bubble on the graph where multiple nodes can be chosen.  Each of these nodes can exponentially increase the number of paths within the "snarl", and thus the alignment time.  We attempt to improve upon this by excluding nodes not associated with a given haplotype.
-
-Our algorithm speeds up the clustering after the search hits are gathered.
+The clustering algorithm has been improved by reducing the amount of data copying in the implementation. Additionally, we have devised an improved algorithm for comparing sets of clusters.
 
 ## Running the Code
 
