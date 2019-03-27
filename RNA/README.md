@@ -4,6 +4,7 @@
 
 ## Unambiguous elucidation of both cis- and trans- eQTLs
 
+
 # Summary
 
 ## 1. Create proof of concept pipeline for estimating allele-specific expression
@@ -11,6 +12,25 @@
 ## 2. Wrap it all in WDL
 
 ![Alt text](https://github.com/NCBI-Hackathons/TheHumanPangenome/blob/master/RNA/RNA_project_day3_aims.jpg)
+
+
+
+# Workflow
+
+## 1. Contruct spliced variant graphs from HG002, Chromosome 21
+
+### 1a. Single whole genome graph
+
+### 1b. Multiple disjoint gene graph
+
+## 2. Map Short Reads 
+
+## 3. Run RSEM or similar
+
+## 4. Wrap it all in WDL!
+
+![Alt text](https://github.com/NCBI-Hackathons/TheHumanPangenome/blob/master/RNA/RNA_project_day_3_pipeline.jpg)
+
 
 # Implementation
 
@@ -38,23 +58,6 @@ wget ...
 sudo java -jar cromwell-36.1.jar run vg_rna.wdl -i vg_rna.inputs.json
 
 ```
-
-
-# Workflow
-
-## 1. Contruct spliced variant graphs from HG002, Chromosome 21
-
-### 1a. Single whole genome graph
-
-### 1b. Multiple disjoint gene graph
-
-## 2. Map Short Reads 
-
-## 3. Run RSEM or similar
-
-## 4. Wrap it all in WDL!
-
-![Alt text](https://github.com/NCBI-Hackathons/TheHumanPangenome/blob/master/RNA/RNA_project_day3_pipeline.jpg)
 
 # Results
 
