@@ -1,0 +1,12 @@
+{
+  "vgRNAPipeline.INPUT_FASTQ_READ_PAIR1": "~/chr21_1kg_NA12878_gencode_rsem_sim_1.fq.gz", 
+  "vgRNAPipeline.INPUT_FASTQ_READ_PAIR2": "~/chr21_1kg_NA12878_gencode_rsem_sim_2.fq.gz", 
+  "vgRNAPipeline.INPUT_REF_FASTA": "~/Homo_sapiens.GRCh38.dna.primary_assembly.fa", 
+  "vgRNAPipeline.INPUT_REF_FASTA_INDEX": "~/Homo_sapiens.GRCh38.dna.primary_assembly.fa.fai",
+  "vgRNAPipeline.INPUT_SAMPLE_PHASED_VCF": "~/chr21_1kg_NA12878.vcf.gz", 
+  "vgRNAPipeline.INPUT_SAMPLE_PHASED_VCF_INDEX": "~/chr21_1kg_NA12878.vcf.gz.tbi", 
+  "vgRNAPipeline.INPUT_GENE_GTF": "~/gencode.v29.annotation.chr21.gtf", 
+  "vgRNAPipeline.CONTIG_NAME": "21",
+  "vgRNAPipeline.SAMPLE_NAME": "NA12878_grch38",
+  "vgRNAPipeline.VG_CONTAINER": "quay.io/vgteam/vg:ci-249-439f22abc8f915513b8c9365cd146481c97ac842"
+}

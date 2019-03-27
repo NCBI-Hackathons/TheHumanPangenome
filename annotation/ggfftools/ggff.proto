@@ -27,12 +27,11 @@ message GGFFRecord {
     string ggff_source = 2;
     // GFF3 type
     string ggff_type = 3;
-    // the whole GFF3 line
+    // the GFF3 line after subgraph column is removed
     string ggff_line = 4;
 }
 
 message GGFF {
-    string file_name = 1;
-    repeated GGFFRecord records = 2;
+    repeated GGFFRecord records = 1;
 }
 

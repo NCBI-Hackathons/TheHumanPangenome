@@ -36,7 +36,7 @@ time ./vg index -x ~/graph/CM000786.4.xg ~/graph/CM000786.4.vg
 #-s for random seed
 #-p N for paired end reads of fragment length N; -v fragment length sd
 #how many? -n
-time ./vg sim -x ~/graph/CM000786.4.xg -n 100000 -l 150 -a > ~/graph/sim_CM000786_4_A.gam
+time ./vg sim -x ~/graph/CM000786.4.xg -n 10000 -l 150 -a > ~/graph/sim_CM000786_4_A.gam
 
 1. concatenate fastas
 CM000786.4.fasta
@@ -67,15 +67,44 @@ time seqwish -t 48 -p ~/out/maize_combined4.paf -s ~/data/maize_combined4.fasta 
 first try a smaller dataset
 time seqwish -t 48 -p ~/out/CM000786_CM004357.paf.gz -s ~/data/maize_B73_W22.fasta -b ~/temp/maize_B73_W22 -g maize_B73_W22.gfa
 
+suggest
 next steps in pipeline:
 4. convert gfa to vg using vg view -Fv graph.gfa > graph.vg
-6. vg snarls -t graph.vg > graph.snarls
-7. index vg file, vg index graph.vg -x graph.xg -T -G graph.gbwt -s graph.snarls -j graph.dist -w 1000
-8. vg minimizer  graph.xg -g graph.gbwt -i graph.min
-9. vg gaffe -x graph.xg -H graph.gbwt -s graph.snarls -d graph.dist -m graph.min -G in.gam > out.gam 
+5. vg snarls -t graph.vg > graph.snarls
+6. index vg file, vg index graph.vg -x graph.xg -T -G graph.gbwt -s graph.snarls -j graph.dist -w 1000
+7. vg minimizer  graph.xg -g graph.gbwt -i graph.min
+8. vg gaffe -x graph.xg -H graph.gbwt -s graph.snarls -d graph.dist -m graph.min -G in.gam > out.gam
 10. vg annotate -a out.gam -p -x index.xg > annot.gam
 11. vg gamcompare annot.gam in.gam -r 100 > compared.gam
 12. vg view -aj compared.gam |jq '.correctly_mapped'
-11. vg graphcompare annot
 
-actual commands:
+to create a png for graph visualiation:
+odgi build -g graph.gfa -o /dev/stdout | odgi sort -i /dev/stdin -o graph.dg
+odgi viz -i graph.dg -o graph.png -x 2000 -y 500 -P 20
+
+in this case:
+./odgi build -g ~/graph/maize_B73_W22.gfa -o /dev/stdout | ./odgi sort -i /dev/stdin -o ~/graph/maize_B73_W22.dg
+./odgi build -g ~/graph/maize_B73_W22.gfa -o ~/temp/odgi.out
+./odgi sort -i ~/temp/odgi.out -o ~/graph/graph.dg
+
+
+actual commands to run gaffe:
+./vg view -Fv ~/graph/maize_B73_W22.gfa > ~/graph/maize_B73_W22.vg
+
+./vg snarls -t ~/graph/maize_B73_W22.vg > ~/graph/maize_B73_W22.snarls
+
+./vg index ~/graph/maize_B73_W22.vg -x ~/graph/maize_B73_W22.xg
+./vg index ~/graph/maize_B73_W22.vg -T -G ~/graph/maize_B73_W22.gbwt
+./vg index ~/graph/maize_B73_W22.vg -s ~/graph/maize_B73_W22.snarls -j ~/graph/maize_B73_W22.dist -w 1000
+
+./vg minimizer ~/graph/maize_B73_W22.xg -g ~/graph/maize_B73_W22.gbwt -i ~/graph/maize_B73_W22.min
+
+./vg gaffe -x ~/graph/maize_B73_W22.xg -H ~/graph/maize_B73_W22.gbwt -s ~/graph/maize_B73_W22.snarls -d ~/graph/maize_B73_W22.dist -m ~/graph/maize_B73_W22.min -G ~/graph/sim_CM000786_4_A.gam > ~/graph/mapped_CM000786_4_A.gam
+
+./vg annotate -a ~/graph/mapped_CM000786_4_A.gam -p -x ~/graph/maize_B73_W22.xg > ~/graph/annot_maize_B73_W22.gam
+
+./vg gamcompare ~/graph/annot_maize_B73_W22.gam ~/graph/sim_CM000786_4_A.gam -r 100 > ~/graph/B73_compared.gam
+
+./vg view -aj ~/graph/B73_compared.gam > ~/graph/B73_mapinfo.txt
+
+jq '.correctly_mapped' ~/graph/B73_mapinfo.txt

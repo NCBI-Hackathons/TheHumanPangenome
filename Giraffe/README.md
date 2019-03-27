@@ -3,23 +3,23 @@
 
 Our work modifies [this function](https://github.com/vgteam/vg/blob/master/src/subcommand/gaffe_main.cpp) in `vg`.
 
-#### A BETTER Short-Read Mapper
-This allows us to deal with cross-overs and indels.  Anything that we can't deal with on the first pass.
+Improve a prototype minimizer-based mapper, by adding a faster clustering function to cluster minimizer hits, and hit extension logic for handling clusters that have no good full-length gapless alignment.
 
-The current behavior is to ignore indels and cross-overs and only provide gapless alignments (the default allows for four mismatched bases).
-
-#### A FASTER Short-Read Mapper
-When creating an alignment from numerous graph pathways, the speed of alignment is slowed exponentially with each node present in "snarl" regions.  These "snarl" regions constitute a bubble on the graph where multiple nodes can be chosen.  Each of these nodes can exponentially increase the number of paths within the "snarl", and thus the alignment time.  We attempt to improve upon this by excluding nodes not associated with a given haplotype.
-
-Our algorithm speeds up the clustering after the search hits are gathered.
+The clustering algorithm has been improved by reducing the amount of data copying in the implementation. Additionally, we have devised an improved algorithm for comparing sets of clusters.
 
 ## Running the Code
 
 You will need to run `vg` to see the updated function at work.
 
-We'll be using `valgrind` which can be installed with: `sudo apt install valgrind`
+We'll be using `valgrind` which can be installed with: `sudo apt install valgrind kcachegrind`
 
-Next, clone `vg` with: `git clone https://github.com/vgteam/vg.git`
+At the time of writing, the current vg `master` branch did not contain the updated gaffe function and was cloned with: `git clone --recursive https://github.com/vgteam/vg.git`
+
+A repo repo was cloned and compiled with the new gaffe function using:
+```
+git clone --recursive https://github.com/vgteam/vg.git && cd vg
+git pull https://github.com/xchang1/vg.git seed_clustering
+```
 
 At the top of [src/subcommand/gaffe_main.cpp](https://github.com/vgteam/vg/blob/master/src/subcommand/gaffe_main.cpp) please uncomment this line to use with valgrind: https://github.com/vgteam/vg/blob/master/src/subcommand/gaffe_main.cpp#L25
 
@@ -60,21 +60,31 @@ valgrind --tool=callgrind --instr-atstart=no \
     > data/mapped.gam
 ```
 
-Then to annotate, run:
-
+Optionally, one can run:
 ```
-valgrind --tool=callgrind --instr-atstart=no \
-     ./bin/vg annotate -p -x data/snp1kg-CHR21_filter.xg -a data/mapped.gam > data/annotated.gam
+./bin/vg annotate -p -x data/snp1kg-CHR21_filter.xg -a data/mapped.gam > data/annotated.gam
 ```
 
 Finally, to compare the annotated reads to the truth and set the mapped_correctly field:
-
 ```
-valgrind --tool=callgrind --instr-atstart=no \
-    ./bin/vg gamcompare  -r 100 data/annotated.gam data/reads/sim.gam > data/compared.gam
+./bin/vg gamcompare -r 100 data/annotated.gam data/reads/sim.gam > data/compared.gam
 ```
 
-## Slides
+## Final Slides
+
+### Clusterer Speedup
+ * The clustere is not slower.
+ * The clusterer is slightly faster
+ 
+### Maize Graph
+ * A maize graph has been built.
+ * It contains a snarl with ~107,000 nodes, which is too big for the distance index to handle.
+ * `odgi` draws this beautiful picture:
+ 
+![ODGI](https://raw.githubusercontent.com/NCBI-Hackathons/TheHumanPangenome/master/Giraffe/images/odgi.png)
+ 
+
+## Day 1 Slides
 ![Image00](https://raw.githubusercontent.com/NCBI-Hackathons/TheHumanPangenome/master/Giraffe/images/00.png)
 ![Image01](https://raw.githubusercontent.com/NCBI-Hackathons/TheHumanPangenome/master/Giraffe/images/01.png)
 ![Image02](https://raw.githubusercontent.com/NCBI-Hackathons/TheHumanPangenome/master/Giraffe/images/02.png)
