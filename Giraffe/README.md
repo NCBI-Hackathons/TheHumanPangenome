@@ -1,9 +1,15 @@
 
 ## Specific aim:  A Faster, Better Short-Read Mapper with Hit Chaining.
 
+#### A Better Short-Read Mapper
 This allows us to deal with cross-overs and indels.  Anything that we can't deal with on the first pass.
 
 The current behavior is to ignore indels and cross-overs and only provide gapless alignments (the default allows for four mismatched bases).
+
+#### A Faster Short-Read Mapper
+When creating an alignment from numerous graph pathways, the speed of alignment is slowed exponentially with each node present in "snarl" regions.  These "snarl" regions constitute a bubble on the graph where multiple nodes can be chosen.  Each of these nodes can exponentially increase the number of paths within the "snarl", and thus the alignment time.  We attempt to improve upon this by excluding nodes not associated with a given haplotype.
+
+Our algorithm speeds up the clustering after the search hits are gathered.
 
 Our work modifies [this function](https://github.com/vgteam/vg/blob/master/src/subcommand/gaffe_main.cpp) in `vg`.
 
@@ -59,12 +65,8 @@ Now that `vg` is installed, you can run the following using the sample data abov
 ![Image04](https://raw.githubusercontent.com/NCBI-Hackathons/TheHumanPangenome/master/Giraffe/images/04.png)
 
 ## Stretch Goals:
-#### Fast Clustering (Stretch Goal #1)
-When creating an alignment from numerous graph pathways, the speed of alignment is slowed exponentially with each node present in "snarl" regions.  These "snarl" regions constitute a bubble on the graph where multiple nodes can be chosen.  Each of these nodes can exponentially increase the number of paths within the "snarl", and thus the alignment time.  We attempt to improve upon this by excluding nodes not associated with a given haplotype.
-
-Our algorithm speeds up the clustering after the search hits are gathered.
-
-#### Haplotype-based Hit Joining (Stretch Goal #2)
+- Fast Clustering (Stretch Goal #1)
+- Haplotype-based Hit Joining (Stretch Goal #2)
 
 ## Fallback Goal:
 Dump hit coverage by node.
