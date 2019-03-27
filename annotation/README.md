@@ -53,6 +53,13 @@ We have defined a generalization of the GFF3 format that replaces genomic interv
 * phase: 0, 1, or 2 indicating the first base of the feature that is a codon, measuring from the source node in the subgraph
 * attributes: a semi-colon separated list of tag-value pairs, with tags separated from the values by an "="
 
+Example:
+```
+156619[22:32]+,156620[0:32]+,156621[0:32]+,156622[0:2]+ havana  exon    .       .       Parent=transcript:ENST00000624081;Name=ENSE00003760288;constitutive=1;ensembl_end_phase=1;ensembl_phase=0;exon_id=ENSE00003760288;rank=1;version=1
+156619[22:32]+,156620[0:32]+,156621[0:32]+,156622[0:2]+ havana  CDS     .       0       ID=CDS:ENSP00000485664;Parent=transcript:ENST00000624081;protein_id=ENSP00000485664
+156643[3:32]+,156644[0:32]+,156645[0:32]+,156646[0:32]+,156647[0:15]+   havana  exon    .       .       Parent=transcript:ENST00000624081;Name=ENSE00003758404;constitutive=1;ensembl_end_phase=0;ensembl_phase=1;exon_id=ENSE00003758404;rank=2;version=1
+```
+
 #### Converting to gGFF from GFF3
 
 We have built this capacity into the `vg` toolkit. The following invocation will inject the annotations from a GFF3 file into a graph:
