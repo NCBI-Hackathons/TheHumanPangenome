@@ -46,12 +46,12 @@ See the subproject-specific [README](gene_quant/README.md).
 
 We have defined a generalization of the GFF3 format that replaces genomic intervals with a subraph. It is a text-based, tab-separated file. Every line contains each of the following fields. If a field is to be ignored, it can be replaced with a "." (without quotes). The fields are
 
-* subgraph: a comma separated list of intervals of sequences on nodes, along with orientation in the format `ID[start:end](+/-/?)`. The interval is 0-based and exclusive for the end index. If the strand is given as "-", the interval begins at the reverse strand of the final base and extends toward the first base of the node.
-* source: the name of the program or database that generated the annotation
-* type: the type of feature
-* score: a floating point value
-* phase: 0, 1, or 2 indicating the first base of the feature that is a codon, measuring from the source node in the subgraph
-* attributes: a semi-colon separated list of tag-value pairs, with tags separated from the values by an "="
+* **subgraph**: a comma separated list of intervals of sequences on nodes, along with orientation in the format `ID[start:end](+/-/?)`. The interval is 0-based and exclusive for the end index. If the strand is given as "-", the interval begins at the reverse strand of the final base and extends toward the first base of the node.
+* **source**: the name of the program or database that generated the annotation
+* **type**: the type of feature
+* **score**: a floating point value
+* **phase**: 0, 1, or 2 indicating the first base of the feature that is a codon, measuring from the source node in the subgraph
+* **attributes**: a semi-colon separated list of tag-value pairs, with tags separated from the values by an "="
 
 Example:
 ```
