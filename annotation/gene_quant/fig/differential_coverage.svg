@@ -9,9 +9,9 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="26.449247mm"
-   height="13.15775mm"
-   viewBox="0 0 26.449247 13.15775"
+   width="4.7966466in"
+   height="2.3861954in"
+   viewBox="0 0 121.83481 60.609365"
    version="1.1"
    id="svg89221"
    inkscape:version="0.92.3 (2405546, 2018-03-11)"
@@ -25,9 +25,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="8"
-     inkscape:cx="53.396063"
-     inkscape:cy="24.786053"
+     inkscape:zoom="2"
+     inkscape:cx="203.20966"
+     inkscape:cy="53.321983"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -39,7 +39,8 @@
      fit-margin-top="0"
      fit-margin-left="0"
      fit-margin-right="0"
-     fit-margin-bottom="0" />
+     fit-margin-bottom="0"
+     units="in" />
   <metadata
      id="metadata89218">
     <rdf:RDF>
@@ -56,10 +57,10 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-155.91166,-156.25113)">
+     transform="translate(-155.91166,-108.79952)">
     <g
        id="g109327"
-       transform="translate(0,-0.52915823)">
+       transform="matrix(4.6063621,0,0,4.6063621,-562.2739,-613.38724)">
       <path
          id="path1682"
          d="m 160.84147,157.61813 h 8.46666"
@@ -103,7 +104,7 @@
     </g>
     <g
        id="g109332"
-       transform="translate(0,-0.51344964)">
+       transform="matrix(4.6063621,0,0,4.6063621,-562.2739,-613.31489)">
       <path
          id="path5850"
          d="m 160.84147,159.02924 h 8.46666"
@@ -122,7 +123,7 @@
     </g>
     <g
        id="g109337"
-       transform="translate(0,-1.203301)">
+       transform="matrix(4.6063621,0,0,4.6063621,-562.2739,-616.4926)">
       <path
          id="path7950"
          d="m 160.84147,161.14591 h 8.46666"
@@ -141,7 +142,7 @@
     </g>
     <g
        id="g109342"
-       transform="translate(0,-1.0111991)">
+       transform="matrix(4.6063621,0,0,4.6063621,-562.2739,-615.6077)">
       <path
          id="path8500"
          d="m 160.84147,161.85146 h 8.46666"
@@ -160,7 +161,7 @@
     </g>
     <g
        id="g109347"
-       transform="translate(0,-2.2302172)">
+       transform="matrix(4.6063621,0,0,4.6063621,-562.2739,-621.22294)">
       <path
          id="path9252"
          d="m 160.84147,163.96813 h 8.46666"
@@ -179,7 +180,7 @@
     </g>
     <g
        id="g109352"
-       transform="translate(0,-2.0381172)">
+       transform="matrix(4.6063621,0,0,4.6063621,-562.2739,-620.33806)">
       <path
          id="path9950"
          d="m 160.84147,164.67369 h 8.46666"
@@ -198,7 +199,7 @@
     </g>
     <g
        id="g109357"
-       transform="translate(0,-1.8459991)">
+       transform="matrix(4.6063621,0,0,4.6063621,-562.2739,-619.4531)">
       <path
          id="path10600"
          d="m 160.84147,165.37924 h 8.46666"
@@ -217,7 +218,7 @@
     </g>
     <g
        id="g109362"
-       transform="translate(0,-1.653891)">
+       transform="matrix(4.6063621,0,0,4.6063621,-562.2739,-618.56817)">
       <path
          id="path11166"
          d="m 160.84147,166.0848 h 8.46666"
@@ -236,7 +237,7 @@
     </g>
     <g
        id="g109367"
-       transform="translate(0,-2.1672629)">
+       transform="matrix(4.6063621,0,0,4.6063621,-562.2739,-620.93294)">
       <path
          id="path13224"
          d="m 160.84147,167.49584 h 8.46666"
@@ -255,7 +256,7 @@
     </g>
     <g
        id="g109372"
-       transform="translate(0,-1.9751549)">
+       transform="matrix(4.6063621,0,0,4.6063621,-562.2739,-620.04803)">
       <path
          id="path13666"
          d="m 160.84147,168.2014 h 8.46666"
@@ -274,7 +275,7 @@
     </g>
     <g
        id="g109377"
-       transform="translate(0,-4.6052568)">
+       transform="matrix(4.6063621,0,0,4.6063621,-562.2739,-632.16324)">
       <path
          id="path14618"
          d="m 160.84147,171.72917 h 8.46666"
@@ -293,7 +294,7 @@
     </g>
     <g
        id="g109382"
-       transform="translate(0,-4.4131487)">
+       transform="matrix(4.6063621,0,0,4.6063621,-562.2739,-631.27831)">
       <path
          id="path15268"
          d="m 160.84147,172.43473 h 8.46666"
@@ -312,7 +313,7 @@
     </g>
     <g
        id="g109442"
-       transform="translate(0,-4.7625022)">
+       transform="matrix(4.6063621,0,0,4.6063621,-562.2739,-632.88757)">
       <path
          id="path41152"
          d="m 161.01786,173.84573 v -0.33211"
@@ -606,35 +607,35 @@
     </g>
     <text
        id="text109280"
-       y="157.38095"
-       x="156.36874"
-       style="font-style:normal;font-weight:normal;font-size:1.05833328px;line-height:1;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       y="114.00388"
+       x="158.01715"
+       style="font-style:normal;font-weight:normal;font-size:4.87506628px;line-height:1;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.21876657"
        xml:space="preserve"><tspan
-         style="stroke-width:0.26458332"
-         y="157.38095"
-         x="156.36874"
+         style="stroke-width:1.21876657"
+         y="114.00388"
+         x="158.01715"
          id="tspan109278"
          sodipodi:role="line">Graph</tspan></text>
     <text
        id="text109280-3"
-       y="158.91034"
-       x="155.85223"
-       style="font-style:normal;font-weight:normal;font-size:1.05833328px;line-height:1;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#455e26;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       y="121.04881"
+       x="155.63791"
+       style="font-style:normal;font-weight:normal;font-size:4.87506628px;line-height:1;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#455e26;fill-opacity:1;stroke:none;stroke-width:1.21876657"
        xml:space="preserve"><tspan
-         style="fill:#455e26;fill-opacity:1;stroke-width:0.26458332"
-         y="158.91034"
-         x="155.85223"
+         style="fill:#455e26;fill-opacity:1;stroke-width:1.21876657"
+         y="121.04881"
+         x="155.63791"
          id="tspan109278-6"
          sodipodi:role="line">GRCh38</tspan></text>
     <text
        id="text109280-3-7"
-       y="169.18874"
-       x="155.91089"
-       style="font-style:normal;font-weight:normal;font-size:1.05833328px;line-height:1;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#513099;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       y="168.39484"
+       x="155.90811"
+       style="font-style:normal;font-weight:normal;font-size:4.87506628px;line-height:1;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#513099;fill-opacity:1;stroke:none;stroke-width:1.21876657"
        xml:space="preserve"><tspan
-         style="fill:#513099;fill-opacity:1;stroke-width:0.26458332"
-         y="169.18874"
-         x="155.91089"
+         style="fill:#513099;fill-opacity:1;stroke-width:1.21876657"
+         y="168.39484"
+         x="155.90811"
          id="tspan109278-6-5"
          sodipodi:role="line">RNAseq</tspan></text>
   </g>

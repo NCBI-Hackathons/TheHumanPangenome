@@ -70,7 +70,21 @@ Finally, to compare the annotated reads to the truth and set the mapped_correctl
 ./bin/vg gamcompare -r 100 data/annotated.gam data/reads/sim.gam > data/compared.gam
 ```
 
-## Slides
+## Final Slides
+
+### Clusterer Speedup
+ * The clustere is not slower.
+ * The clusterer is slightly faster
+ 
+### Maize Graph
+ * A maize graph has been built.
+ * It contains a snarl with ~107,000 nodes, which is too big for the distance index to handle.
+ * `odgi` draws this beautiful picture:
+ 
+![ODGI](https://raw.githubusercontent.com/NCBI-Hackathons/TheHumanPangenome/master/Giraffe/images/odgi.png)
+ 
+
+## Day 1 Slides
 ![Image00](https://raw.githubusercontent.com/NCBI-Hackathons/TheHumanPangenome/master/Giraffe/images/00.png)
 ![Image01](https://raw.githubusercontent.com/NCBI-Hackathons/TheHumanPangenome/master/Giraffe/images/01.png)
 ![Image02](https://raw.githubusercontent.com/NCBI-Hackathons/TheHumanPangenome/master/Giraffe/images/02.png)

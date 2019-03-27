@@ -32,13 +32,13 @@ An updated version of the script along with exact commands on how to generate th
 
 ```
 # construct the graph
-sibeliaz-lcb --graph chr1_hg38_jg1_deBruijngraph.dbg --fasta hg38_chr1.fasta -k 25 -b 200 -o chr1_gddd -m 500 -t 4 --abundance 16
+sibeliaz -f 100 -a 16 -t 8 -o chr1_500 -m 500 all_chr1.fa
 
 # convert MAF to GFAv1
-scripts/maf_to_gfa1.py <in.maf> <out.gfa1>
+scripts/maf_to_gfa1.py sibeliaz_out/alignment.maf all_chr1.fa > out.gfa1
 
 # convert GFAv1 to vg
-vg view <in.gfa1> <out.vg>
+vg view out.gfa1 out.vg
 ```
 
 3) [Cactus](https://github.com/ComparativeGenomicsToolkit/cactus)
@@ -63,6 +63,8 @@ Following the conversion we loaded the graph onto Bandage for visualisation. Ano
 
 ### 2) define a graph coordinate system that will be retro-compatible with GRCh38.
 
+![coordinates](https://github.com/NCBI-Hackathons/TheHumanPangenome/blob/master/DS/graph/Genome_graph_compare.png?raw=true "Apes Tree")
+
 Representing haplotype information in reference genome is beneficial in increasing mappability and reducing bias. The major concerns for representing haplotype in the existing reference genome are the alteration of coordinate, redundant representation, and ambiguous sequence inference. Our proposed notation tackle these issues with the following design philosophies:
 
 1) The haplotype contigs are coordinated and defined as an add-on outside the reference genome coordinate. This allow the haplotype contigs set to be updated separately and the inclusion of haplotype sequence does not alter genomic coordinate. This design also allow the user to use patch in reference genome or recreating custom sequence using their haplotype of interest.
@@ -71,8 +73,15 @@ Representing haplotype information in reference genome is beneficial in increasi
 
 3) Each haplotype can be uniquely represent using Graphical Fragment Assembly-liked notation which can track back into node storing specific sequence for each haplotype.
 
+![Proposed graph coordinate system](https://github.com/NCBI-Hackathons/TheHumanPangenome/blob/master/DS/graph/figure1.png)
 
-![coordinates](https://github.com/NCBI-Hackathons/TheHumanPangenome/blob/master/DS/graph/Genome_graph_compare.png?raw=true "Apes Tree")
+Proposed graph coordinate system to represent haplotype. A) GFA file that includes nodes and edges for reference genome and haplotypes. B) Accompany path file include path for reference genome, haplotig 1, and haplotig 2. These paths have corresponding sequences stored separately. C) Visualization of A using path label from B. An individual with haplotype 1 should be compared against sequence 1-3-5-6-4. An individual with type 2 should be compared against sequence 1-3-7-6-4. 
+
+![Updating graph](https://github.com/NCBI-Hackathons/TheHumanPangenome/blob/master/DS/graph/figure2.png)
+
+Expanding the model Our proposed model allows nodes and edges representation of the GFA to change while the sequence corresponding to each haplotive can remain unchanged 
+
+
 
 ## Useful links
 
