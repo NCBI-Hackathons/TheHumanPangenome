@@ -1,0 +1,76 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Unknown </title></head><body>
+<h2 id="specific-aim-a-faster-better-short-read-mapper-with-hit-chaining">Specific aim:  A Faster, Better Short-Read Mapper with Hit Chaining.</h2>
+<p>Our work modifies <a href="https://github.com/vgteam/vg/blob/master/src/subcommand/gaffe_main.cpp">this function</a> in <code>vg</code>.</p>
+<p>Improve a prototype minimizer-based mapper, by adding a faster clustering function to cluster minimizer hits, and hit extension logic for handling clusters that have no good full-length gapless alignment.</p>
+<p>The clustering algorithm has been improved by reducing the amount of data copying in the implementation. Additionally, we have devised an improved algorithm for comparing sets of clusters.</p>
+<h2 id="running-the-code">Running the Code</h2>
+<p>You will need to run <code>vg</code> to see the updated function at work.</p>
+<p>We'll be using <code>valgrind</code> which can be installed with: <code>sudo apt install valgrind kcachegrind</code></p>
+<p>At the time of writing, the current vg <code>master</code> branch did not contain the updated gaffe function and was cloned with: <code>git clone --recursive https://github.com/vgteam/vg.git</code></p>
+<p>A repo repo was cloned and compiled with the new gaffe function using:
+<code>git clone --recursive https://github.com/vgteam/vg.git &amp;&amp; cd vg
+git pull https://github.com/xchang1/vg.git seed_clustering</code></p>
+<p>At the top of <a href="https://github.com/vgteam/vg/blob/master/src/subcommand/gaffe_main.cpp">src/subcommand/gaffe_main.cpp</a> please uncomment this line to use with valgrind: https://github.com/vgteam/vg/blob/master/src/subcommand/gaffe_main.cpp#L25</p>
+<p>Then follow <a href="https://github.com/vgteam/vg">the installation instructions at the vg repo to compile the repo from source</a> (warning: this can take 30 minutes+ to compile the first time).</p>
+<p>Data files for testing are <a href="http://public.gi.ucsc.edu/~anovak/graphs/gaffe/basic-testing">located here</a>.  They can be downloaded with:
+```</p>
+<h1 id="usrbinenv-bash">!/usr/bin/env bash</h1>
+<p>mkdir data
+mkdir data/reads
+curl -o data/snp1kg-CHR21_filter.dist http://public.gi.ucsc.edu/~anovak/graphs/gaffe/basic-testing/snp1kg-CHR21_filter.dist
+curl -o data/snp1kg-CHR21_filter.gbwt http://public.gi.ucsc.edu/~anovak/graphs/gaffe/basic-testing/snp1kg-CHR21_filter.gbwt
+curl -o data/snp1kg-CHR21_filter.gcsa http://public.gi.ucsc.edu/~anovak/graphs/gaffe/basic-testing/snp1kg-CHR21_filter.gcsa
+curl -o data/snp1kg-CHR21_filter.gcsa.lcp http://public.gi.ucsc.edu/~anovak/graphs/gaffe/basic-testing/snp1kg-CHR21_filter.gcsa.lcp
+curl -o data/snp1kg-CHR21_filter.min http://public.gi.ucsc.edu/~anovak/graphs/gaffe/basic-testing/snp1kg-CHR21_filter.min
+curl -o data/snp1kg-CHR21_filter.snarls http://public.gi.ucsc.edu/~anovak/graphs/gaffe/basic-testing/snp1kg-CHR21_filter.snarls
+curl -o data/snp1kg-CHR21_filter.vg http://public.gi.ucsc.edu/~anovak/graphs/gaffe/basic-testing/snp1kg-CHR21_filter.vg
+curl -o data/snp1kg-CHR21_filter.xg http://public.gi.ucsc.edu/~anovak/graphs/gaffe/basic-testing/snp1kg-CHR21_filter.xg
+curl -o data/reads/sim.fq.gz http://public.gi.ucsc.edu/~anovak/graphs/gaffe/basic-testing/reads/sim.fq.gz
+curl -o data/reads/sim.gam http://public.gi.ucsc.edu/~anovak/graphs/gaffe/basic-testing/reads/sim.gam
+curl -o data/reads/toil-vg-sim.txt http://public.gi.ucsc.edu/~anovak/graphs/gaffe/basic-testing/reads/toil-vg-sim.txt
+curl -o data/reads/true.pos http://public.gi.ucsc.edu/~anovak/graphs/gaffe/basic-testing/reads/true.pos
+```</p>
+<p>Now that <code>vg</code> is installed, you can run the following using the sample data above:
+```</p>
+<h1 id="usrbinenv-bash_1">!/usr/bin/env bash</h1>
+<p>valgrind --tool=callgrind --instr-atstart=no \
+    ./bin/vg gaffe \
+    -x data/snp1kg-CHR21_filter.xg \
+    -m data/snp1kg-CHR21_filter.min \
+    -d data/snp1kg-CHR21_filter.dist \
+    -s data/snp1kg-CHR21_filter.snarls \
+    -H data/snp1kg-CHR21_filter.gbwt \
+    -G data/reads/sim.gam \
+    &gt; data/mapped.gam
+```</p>
+<p>Optionally, one can run:
+<code>./bin/vg annotate -p -x data/snp1kg-CHR21_filter.xg -a data/mapped.gam &gt; data/annotated.gam</code></p>
+<p>Finally, to compare the annotated reads to the truth and set the mapped_correctly field:
+<code>./bin/vg gamcompare -r 100 data/annotated.gam data/reads/sim.gam &gt; data/compared.gam</code></p>
+<h2 id="final-slides">Final Slides</h2>
+<h3 id="clusterer-speedup">Clusterer Speedup</h3>
+<ul>
+<li>The clustere is not slower.</li>
+<li>The clusterer is slightly faster</li>
+</ul>
+<h3 id="maize-graph">Maize Graph</h3>
+<ul>
+<li>A maize graph has been built.</li>
+<li>It contains a snarl with ~107,000 nodes, which is too big for the distance index to handle.</li>
+<li><code>odgi</code> draws this beautiful picture:</li>
+</ul>
+<p><img alt="ODGI" src="https://raw.githubusercontent.com/NCBI-Hackathons/TheHumanPangenome/master/Giraffe/images/odgi.png" /></p>
+<h2 id="day-1-slides">Day 1 Slides</h2>
+<p><img alt="Image00" src="https://raw.githubusercontent.com/NCBI-Hackathons/TheHumanPangenome/master/Giraffe/images/00.png" />
+<img alt="Image01" src="https://raw.githubusercontent.com/NCBI-Hackathons/TheHumanPangenome/master/Giraffe/images/01.png" />
+<img alt="Image02" src="https://raw.githubusercontent.com/NCBI-Hackathons/TheHumanPangenome/master/Giraffe/images/02.png" />
+<img alt="Image03" src="https://raw.githubusercontent.com/NCBI-Hackathons/TheHumanPangenome/master/Giraffe/images/03.png" />
+<img alt="Image04" src="https://raw.githubusercontent.com/NCBI-Hackathons/TheHumanPangenome/master/Giraffe/images/04.png" /></p>
+<h2 id="stretch-goals">Stretch Goals:</h2>
+<ul>
+<li>Fast Clustering (Stretch Goal #1)</li>
+<li>Haplotype-based Hit Joining (Stretch Goal #2)</li>
+</ul>
+<h2 id="fallback-goal">Fallback Goal:</h2>
+<p>Dump hit coverage by node.</p>
+</body></html>
