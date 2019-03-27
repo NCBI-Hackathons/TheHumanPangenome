@@ -32,13 +32,13 @@ An updated version of the script along with exact commands on how to generate th
 
 ```
 # construct the graph
-sibeliaz-lcb --graph chr1_hg38_jg1_deBruijngraph.dbg --fasta hg38_chr1.fasta -k 25 -b 200 -o chr1_gddd -m 500 -t 4 --abundance 16
+sibeliaz -f <memory limit in GB> <fasta>
 
 # convert MAF to GFAv1
-scripts/maf_to_gfa1.py <in.maf> <out.gfa1>
+python scripts/maf_to_gfa1.py sibeliaz_out/alignment.maf <fasta> <out.gfa>
 
 # convert GFAv1 to vg
-vg view <in.gfa1> <out.vg>
+vg view <out.gfa> <out.vg>
 ```
 
 3) [Cactus](https://github.com/ComparativeGenomicsToolkit/cactus)
