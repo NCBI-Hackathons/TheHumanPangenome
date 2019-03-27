@@ -25,6 +25,7 @@ We created a graph from chromosomes 1 of the Japanese *de novo* assembly jg1 and
 To do so we first ran SibeliaZ to produce a whole-genome alignment of these two sequences in MAF format.
 Then we converted MAF to GFA1 and imported it into vg.
 To make the conversion, we wrote a script producing a GFA1 graph from a MAF alignment (scripts/maf_to_gfa1.py).
+An updated version of the script along with exact commands on how to generate the GFA file will be included in the next minor release of SibeliaZ.
 
 3) [Cactus](https://github.com/ComparativeGenomicsToolkit/cactus). [in progress]
 
