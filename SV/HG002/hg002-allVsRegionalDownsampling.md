@@ -1,18 +1,18 @@
 Comparison of variants called using all reads vs regionally downsampled reads
 =============================================================================
 
-SNPs
-----
+All insertions
+--------------
+
+### SNPs
 
 ![](venn-snps-all-regional.png)
 
-Indels
-------
+### Indels
 
 ![](venn-indels-all-regional.png)
 
-Example of variants specific to the regional
---------------------------------------------
+### Example of variants specific to the regional
 
 |     |  pos| seq    | id                            | ins.gt | type | ins.chr |    ins.pos|  ins.size|  align.prop.match.all| var.id.all |  align.prop.match.region| var.id.region                                 | all   | regional |    n|
 |-----|----:|:-------|:------------------------------|:-------|:-----|:--------|----------:|---------:|---------------------:|:-----------|------------------------:|:----------------------------------------------|:------|:---------|----:|
@@ -37,7 +37,20 @@ Example of variants specific to the regional
 |-----|----:|:-------|:------------------------------|:-------|:-----|:--------|----------:|---------:|---------------------:|:-----------|------------------------:|:----------------------------------------------|:------|:---------|----:|
 | 32  |    1| A&gt;C | CHM1\_chr11-102299023-INS-293 | het    | SNV  | chr11   |  102299023|       293|                    NA| NA         |                   0.9966| 1\_A&gt;C\_CHM1\_chr11-102299023-INS-293\_het | FALSE | TRUE     |    1|
 
-Size distribution
------------------
+### Size distribution
 
 ![](hg002-allVsRegionalDownsampling_files/figure-markdown_github/unnamed-chunk-7-1.png)![](hg002-allVsRegionalDownsampling_files/figure-markdown_github/unnamed-chunk-7-2.png)![](hg002-allVsRegionalDownsampling_files/figure-markdown_github/unnamed-chunk-7-3.png)
+
+Insertions called in both runs
+------------------------------
+
+5977 insertions are called in both (out of 12858 called from the *all
+reads* run, and 7597 called from the *regional downsample* run).
+
+### SNPs
+
+![](venn-snps-all-regional-insInBoth.png)
+
+### Indels
+
+![](venn-indels-all-regional-insInBoth.png)
