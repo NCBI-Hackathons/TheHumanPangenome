@@ -65,9 +65,9 @@ sudo java -jar cromwell-36.1.jar run vg_rna.wdl -i vg_rna.inputs.json
 
 ## Future goals
 
-* Complete allele-specific expression pipeline using RSEM or other state-of-the-art quantification tools 
+* Complete allele-specific expression pipeline
 
-* Comprehensive evaluation of splice graph mapping using vg with comparison to state-of-the-art aligners
+* Comprehensive evaluation of splice graph mapping using vg
 
 
 
