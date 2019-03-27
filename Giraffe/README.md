@@ -19,7 +19,13 @@ You will need to run `vg` to see the updated function at work.
 
 We'll be using `valgrind` which can be installed with: `sudo apt install valgrind kcachegrind`
 
-Next, clone `vg` with: `git clone https://github.com/vgteam/vg.git`
+At the time of writing, the current vg `master` branch did not contain the updated gaffe function and was cloned with: `git clone --recursive https://github.com/vgteam/vg.git`
+
+A repo repo was cloned and compiled with the new gaffe function using:
+```
+git clone --recursive https://github.com/vgteam/vg.git && cd vg
+git pull https://github.com/xchang1/vg.git seed_clustering
+```
 
 At the top of [src/subcommand/gaffe_main.cpp](https://github.com/vgteam/vg/blob/master/src/subcommand/gaffe_main.cpp) please uncomment this line to use with valgrind: https://github.com/vgteam/vg/blob/master/src/subcommand/gaffe_main.cpp#L25
 
@@ -60,18 +66,14 @@ valgrind --tool=callgrind --instr-atstart=no \
     > data/mapped.gam
 ```
 
-Then to annotate, run:
-
+Optionally, one can run:
 ```
-valgrind --tool=callgrind --instr-atstart=no \
-     ./bin/vg annotate -p -x data/snp1kg-CHR21_filter.xg -a data/mapped.gam > data/annotated.gam
+./bin/vg annotate -p -x data/snp1kg-CHR21_filter.xg -a data/mapped.gam > data/annotated.gam
 ```
 
 Finally, to compare the annotated reads to the truth and set the mapped_correctly field:
-
 ```
-valgrind --tool=callgrind --instr-atstart=no \
-    ./bin/vg gamcompare -r 100 data/annotated.gam data/reads/sim.gam > data/compared.gam
+./bin/vg gamcompare -r 100 data/annotated.gam data/reads/sim.gam > data/compared.gam
 ```
 
 ## Slides
