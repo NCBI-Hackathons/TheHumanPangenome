@@ -46,7 +46,7 @@ See the subproject-specific [README](gene_quant/README.md).
 
 We have defined a generalization of the GFF3 format that replaces genomic intervals with a subraph. It is a text-based, tab-separated file. Every line contains each of the following fields. If a field is to be ignored, it can be replaced with a "." (without quotes). The fields are
 
-* subgraph: a comma separated list of intervals of sequences on nodes, along with orientation in the format `ID[start:end](+/-)`.
+* subgraph: a comma separated list of intervals of sequences on nodes, along with orientation in the format `ID[start:end](+/-/?)`.
 * source: the name of the program or database that generated the annotation
 * type: the type of feature
 * score: a floating point value
@@ -57,7 +57,7 @@ We have defined a generalization of the GFF3 format that replaces genomic interv
 
 * Travis Wrightsman (tw493@cornell.edu)
 * Jordan Eizenga (jeizenga@ucsc.edu)
-* Rajeeva Musunuri
+* Rajeeva Musunuri (rmusunuri@nygenome.org)
 * Toshiyuki Yokoyama
 
 ## Future Directions
