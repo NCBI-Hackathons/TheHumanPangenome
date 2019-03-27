@@ -21,7 +21,7 @@ Beyond SNVs/indels, there are several interesting ABO structural variants standi
 miniwdl cromwell vg_wdl/workflows/vg_construct_and_index.wdl \
     graph_name=ABOlocus_SV contigs=ABOlocus \
     ref_fasta_gz=vg_wdl/tests/ABOlocus/ABOlocus.fa.gz \
-    contigs_vcf_gz=tests/ABOlocus/ABOlocus_SV.vcf.gz
+    contigs_vcf_gz=vg_wdl/tests/ABOlocus/ABOlocus_SV.vcf.gz
 ```
 
 A few 1000 Genomes samples carry this deletion. The [vg_wdl tests](https://github.com/vgteam/vg_wdl/blob/master/tests/ABOlocus/vg_ABOlocus_test_SV.wdl) map the reads from one such carrier (HG01308) to this graph, and confirm that vg aligns some reads along the deletion edge.
