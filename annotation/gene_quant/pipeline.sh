@@ -54,5 +54,5 @@ vg map -t 32 -d GRCh38_chr21.splice -f SRR307005.chr21.1.fq -f SRR307005.chr21.2
 vg pack -t 32 -x GRCh38_chr21.splice.xg -g GRCh38_chr21.splice.SRR307005.gam -d > GRCh38_chr21.splice.SRR307005.pack
 
 # sum over genes (ignore ambiguity)
-python3 gene_quant.py GRCh38_chr21.splice.SRR307005.pack GRCh38_chr21.splice.ggff
+python3 gene_quant.py GRCh38_chr21.splice.SRR307005.pack GRCh38_chr21.splice.ggff > coverage.out 2> coverage.err
 
