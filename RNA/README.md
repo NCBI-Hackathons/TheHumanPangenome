@@ -18,7 +18,7 @@
 
 # Workflow
 
-![Alt text](https://github.com/NCBI-Hackathons/TheHumanPangenome/blob/master/RNA/RNA%20project-5.jpg?raw=true "Title")
+![Alt text](https://github.com/NCBI-Hackathons/TheHumanPangenome/blob/master/RNA/RNA%20project%20-%20day%203.jpg?raw=true "Title")
 
 ## 1. Contruct spliced variant graphs from HG002, Chromosome 21
 
@@ -44,11 +44,9 @@
 
 # Results
 
-![Alt text](https://github.com/NCBI-Hackathons/TheHumanPangenome/blob/master/RNA/RNA%20project-6.jpg?raw=true "Title")
+![Alt text](https://github.com/NCBI-Hackathons/TheHumanPangenome/blob/master/RNA/RNA%20project%20-%20day%203-2.jpg?raw=true "Title")
 
-# Presentations
+![Alt text](?raw=true "Title")
 
-### Day 2 presentation
-https://docs.google.com/presentation/d/1wWK4d39ZiJW09IytHxArcYOA3xTiF3rgxKcM5b62BmA/edit?usp=sharing
 
 
