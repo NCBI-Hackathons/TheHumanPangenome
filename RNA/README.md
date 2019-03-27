@@ -12,9 +12,13 @@
 
 ## 3. Wrap it all in WDL
 
+# Implementation
+
+```Heres how we run this pipeline```
+
 # Workflow
 
-![Alt text](?raw=true "Title")
+![Alt text](https://github.com/NCBI-Hackathons/TheHumanPangenome/blob/master/RNA/RNA%20project-5.jpg?raw=true "Title")
 
 ## 1. Contruct spliced variant graphs from HG002, Chromosome 21
 
@@ -39,6 +43,8 @@
 ## 8. Wrap it all in WDL!
 
 # Results
+
+![Alt text](https://github.com/NCBI-Hackathons/TheHumanPangenome/blob/master/RNA/RNA%20project-5.jpg?raw=true "Title")
 
 # Presentations
 
