@@ -25,6 +25,9 @@ bcftools norm -m -both -f $REFG $VCF_SRRD | bgzip -c > ${VCF_SRRD%.vcf.gz}.norm.
 zcat ${VCF_SRRD%.vcf.gz}.norm.vcf.gz | awk '{if(substr($0, 1, 1)=="#" || (length($4)==1 && length($5)>20)){print$0}}' | bgzip -c > ${VCF_SRRD%.vcf.gz}.norm.ins.vcf.gz
 Rscript callVariantsInInsertedSeq.R ${VCF_GRAPH%.vcf.gz}.norm.vcf.gz ${VCF_SRRD%.vcf.gz}.norm.ins.vcf.gz /data/variants_in_insertions/HG002/variantsInInsertions.SRRD $REGIONS
 
+## Align insertions SR vs SRRD
+Rscript alignCalledInsertions.R ${VCF_SR%.vcf.gz}.norm.nosnp.vcf.gz ${VCF_SRRD%.vcf.gz}.norm.ins.vcf.gz /data/variants_in_insertions/HG002/align.SR.SRRD.tsv $REGIONS
+
 ## CCS
 bcftools norm -m -both -f $REF $VCF_CCS | bgzip -c > ${VCF_CCS%.vcf.gz}.norm.vcf.gz
 Rscript callVariantsInInsertedSeq.R ${VCF_GRAPH%.vcf.gz}.norm.vcf.gz ${VCF_CCS%.vcf.gz}.norm.vcf.gz /data/variants_in_insertions/HG002/variantsInInsertions.CCS $REGIONS
