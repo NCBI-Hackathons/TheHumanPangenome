@@ -106,7 +106,7 @@ Stack trace path: /tmp/vg_crash_i5SNDK/stacktrace.txt
 
 ### Clusterer Speedup
 ![Image05](https://raw.githubusercontent.com/NCBI-Hackathons/TheHumanPangenome/master/Giraffe/images/05.png)
- * The clustere is not slower.
+ * The clusterer is not slower.
  * The clusterer is twice as fast!
  
 
