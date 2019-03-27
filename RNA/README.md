@@ -44,7 +44,7 @@
 
 # Results
 
-![Alt text](https://github.com/NCBI-Hackathons/TheHumanPangenome/blob/master/RNA/RNA%20project-5.jpg?raw=true "Title")
+![Alt text](https://github.com/NCBI-Hackathons/TheHumanPangenome/blob/master/RNA/RNA%20project-6.jpg?raw=true "Title")
 
 # Presentations
 
