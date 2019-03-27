@@ -80,7 +80,7 @@ Finally, to compare the annotated reads to the truth and set the mapped_correctl
 
 ### Clusterer Speedup
  * The clustere is not slower.
- * The clusterer is slightly faster
+ * The clusterer is twice as fast!
  
 ### Maize Graph
  * A maize graph has been built.
@@ -88,6 +88,25 @@ Finally, to compare the annotated reads to the truth and set the mapped_correctl
  * `odgi` draws this beautiful picture:
  
 ![ODGI](https://raw.githubusercontent.com/NCBI-Hackathons/TheHumanPangenome/master/Giraffe/images/odgi.png)
+
+### Extension Chaining
+ * Implemented
+ * Does not work
+ 
+```
+Align {"sequence":"AAGATTCGGT"} global vs:
+1 (AAAGATT): 
+	-> 2 (C)
+2 (C): 
+	1 (AAAGATT) ->
+	-> 3 (GGTAACAGTAAAGATAA)
+3 (GGTAACAGTAAAGATAA): 
+	2 (C) ->
+error:[BandedGlobalAligner] traceback stuck in match matrix interior
+Assertion failed: (0), function traceback_internal, file src/banded_global_aligner.cpp, line 863.
+ERROR: Signal 6 occurred. VG has crashed. Run 'vg bugs --new' to report a bug.
+Stack trace path: /tmp/vg_crash_i5SNDK/stacktrace.txt
+```
 
 ## Stretch Goals:
 - Fast Clustering (Stretch Goal #1)
