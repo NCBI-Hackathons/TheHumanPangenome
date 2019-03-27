@@ -47,7 +47,8 @@ Now that `vg` is installed, you can run the following using the sample data abov
 ```
 #!/usr/bin/env bash
 
-./bin/vg gaffe \
+valgrind --tool=callgrind --instr-atstart=no \
+    ./bin/vg gaffe \
     -x snp1kg-CHR21_filter.xg \
     -m snp1kg-CHR21_filter.min \
     -d snp1kg-CHR21_filter.dist \
@@ -59,11 +60,17 @@ Now that `vg` is installed, you can run the following using the sample data abov
 
 Then to annotate, run:
 
-`./bin/vg annotate -p -x snp1kg-CHR21_filter.xg -a mapped.gam > annotated.gam`
+```
+valgrind --tool=callgrind --instr-atstart=no \
+     ./bin/vg annotate -p -x snp1kg-CHR21_filter.xg -a mapped.gam > annotated.gam
+```
 
 Finally, to compare the annotated reads to the truth and set the mapped_correctly field:
 
-`./bin/vg gamcompare  -r 100 annotated.gam reads/sim.gam > compared.gam`
+```
+valgrind --tool=callgrind --instr-atstart=no \
+    ./bin/vg gamcompare  -r 100 annotated.gam reads/sim.gam > compared.gam
+```
 
 ## Slides
 ![Image00](https://raw.githubusercontent.com/NCBI-Hackathons/TheHumanPangenome/master/Giraffe/images/00.png)
