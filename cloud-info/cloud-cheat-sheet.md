@@ -112,66 +112,8 @@ Unmapped reads then are assembled using skesa into denovo contigs and aligned wi
 BAM files are sorted and indexed, for each BAM there is a flagstat and counts files. The counts are also stored in the BigQuery table rnaseq.genescounts.
 
 ## General GCP Advice
-    
-### BigQuery (a.k.a bq)
-        
-* [https://cloud.google.com/bigquery/docs/bq-command-line-tool](https://cloud.google.com/bigquery/docs/bq-command-line-tool)
-        
-> For reference use only -- _should not_ be included in an external docker
-        
-* Search data pre-indexed by NCBI
-            
-  * *Query format*: `bq --project_id strides-sra-hackathon-data query --nouse_legacy_sql`
-                
-    > In some case you may need to use `strides-sra-hackathon-data`, more on this below
-            
-* *Useful options*: 
-    ```
-    bq --max_rows=100 
-       --format=pretty 
-       --project_id strides-sra-hackathon-data query     
-       --nouse_legacy_sql "<your_standard_sql_query_here"
-       ```
-
-> The format flag also takes “json” and “csv” as valid arguments
-            
-
-* *Available data*:
-    `bq show --schema --format=prettyjson strides-sra-hackathon-data:rnaseq.runinfo`
-
-> Format also accepts “json”
-
-* *Example query*: to get a list of library selection strategies used by included SRRs:
-    ```   
-    bq --format=csv --project_id strides-sra-hackathon-data query
-       --nouse_legacy_sql 
-         "select distinct LibrarySelection from rnaseq.runinfo"  
-    ```
-
-* > Expected Output:**
-    ```
-    Waiting on bqjob_r2257ca5f589030fa_000001681a2c36ac_1 ... (0s)
-    Current status: DONE  
-LibrarySelection
-RANDOM
-ChIP
-PolyA
-other
-DNase
-cDNA
-size fractionation
-CAGE
-Reduced Representation
-unspecified
-Hybrid Selection
-    ```
-    
-* If you have a complex query you are interested in, especially if you think it might involve tables in `strides-sra-hackathon-data`, please let us know if we can help in the TODO: `#help-desk` Slack Channel.
-
-
-### Some other useful commands
-
-####  Working with Google Storage (aka `gs`) buckets:
+ 
+###  Working with Google Storage (aka `gs`) buckets:
 
 * `gsutil` is a collection of command line tools to access and modify data stored in google storage buckets. [`gsutil` Documentation Link](https://cloud.google.com/storage/docs/gsutil)
         
@@ -200,7 +142,7 @@ Hybrid Selection
 > * or, add your ssh keys to the source server and use `scp localfile username@REMOTE-IP:/foo/bar/`
 
 
-#### Google compute cloud tools (gcloud):
+### Google compute cloud tools (gcloud):
         
 * Check your service account and project: `gcloud info`
         
@@ -213,89 +155,41 @@ Hybrid Selection
             
   * Pull a message from the subscription: `gcloud pubsub subscriptions pull sub1`
 
+   
+### BigQuery (a.k.a bq)
+        
+* [https://cloud.google.com/bigquery/docs/bq-command-line-tool](https://cloud.google.com/bigquery/docs/bq-command-line-tool)
+        
+> For reference use only -- _should not_ be included in an external docker
+        
+* Search data pre-indexed by NCBI
+            
+  * *Query format*: `bq --project_id strides-sra-hackathon-data query --nouse_legacy_sql`
+                
+    > In some case you may need to use `strides-sra-hackathon-data`, more on this below
+            
+* *Useful options*: 
+    ```
+    bq --max_rows=100 
+       --format=pretty 
+       --project_id strides-sra-hackathon-data query     
+       --nouse_legacy_sql "<your_standard_sql_query_here"
+       ```
+
+> The format flag also takes “json” and “csv” as valid arguments
+            
+
+* *Available data*:
+    `bq show --schema --format=prettyjson strides-sra-hackathon-data:rnaseq.runinfo`
+
+> Format also accepts “json”
+
 
 ## Premade servers
 
-Several solr and other database servers are available.
+Several servers are available.
 
-* For Solr: URL Access: [http://IP-ADDRESS:7790/solr/\#/](http://IP-ADDRESS:7790/solr/#/) (requires browser authentication).
-
-> See the pinned post in the `#help-desk` channel in slack for server IP addresses. Contact a friendly admin for username or password information.
-
-* Solr is installed as a docker image `solr01`.
-  * Copy files to the image using `docker cp localfile solr01:/path/`
-  * Restart solr using `sudo docker container restart solr01`
-  
-* Example solr API Query using `curl`
-
-  `$ curl -u USERNAME:PASSWORD "IP-ADDRESS:7790/solr/tstcol01/select?q=\*:\*"`  
-
-  > Response:
-    ```
-     {  
-     "responseHeader":{  
-     "Status":0,  
-     "QTime":0,  
-     "Params":{  
-     "q":"\*:\*"}},  
-     "response":{"numFound":0,"start":0,"docs":\[\]  
-     }}  
-    ```
-
-  * Data Import (all on one line)
-    
-    ``` 
-    curl -u USERNAME:PASSWORD 
-         "IP-ADDRESS:7790/solr/tstcol01/update/json/docs?commit=true" 
-         -X POST 
-         -H 'Content-Type:application/json' 
-         --data-binary "FULL_PATH_TO_DATA.json"  
-    ```
-
-  > For example:  
-
-   `curl -u USERNAME:PASSWORD "IP-ADDRESS:7790/solr/tstcol01/update/json/docs?commit=true" -X POST -H 'Content-Type:application/json' --data-binary test_known4.json`  
-
-  > Where test_known4.json contains:  
- 
-    ```
-
-    [{"hit_id" : 1,
-     "Contig" : "SRR123.contig.1",
-     "method" : "mmseq2",
-     "parameters" : "some parameters",
-     "accession": "AC12345.1",
-     "simil":0.8},**
-
-    {"hit_id" : 2,
-     "Contig" : "SRR123.contig.1",
-     "method" : "rpstblastn",
-     "parameters" : "some parameters",
-     "accession": "AC12345.1",
-     "simil":0.8},
-
-    {"hit_id" : 3,
-     "Contig" : "SRR123.contig.2",
-     "method" : "mmseq2",
-     "parameters" : "some parameters",
-     "accession": "AC12356.2",
-     "simil":0.9},
-
-    {"hit_id" : 4,
-     "Contig" : "SRR123.contig.2", 
-     "method" : "rpstblastn",
-     "parameters" : "some parameters",
-     "accession": "AC12345.1",
-     "simil":0.4}, git
-
-    {"hit_id" : 5,
-    "Contig" : "SRR123.contig.1",
-    "method" : "AC12356.2",
-    "parameters" : "this is some parameters",
-    "accession": "AC12345.1",
-    "simil":0.5}
-     ]
-    ```
+* See the pinned post in the `#help-desk` channel in slack for server IP addresses. Contact a friendly admin for access or to request a new or modified (more CPU, memory, disk) server.
 
 ## Working with NCBI Data/Tools in the cloud
 
