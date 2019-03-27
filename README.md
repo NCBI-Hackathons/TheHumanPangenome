@@ -8,7 +8,7 @@
 
 #### A Faster, Better Short-Read Mapper with Hit Chaining. Now with more corn! See the Giraffe folder for details!
 
-![Alt text](https://github.com/NCBI-Hackathons/TheHumanPangenome/blob/master/annotation/fig/annotation_easy_case.svg?raw=true "Title")
+![Alt text](https://github.com/NCBI-Hackathons/TheHumanPangenome/blob/master/annotation/fig/annotation_easy_case.svg)
 
 #### Most Genome Annotations can be Imported from gff3 (to ggff!) quite easily!  See the annotation folder for details!
 
