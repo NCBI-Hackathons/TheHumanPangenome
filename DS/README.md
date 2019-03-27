@@ -55,7 +55,7 @@ hal2vg panApe_chr21.hal > panApe_chr21.vg
 ```
 
 #### Graph visualisation 
-Following the conversion we loaded the graph onto Bandage for visualisation. Another alternative is Momi-G (link).
+Following the conversion we loaded the graph onto Bandage for visualisation. Another alternative is Momi-G (https://github.com/MoMI-G/MoMI-G).
 
 | Example 1 | Example 2 |
 | - | - |
