@@ -58,7 +58,7 @@ We have defined a generalization of the GFF3 format that replaces genomic interv
 * Travis Wrightsman (tw493@cornell.edu)
 * Jordan Eizenga (jeizenga@ucsc.edu)
 * Rajeeva Musunuri (rmusunuri@nygenome.org)
-* Toshiyuki Yokoyama
+* Toshiyuki Yokoyama (toshiyuki.t.yokoyama@gmail.com)
 
 ## Future Directions
 
