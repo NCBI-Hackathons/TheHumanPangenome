@@ -63,6 +63,8 @@ Following the conversion we loaded the graph onto Bandage for visualisation. Ano
 
 ### 2) define a graph coordinate system that will be retro-compatible with GRCh38.
 
+![coordinates](https://github.com/NCBI-Hackathons/TheHumanPangenome/blob/master/DS/graph/Genome_graph_compare.png?raw=true "Apes Tree")
+
 Representing haplotype information in reference genome is beneficial in increasing mappability and reducing bias. The major concerns for representing haplotype in the existing reference genome are the alteration of coordinate, redundant representation, and ambiguous sequence inference. Our proposed notation tackle these issues with the following design philosophies:
 
 1) The haplotype contigs are coordinated and defined as an add-on outside the reference genome coordinate. This allow the haplotype contigs set to be updated separately and the inclusion of haplotype sequence does not alter genomic coordinate. This design also allow the user to use patch in reference genome or recreating custom sequence using their haplotype of interest.
@@ -79,7 +81,7 @@ Proposed graph coordinate system to represent haplotype. A) GFA file that includ
 
 Expanding the model Our proposed model allows nodes and edges representation of the GFA to change while the sequence corresponding to each haplotive can remain unchanged 
 
-![coordinates](https://github.com/NCBI-Hackathons/TheHumanPangenome/blob/master/DS/graph/Genome_graph_compare.png?raw=true "Apes Tree")
+
 
 ## Useful links
 
