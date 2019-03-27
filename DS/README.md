@@ -2,7 +2,7 @@
 
 The goal of our team is to establish pipelines to build graph genomes from *de novo* assembly level data, as well as define a new coordinate system that will be retro-compatible with GRCh38 to enhance interoperability.
 
-![panApe](https://github.com/NCBI-Hackathons/TheHumanPangenome/blob/master/DS/ds-vis1.png?raw=true "Title")
+![panApe](https://github.com/NCBI-Hackathons/TheHumanPangenome/blob/master/DS/graph/ds-vis1.png?raw=true "Title")
 
 **The path of GRCh38 through a graph! For details check the DS folder!**
 
