@@ -11,10 +11,18 @@ Our work modifies [this function](https://github.com/vgteam/vg/blob/master/src/s
 
 You will need to run `vg` to see the updated function at work.
 
-Follow [the installation instructions at the vg repo](https://github.com/vgteam/vg) (or install a precompiled binary since it can take 30 minutes+ to compile vg).
+We'll be using `valgrind` which can be installed with: `sudo apt install valgrind`
+
+Next, clone `vg` with: `git clone https://github.com/vgteam/vg.git`
+
+At the top of [src/subcommand/gaffe_main.cpp](https://github.com/vgteam/vg/blob/master/src/subcommand/gaffe_main.cpp) please uncomment this line to use with valgrind: https://github.com/vgteam/vg/blob/master/src/subcommand/gaffe_main.cpp#L25
+
+Then follow [the installation instructions at the vg repo to compile the repo from source](https://github.com/vgteam/vg) (warning: this can take 30 minutes+ to compile the first time).
 
 Data files for testing are [located here](http://public.gi.ucsc.edu/~anovak/graphs/gaffe/basic-testing).  They can be downloaded with:
 ```
+#!/usr/bin/env bash
+
 curl -o snp1kg-CHR21_filter.dist http://public.gi.ucsc.edu/~anovak/graphs/gaffe/basic-testing/snp1kg-CHR21_filter.dist
 curl -o snp1kg-CHR21_filter.gbwt http://public.gi.ucsc.edu/~anovak/graphs/gaffe/basic-testing/snp1kg-CHR21_filter.gbwt
 curl -o snp1kg-CHR21_filter.gcsa http://public.gi.ucsc.edu/~anovak/graphs/gaffe/basic-testing/snp1kg-CHR21_filter.gcsa
@@ -31,7 +39,9 @@ curl -o reads/true.pos http://public.gi.ucsc.edu/~anovak/graphs/gaffe/basic-test
 
 Now that `vg` is installed, you can run the following using the sample data above:
 ```
-vg gaffe \
+#!/usr/bin/env bash
+
+./bin/vg gaffe \
     -x snp1kg-CHR21_filter.xg \
     -m snp1kg-CHR21_filter.min \
     -d snp1kg-CHR21_filter.dist \
