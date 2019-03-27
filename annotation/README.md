@@ -41,3 +41,11 @@ See the subproject-specific [README](gene_quant/README.md).
 #### Visualization using MoMIG
 
 ![MoMIG Genome Graph Visualization software screenshot](fig/momig_screenshot.png)
+
+## Team Members
+
+* Travis Wrightsman (tw493@cornell.edu)
+* Jordan Eizenga
+* Rajeeva Musunuri
+* Toshiyuki Yokoyama
+
