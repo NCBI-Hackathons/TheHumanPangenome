@@ -3,12 +3,12 @@
 
 Our work modifies [this function](https://github.com/vgteam/vg/blob/master/src/subcommand/gaffe_main.cpp) in `vg`.
 
-#### A Better Short-Read Mapper
+#### A BETTER Short-Read Mapper
 This allows us to deal with cross-overs and indels.  Anything that we can't deal with on the first pass.
 
 The current behavior is to ignore indels and cross-overs and only provide gapless alignments (the default allows for four mismatched bases).
 
-#### A Faster Short-Read Mapper
+#### A FASTER Short-Read Mapper
 When creating an alignment from numerous graph pathways, the speed of alignment is slowed exponentially with each node present in "snarl" regions.  These "snarl" regions constitute a bubble on the graph where multiple nodes can be chosen.  Each of these nodes can exponentially increase the number of paths within the "snarl", and thus the alignment time.  We attempt to improve upon this by excluding nodes not associated with a given haplotype.
 
 Our algorithm speeds up the clustering after the search hits are gathered.
@@ -56,6 +56,14 @@ Now that `vg` is installed, you can run the following using the sample data abov
     -G reads/sim.gam \
     > mapped.gam
 ```
+
+Then to annotate, run:
+
+`./bin/vg annotate -p -x snp1kg-CHR21_filter.xg -a mapped.gam > annotated.gam`
+
+Finally, to compare the annotated reads to the truth and set the mapped_correctly field:
+
+`./bin/vg gamcompare  -r 100 annotated.gam reads/sim.gam > compared.gam`
 
 ## Slides
 ![Image00](https://raw.githubusercontent.com/NCBI-Hackathons/TheHumanPangenome/master/Giraffe/images/00.png)
