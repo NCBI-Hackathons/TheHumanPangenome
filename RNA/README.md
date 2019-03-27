@@ -28,7 +28,7 @@
 ![Alt text](https://github.com/NCBI-Hackathons/TheHumanPangenome/blob/master/RNA/RNA_project_day_3_pipeline.jpg)
 
 
-# Implementation
+## Implementation
 
 ### Download the relevant pipeline scripts
 ```
