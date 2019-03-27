@@ -53,4 +53,10 @@ We have defined a generalization of the GFF3 format that replaces genomic interv
 * phase: 0, 1, or 2 indicating the first base of the feature that is a codon, measuring from the source node in the subgraph
 * attributes: a semi-colon separated list of tag-value pairs, with tags separated from the values by an "="
 
+## Team Members
+
+* Travis Wrightsman (tw493@cornell.edu)
+* Jordan Eizenga (jeizenga@ucsc.edu)
+* Rajeeva Musunuri
+* Toshiyuki Yokoyama
 
