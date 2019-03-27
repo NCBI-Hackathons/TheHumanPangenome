@@ -10,7 +10,7 @@ git clone git@github.com:vgteam/vg_wdl.git
 miniwdl cromwell --no-quant-check vg_wdl/workflows/vg_construct_and_index.wdl \
     graph_name=ABOlocus contigs=ABOlocus use_haplotypes=true \
     ref_fasta_gz=vg_wdl/tests/ABOlocus/ABOlocus.fa.gz \
-    contigs_vcf_gz=tests/ABOlocus/ABOlocus_small.vcf.gz
+    contigs_vcf_gz=vg_wdl/tests/ABOlocus/ABOlocus_small.vcf.gz
 ```
 
 The [vg_construct_and_index.wdl](https://github.com/vgteam/vg_wdl/blob/master/workflows/vg_construct_and_index.wdl) workflow puts [prose instructions from the vg wiki](https://github.com/vgteam/vg/wiki/Index-Construction) into portably executable form. The next step will be to feed the graph+indices produced from this into [Charlie's mapping+calling workflow](https://github.com/vgteam/vg_wdl/blob/8eea6a9dd078e8110cb2e12cea1748fdbfd6b3e0/workflows/vg_pipeline.workingexample.wdl).
