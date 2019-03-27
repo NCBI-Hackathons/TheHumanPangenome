@@ -23,6 +23,7 @@ class GFAGraph:
 		"""
 		self._graph = defaultdict(set)
 		self._nodes = {}
+		self._node_to_path = defaultdict(list)
 		self._varying_overlaps = varying_overlaps
 		self._const_overlap = -1
 		self._edge_overlaps = {}
@@ -30,10 +31,10 @@ class GFAGraph:
 		self._name_to_id = {}
 		self._id_to_name = {}		
 		self._next_id = 0
+		self._paths = defaultdict(list)
 		if filename is not None:
 			# read graph from file
 			self._read_from_file(filename)
-		self._paths = defaultdict(list)
 
 	def _get_id(self, node_name):
 		"""
@@ -198,6 +199,7 @@ class GFAGraph:
 					node_orientation = path_node[-1] == '-'
 					node_id = self._name_to_id[node_name]
 					self._paths[path_name].append(Node(node_id, node_orientation))
+					self._node_to_path[Node(node_id, node_orientation)].append(path_name)
 		if not self._varying_overlaps:
 			assert len(self._edge_overlaps) == 0
 		print('Verify ...')
@@ -300,23 +302,25 @@ class GFAGraph:
 					return False
 		return True
 
-	# TODO
+	# TODO this does not yet work
 	def generate_paths(self, primary_name):
 		"""
 		Traverse the graph and generate paths.
 		"""
-		start_id = self._paths[primary_name][0].node_id
-		end_id = self._paths[primary_name][-1].node_id
-		start_name = self._id_to_name[start_id]
+		print(self._graph)
+		start = self._paths[primary_name][0]
+		end = self._paths[primary_name][-1]
+		start_name = self._id_to_name[start.node_id]
 		# perform DFS
-		nodes_to_process = [start_id, [primary_name, start_name]]
+		nodes_to_process = [(start, [primary_name, start_name])]
 		paths = []
 		while nodes_to_process:
 			(node, path) = nodes_to_process.pop()
 			for end_node in self._graph[node]:
-				end_node_id = self._name_to_id[end_node.node_id]
-				if end_id == end_node_id:
+				print(end_node.node_id, end)
+				end_node_id = end_node.node_id
+				if end.node_id == end_node_id:
 					paths.append(path)
 				else:
-					nodes_to_process.append((end_id, [end_node]))
+					nodes_to_process.append((end_node.node_id, [end_node]))
 		print(paths)
