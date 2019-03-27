@@ -61,11 +61,16 @@ sudo java -jar cromwell-36.1.jar run vg_rna.wdl -i vg_rna.inputs.json
 
 # Results
 
-![Alt text](https://github.com/NCBI-Hackathons/TheHumanPangenome/blob/master/RNA/RNA%20project-2.2.jpg?raw=true "Title")
+![Alt text](https://github.com/NCBI-Hackathons/TheHumanPangenome/blob/master/RNA/RNA_project_day3_SMIM11A.jpg)
+![Alt text](https://github.com/NCBI-Hackathons/TheHumanPangenome/blob/master/RNA/RNA_project_day3_SMIM11A_var.jpg)
+![Alt text](https://github.com/NCBI-Hackathons/TheHumanPangenome/blob/master/RNA/RNA_project_day3_mapstats.jpg)
 
-![Alt text](https://github.com/NCBI-Hackathons/TheHumanPangenome/blob/master/RNA/RNA%20project%20-%20day%203-2.jpg?raw=true "Title")
 
 
+# Future goals
 
+* Complete allele-specific expression pipeline 
+
+* More comprehensive evaluation of splice graph mapping using vg
 
 
