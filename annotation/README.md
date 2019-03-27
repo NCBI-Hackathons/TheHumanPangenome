@@ -53,12 +53,22 @@ We have defined a generalization of the GFF3 format that replaces genomic interv
 * phase: 0, 1, or 2 indicating the first base of the feature that is a codon, measuring from the source node in the subgraph
 * attributes: a semi-colon separated list of tag-value pairs, with tags separated from the values by an "="
 
+#### Converting to gGFF from GFF3
+
+We have built this capacity into the `vg` toolkit. The following invocation will inject the annotations from a GFF3 file into a graph:
+
+```
+vg annotate -x graph.xg -s graph.snarls -f annotations.gff3 -g > annotations.ggff
+```
+
+The snarls can be computed from a `.vg` file with the `vg snarls` subcommand, and the XG index can be created from a `.vg` file using the `vg index` subcommand.
+
 ## Team Members
 
 * Travis Wrightsman (tw493@cornell.edu)
 * Jordan Eizenga (jeizenga@ucsc.edu)
 * Rajeeva Musunuri (rmusunuri@nygenome.org)
-* Toshiyuki Yokoyama (toshiyuki.t.yokoyama@gmail.com)
+* Toshiyuki Yokoyama
 
 ## Future Directions
 
