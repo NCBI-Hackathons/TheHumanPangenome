@@ -1,0 +1,81 @@
+#use minimap2 to create pairwise alignments
+#B73 chr10  CM000786.4
+#W22 chr10 CM004357.2
+#PH207 chr10 CM008151.1
+ 
+time minimap2 -t 16 -cx asm20 /home/share/maize-fastas/CM000786.4.fasta  /home/share/maize-fastas/CM004357.2.fasta | pigz > ~/out/CM000786_CM004357.paf.gz 
+time minimap2 -t 16 -cx asm20 /home/share/maize-fastas/CM000786.4.fasta  /home/share/maize-fastas/CM008151.1.fasta | pigz > ~/out/CM000786_CM008151.paf.gz
+time minimap2 -t 16 -cx asm20 /home/share/maize-fastas/CM004357.2.fasta  /home/share/maize-fastas/CM008151.1.fasta | pigz > ~/out/CM004357_CM008151.paf.gz
+
+#plus another assembly - CML247 CM008391.1
+time minimap2 -t 16 -cx asm20 /home/share/maize-fastas/CM000786.4.fasta  /home/share/maize-fastas/CM008391.1.fasta | pigz > ~/out/CM000786_CM008391.paf.gz
+time minimap2 -t 16 -cx asm20 /home/share/maize-fastas/CM004357.2.fasta  /home/share/maize-fastas/CM008391.1.fasta | pigz > ~/out/CM004357_CM008391.paf.gz
+time minimap2 -t 16 -cx asm20 /home/share/maize-fastas/CM008151.1.fasta  /home/share/maize-fastas/CM008391.1.fasta | pigz > ~/out/CM008151_CM008391.paf.gz
+
+#plus MO17, from ~/data
+time minimap2 -t 16 -cx asm20 CM009915.1.fasta \
+  CM000786.4.fasta \
+  CM004357.2.fasta \
+  CM008151.1.fasta \
+  CM008391.1.fasta \
+  | pigz > ~/out/MO17_other4.paf.gz
+
+#get vg
+wget https://github.com/vgteam/vg/releases/download/v1.14.0/vg
+
+#construct a flat vg graph to use with sim
+#need fai as well as fasta -- index using samtools faidx
+#1. contstruct the graph
+time ./vg construct -r ~/data/CM000786.4.fasta > ~/graph/CM000786.4.vg
+
+#2. index the graph
+time ./vg index -x ~/graph/CM000786.4.xg ~/graph/CM000786.4.vg
+
+#read simulation, no errors
+#read lengths? -l 150 for read length of 150
+#-s for random seed
+#-p N for paired end reads of fragment length N; -v fragment length sd
+#how many? -n
+time ./vg sim -x ~/graph/CM000786.4.xg -n 100000 -l 150 -a > ~/graph/sim_CM000786_4_A.gam
+
+1. concatenate fastas
+CM000786.4.fasta
+CM004357.2.fasta
+CM008151.1.fasta
+CM008391.1.fasta
+
+cp CM000786.4.fasta maize_combined4.fasta
+cat CM004357.2.fasta >> maize_combined4.fasta
+cat CM008151.1.fasta >> maize_combined4.fasta
+cat CM008391.1.fasta >> maize_combined4.fasta
+
+2. concatenate pafs 
+#CM000786_CM004357.paf.gz  CM000786_CM008391.paf.gz  CM004357_CM008391.paf.gz  MO17_other4.paf.gz
+#CM000786_CM008151.paf.gz  CM004357_CM008151.paf.gz  CM008151_CM008391.paf.gz
+
+cp CM000786_CM004357.paf.gz maize_combined4.paf
+zcat CM000786_CM008391.paf.gz >> maize_combined4.paf
+zcat CM004357_CM008391.paf.gz >> maize_combined4.paf
+zcat CM000786_CM008151.paf.gz >> maize_combined4.paf
+zcat CM004357_CM008151.paf.gz >> maize_combined4.paf
+zcat CM008151_CM008391.paf.gz >> maize_combined4.paf
+
+3.run seqwish 
+time seqwish -t 48 -p ~/out/maize_combined4.paf -s ~/data/maize_combined4.fasta -b ~/temp/maizegraph -g maizecombined4.gfa
+[resulted in segmentation fault]
+
+first try a smaller dataset
+time seqwish -t 48 -p ~/out/CM000786_CM004357.paf.gz -s ~/data/maize_B73_W22.fasta -b ~/temp/maize_B73_W22 -g maize_B73_W22.gfa
+
+next steps in pipeline:
+4. convert gfa to vg using vg view -Fv graph.gfa > graph.vg
+6. vg snarls -t graph.vg > graph.snarls
+7. index vg file, vg index graph.vg -x graph.xg -T -G graph.gbwt -s graph.snarls -j graph.dist -w 1000
+8. vg minimizer  graph.xg -g graph.gbwt -i graph.min
+9. vg gaffe -x graph.xg -H graph.gbwt -s graph.snarls -d graph.dist -m graph.min -G in.gam > out.gam 
+10. vg annotate -a out.gam -p -x index.xg > annot.gam
+11. vg gamcompare annot.gam in.gam -r 100 > compared.gam
+12. vg view -aj compared.gam |jq '.correctly_mapped'
+11. vg graphcompare annot
+
+actual commands:
