@@ -1,4 +1,10 @@
-# Goals
+# Motivation
+
+## Association of Enhancers and Promoter Regions with Specifically Expressed Alleles
+
+## Unambiguous elucidation of both cis- and trans- eQTLs
+
+# Summary
 
 ## 1. Create proof of concept pipeline for estimating allele-specific expression
 
@@ -6,8 +12,9 @@
 
 ## 3. Wrap it all in WDL
 
-
 # Workflow
+
+![Alt text](?raw=true "Title")
 
 ## 1. Contruct spliced variant graphs from HG002, Chromosome 21
 
@@ -31,6 +38,7 @@
 
 ## 8. Wrap it all in WDL!
 
+# Results
 
 # Presentations
 
