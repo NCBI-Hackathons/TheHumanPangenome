@@ -14,7 +14,31 @@
 
 # Implementation
 
-```Heres how we run this pipeline```
+### Download the relevant pipeline scripts
+```
+wget https://raw.githubusercontent.com/NCBI-Hackathons/TheHumanPangenome/master/RNA/wdl_pipeline/vg_rna.wdl -O vg_rna.wdl
+wget https://raw.githubusercontent.com/NCBI-Hackathons/TheHumanPangenome/master/RNA/wdl_pipeline/vg_rna.inputs.json -O vg_rna.inputs.json
+```
+
+### Download cromwell (requires java 8 and Docker to run)
+#### Quickstart intro on using Cromwell: (https://cromwell.readthedocs.io/en/develop/tutorials/FiveMinuteIntro/)
+```
+wget https://github.com/broadinstitute/cromwell/releases/download/36.1/cromwell-36.1.jar .
+```
+### Download example input files
+```
+wget ftp://ftp.ensembl.org/pub/release-94/fasta/homo_sapiens/dna/Homo_sapiens.GRCh38.dna.primary_assembly.fa.gz .
+bgzip -d Homo_sapiens.GRCh38.dna.primary_assembly.fa.gz
+samtools faidx Homo_sapiens.GRCh38.dna.primary_assembly.fa
+
+wget ...
+```
+### Run the WDL workflow
+```
+sudo java -jar cromwell-36.1.jar run vg_rna.wdl -i vg_rna.inputs.json
+
+```
+
 
 # Workflow
 
