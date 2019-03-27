@@ -28,7 +28,10 @@ We use vg view and index to convert the GFAv1 graph into vg format and build the
 (Insert pipeline here)
 
 2) [SibeliaZ](https://github.com/medvedevgroup/SibeliaZ) [in progress]
-We are creating a graph using chromosome 1 of the Japanese *de novo* assembly jg1 and GRCh38. We use SibeliaZ to build a locally-colinear blocks construction graph output in a MAF format. We build a MAF to vg converter, and used vg index to build the required indexes.
+We created a graph from chromosomes 1 of the Japanese *de novo* assembly jg1 and GRCh38.
+To do so we first ran SibeliaZ to produce a whole-genome alignment of these two sequences in MAF format.
+Then we converted MAF to GFA1 and imported it into vg.
+To make the conversion, we wrote a script producing a GFA1 graph from a MAF alignment (scripts/maf_to_gfa1.py).
 
 3) [Cactus](https://github.com/ComparativeGenomicsToolkit/cactus). [in progress]
 
