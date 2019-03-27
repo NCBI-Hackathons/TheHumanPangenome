@@ -19,23 +19,27 @@ samtools faidx -o GRCh38_chr21.fa GCA_000001405.28_GRCh38.p13_genomic.fna "CM000
 sed -i 's/^>CM000683.2/>chr21/' GRCh38_chr21.fa
 
 # subset reference annotation to chromosome 21
-awk '{if ($3 == "chr21"){print $0}}' gencode.v29.annotation.gtf > gencode.v29.chr21.gtf
+grep "^chr21" gencode.v29.annotation.gtf > gencode.v29.chr21.annotation.gtf
 
 # rename chrom from 21 to chr21 in vcf
 sed -i 's/^21/chr21/' ALL.chr21_GRCh38_sites.20170504.vcf
 
 # subset reads to those mapping to chr21
-# need to align SRA307005 to chr21 outside of the pipeline
-samtools view -h SRA307005.bam | awk 'if ($3 == "chr21" || substr($0,1,1) == "@"){print $0}' | samtools view -b > SRA307005.chr21.bam
+# need to align SRR307005 to chr21 outside of the pipeline
+samtools view -h SRR307005.bam | awk '{if ($3 == "chr21" || substr($0,1,1) == "@"){print $0}}' | samtools view -b > SRR307005.chr21.bam
 
 # convert read alignments to fastq
-samtools fastq
+samtools fastq -1 SRR307005.chr21.1.fq -2 SRR307005.chr21.2.fq -0 /dev/null -s /dev/null -n -F 0x900 SRR307005.chr21.bam
 
-# construct graph from variants and reference sequence
-vg construct
+# construct graph from variants and reference sequence, using the docker
+docker run --mount type=bind,src=`pwd`,dst=/wd quay.io/vgteam/vg:ci-249-439f22abc8f915513b8c9365cd146481c97ac842 /vg/bin/vg construct -t 32 -r /wd/GRCh38_chr21.fa -v /wd/ALL.chr21_GRCh38_sites.20170504.vcf > GRCh38_chr21.vg
 
 # construct splice graph
-vg rna
+docker run --mount type=bind,src=`pwd`,dst=/wd quay.io/vgteam/vg:ci-249-439f22abc8f915513b8c9365cd146481c97ac842 /vg/bin/vg rna -n /wd/gencode.v29.chr21.annotation.gtf -e -t 32 -p /wd/GRCh38_chr21.vg > GRCh38_chr21.splice.vg
+
+# index the splice graph
+docker run --mount type=bind,src=`pwd`,dst=/wd quay.io/vgteam/vg:ci-249-439f22abc8f915513b8c9365cd146481c97ac842 /vg/bin/vg index -p -x /wd/GRCh38_chr21.splice.xg /wd/GRCh38_chr21.splice.vg
+docker run --mount type=bind,src=`pwd`,dst=/wd quay.io/vgteam/vg:ci-249-439f22abc8f915513b8c9365cd146481c97ac842 /vg/bin/vg index -p -g /wd/GRCh38_chr21.splice.gcsa /wd/GRCh38_chr21.splice.vg
 
 # map reads
 vg map
