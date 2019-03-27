@@ -1,33 +1,29 @@
-# Motivation
+## Motivation
 
-## Association of Enhancers and Promoter Regions with Specifically Expressed Alleles
+* Association of enhancers and promoter regions with specifically expressed alleles
 
-## Unambiguous elucidation of both cis- and trans- eQTLs
+* Unambiguous elucidation of both cis- and trans- eQTLs
 
 
-# Summary
-
-## 1. Create proof of concept pipeline for estimating allele-specific expression
-
-## 2. Wrap it all in WDL
+## Aims
 
 ![Alt text](https://github.com/NCBI-Hackathons/TheHumanPangenome/blob/master/RNA/RNA_project_day3_aims.jpg)
 
 
 
-# Workflow
+## Workflow
 
-## 1. Contruct spliced variant graphs from HG002, Chromosome 21
+### 1. Contruct spliced variant graphs
 
-### 1a. Single whole genome graph
+#### 1a. Single whole genome graph
 
-### 1b. Multiple disjoint gene graph
+#### 1b. Multiple disjoint gene (splice) graphs
 
-## 2. Map Short Reads 
+### 2. Map short reads to graph(s)
 
-## 3. Run RSEM or similar
+### 3. Surject mapped reads to haplotype-specific transcripts
 
-## 4. Wrap it all in WDL!
+### 4. Run RSEM or similar
 
 ![Alt text](https://github.com/NCBI-Hackathons/TheHumanPangenome/blob/master/RNA/RNA_project_day_3_pipeline.jpg)
 
@@ -59,7 +55,7 @@ sudo java -jar cromwell-36.1.jar run vg_rna.wdl -i vg_rna.inputs.json
 
 ```
 
-# Results
+## Results
 
 ![Alt text](https://github.com/NCBI-Hackathons/TheHumanPangenome/blob/master/RNA/RNA_project_day3_SMIM11A.jpg)
 ![Alt text](https://github.com/NCBI-Hackathons/TheHumanPangenome/blob/master/RNA/RNA_project_day3_SMIM11A_var.jpg)
@@ -67,10 +63,12 @@ sudo java -jar cromwell-36.1.jar run vg_rna.wdl -i vg_rna.inputs.json
 
 
 
-# Future goals
+## Future goals
 
-* Complete allele-specific expression pipeline 
+* Complete allele-specific expression pipeline using RSEM or other state-of-the-art quantification tools 
 
-* More comprehensive evaluation of splice graph mapping using vg
+* Comprehensive evaluation of splice graph mapping using vg with comparison to state-of-the-art aligners
+
+
 
 
