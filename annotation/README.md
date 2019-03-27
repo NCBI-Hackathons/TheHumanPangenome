@@ -60,3 +60,7 @@ We have defined a generalization of the GFF3 format that replaces genomic interv
 * Rajeeva Musunuri
 * Toshiyuki Yokoyama
 
+## Future Directions
+
+* local alignment of nodes could help resolve annotations that span outside of snarls
+  * both distance or best alignment methods could be used to traverse the graph and liftover annotation from the reference path to other paths
