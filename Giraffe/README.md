@@ -29,19 +29,20 @@ Data files for testing are [located here](http://public.gi.ucsc.edu/~anovak/grap
 ```
 #!/usr/bin/env bash
 
-mkdir reads
-curl -o snp1kg-CHR21_filter.dist http://public.gi.ucsc.edu/~anovak/graphs/gaffe/basic-testing/snp1kg-CHR21_filter.dist
-curl -o snp1kg-CHR21_filter.gbwt http://public.gi.ucsc.edu/~anovak/graphs/gaffe/basic-testing/snp1kg-CHR21_filter.gbwt
-curl -o snp1kg-CHR21_filter.gcsa http://public.gi.ucsc.edu/~anovak/graphs/gaffe/basic-testing/snp1kg-CHR21_filter.gcsa
-curl -o snp1kg-CHR21_filter.gcsa.lcp http://public.gi.ucsc.edu/~anovak/graphs/gaffe/basic-testing/snp1kg-CHR21_filter.gcsa.lcp
-curl -o snp1kg-CHR21_filter.min http://public.gi.ucsc.edu/~anovak/graphs/gaffe/basic-testing/snp1kg-CHR21_filter.min
-curl -o snp1kg-CHR21_filter.snarls http://public.gi.ucsc.edu/~anovak/graphs/gaffe/basic-testing/snp1kg-CHR21_filter.snarls
-curl -o snp1kg-CHR21_filter.vg http://public.gi.ucsc.edu/~anovak/graphs/gaffe/basic-testing/snp1kg-CHR21_filter.vg
-curl -o snp1kg-CHR21_filter.xg http://public.gi.ucsc.edu/~anovak/graphs/gaffe/basic-testing/snp1kg-CHR21_filter.xg
-curl -o reads/sim.fq.gz http://public.gi.ucsc.edu/~anovak/graphs/gaffe/basic-testing/reads/sim.fq.gz
-curl -o reads/sim.gam http://public.gi.ucsc.edu/~anovak/graphs/gaffe/basic-testing/reads/sim.gam
-curl -o reads/toil-vg-sim.txt http://public.gi.ucsc.edu/~anovak/graphs/gaffe/basic-testing/reads/toil-vg-sim.txt
-curl -o reads/true.pos http://public.gi.ucsc.edu/~anovak/graphs/gaffe/basic-testing/reads/true.pos
+mkdir data
+mkdir data/reads
+curl -o data/snp1kg-CHR21_filter.dist http://public.gi.ucsc.edu/~anovak/graphs/gaffe/basic-testing/snp1kg-CHR21_filter.dist
+curl -o data/snp1kg-CHR21_filter.gbwt http://public.gi.ucsc.edu/~anovak/graphs/gaffe/basic-testing/snp1kg-CHR21_filter.gbwt
+curl -o data/snp1kg-CHR21_filter.gcsa http://public.gi.ucsc.edu/~anovak/graphs/gaffe/basic-testing/snp1kg-CHR21_filter.gcsa
+curl -o data/snp1kg-CHR21_filter.gcsa.lcp http://public.gi.ucsc.edu/~anovak/graphs/gaffe/basic-testing/snp1kg-CHR21_filter.gcsa.lcp
+curl -o data/snp1kg-CHR21_filter.min http://public.gi.ucsc.edu/~anovak/graphs/gaffe/basic-testing/snp1kg-CHR21_filter.min
+curl -o data/snp1kg-CHR21_filter.snarls http://public.gi.ucsc.edu/~anovak/graphs/gaffe/basic-testing/snp1kg-CHR21_filter.snarls
+curl -o data/snp1kg-CHR21_filter.vg http://public.gi.ucsc.edu/~anovak/graphs/gaffe/basic-testing/snp1kg-CHR21_filter.vg
+curl -o data/snp1kg-CHR21_filter.xg http://public.gi.ucsc.edu/~anovak/graphs/gaffe/basic-testing/snp1kg-CHR21_filter.xg
+curl -o data/reads/sim.fq.gz http://public.gi.ucsc.edu/~anovak/graphs/gaffe/basic-testing/reads/sim.fq.gz
+curl -o data/reads/sim.gam http://public.gi.ucsc.edu/~anovak/graphs/gaffe/basic-testing/reads/sim.gam
+curl -o data/reads/toil-vg-sim.txt http://public.gi.ucsc.edu/~anovak/graphs/gaffe/basic-testing/reads/toil-vg-sim.txt
+curl -o data/reads/true.pos http://public.gi.ucsc.edu/~anovak/graphs/gaffe/basic-testing/reads/true.pos
 ```
 
 Now that `vg` is installed, you can run the following using the sample data above:
@@ -50,27 +51,27 @@ Now that `vg` is installed, you can run the following using the sample data abov
 
 valgrind --tool=callgrind --instr-atstart=no \
     ./bin/vg gaffe \
-    -x snp1kg-CHR21_filter.xg \
-    -m snp1kg-CHR21_filter.min \
-    -d snp1kg-CHR21_filter.dist \
-    -s snp1kg-CHR21_filter.snarls \
-    -H snp1kg-CHR21_filter.gbwt \
-    -G reads/sim.gam \
-    > mapped.gam
+    -x data/snp1kg-CHR21_filter.xg \
+    -m data/snp1kg-CHR21_filter.min \
+    -d data/snp1kg-CHR21_filter.dist \
+    -s data/snp1kg-CHR21_filter.snarls \
+    -H data/snp1kg-CHR21_filter.gbwt \
+    -G data/reads/sim.gam \
+    > data/mapped.gam
 ```
 
 Then to annotate, run:
 
 ```
 valgrind --tool=callgrind --instr-atstart=no \
-     ./bin/vg annotate -p -x snp1kg-CHR21_filter.xg -a mapped.gam > annotated.gam
+     ./bin/vg annotate -p -x data/snp1kg-CHR21_filter.xg -a data/mapped.gam > data/annotated.gam
 ```
 
 Finally, to compare the annotated reads to the truth and set the mapped_correctly field:
 
 ```
 valgrind --tool=callgrind --instr-atstart=no \
-    ./bin/vg gamcompare  -r 100 annotated.gam reads/sim.gam > compared.gam
+    ./bin/vg gamcompare  -r 100 data/annotated.gam data/reads/sim.gam > data/compared.gam
 ```
 
 ## Slides
