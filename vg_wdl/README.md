@@ -13,6 +13,8 @@ miniwdl cromwell --no-quant-check vg_wdl/workflows/vg_construct_and_index.wdl \
     contigs_vcf_gz=tests/ABOlocus/ABOlocus_small.vcf.gz
 ```
 
+The [vg_construct_and_index.wdl](https://github.com/vgteam/vg_wdl/blob/master/workflows/vg_construct_and_index.wdl) workflow puts [prose instructions from the vg wiki](https://github.com/vgteam/vg/wiki/Index-Construction) into portably executable form. The next step will be to feed the graph+indices produced from this into [Charlie's mapping+calling workflow](https://github.com/vgteam/vg_wdl/blob/8eea6a9dd078e8110cb2e12cea1748fdbfd6b3e0/workflows/vg_pipeline.workingexample.wdl).
+
 Beyond SNVs/indels, there are several interesting ABO structural variants standing in the human population, which give rise to unusual blood histocompatibility phenotypes. We selected a known 3.8Kbp deletion (relevant publication: [doi:10.1111/vox.12613](https://onlinelibrary.wiley.com/doi/full/10.1111/vox.12613)), which can be modeled in a vg graph:
 
 ```
