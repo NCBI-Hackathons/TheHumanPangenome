@@ -1,0 +1,5 @@
+((grch38_chr21:0.01, clint_chr21:0.01):0.04, susie_chr21:0.04);
+
+susie_chr21 PonAbe3_Susie_PABv2_Chr21.fasta
+clint_chr21 PanTro_Clint_PTRv2_Chr21.fasta
+grch38_chr21 GRCh38.chr21.fa

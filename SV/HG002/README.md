@@ -6,7 +6,6 @@ We want to compare variant calls using three types of sequencing data:
 1. CCS long reads.
 1. PacBio long reads.
 
-
 ## Mapping
 
 Using vg map. For long reads also [GraphAligner](https://github.com/maickrau/GraphAligner).
@@ -39,3 +38,8 @@ This kind of operations were already implemented to compare SVs in [sveval](http
 #### Smith-Waterman
 
 The inserted sequence called and in the original VCF are aligned to detect SNVs and indels.
+
+
+## All reads vs regionally downsampled reads
+
+See [report](hg002-allVsRegionalDownsampling.md)
