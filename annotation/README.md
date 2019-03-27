@@ -22,27 +22,25 @@ We are proposing to develop a proof-of-concept system for utilizing continuous-v
 * Augment VG to produce and work with these data
 * Hook the file format into an existing graph visualization tool
 
-## Updates
+## Genomic Interval to Graph Annotations
 
-### Day 2
-
-#### Annotation Import - Easy Case
+### Easy Case
 
 ![Annotation Import, The Easy Case](fig/annotation_easy_case.svg)
 
-#### Annotation Import - Harder Cases
+### Harder Cases
 
 ![Annotation Import, The Harder Cases](fig/annotation_harder_cases.svg)
 
-#### Gene-level RNAseq quantification pipeline
+## Gene-level RNAseq quantification pipeline
 
 See the subproject-specific [README](gene_quant/README.md).
 
-#### Visualization using MoMIG
+## Visualization using MoMIG
 
 ![MoMIG Genome Graph Visualization software screenshot](fig/momig_screenshot.png)
 
-#### The gGFF format
+## The gGFF format
 
 We have defined a generalization of the GFF3 format that replaces genomic intervals with a subraph. It is a text-based, tab-separated file. Every line contains each of the following fields. If a field is to be ignored, it can be replaced with a "." (without quotes). The fields are
 
@@ -71,6 +69,7 @@ vg annotate -x graph.xg -s graph.snarls -f annotations.gff3 -g > annotations.ggf
 The snarls can be computed from a `.vg` file with the `vg snarls` subcommand, and the XG index can be created from a `.vg` file using the `vg index` subcommand.
 
 #### Operating on gGFF files
+
 See the subproject-specific [README](ggfftools/README.md).
 
 #### Visualization of `vg pack` format on MoMI-G
