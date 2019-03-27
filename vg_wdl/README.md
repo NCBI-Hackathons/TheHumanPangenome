@@ -1,6 +1,6 @@
 # vg_wdl
 
-Mike Lin @mlin and Charlie Markello @cmarkello hacked on the [vg_wdl](https://github.com/vgteam/vg_wdl) repository, which (while incipient) is accumulating vg-related docker+[WDL](http://openwdl.org/) workflows and automatically testing them on small examples. 
+Mike Lin and Charlie Markello hacked on the [vg_wdl](https://github.com/vgteam/vg_wdl) repository, which (while incipient) is accumulating vg-related docker+[WDL](http://openwdl.org/) workflows and automatically testing them on small examples. 
 
 Here's how you can build a vg genome graph, complete with GBWT index of 1000 Genomes haplotypes on small variants, for the *ABO* locus which influences blood type. System requirements: git, python3-pip, Java 11 JRE, docker set up for [non-root](https://docs.docker.com/install/linux/linux-postinstall/#manage-docker-as-a-non-root-user) invocation.
 
