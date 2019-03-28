@@ -2,7 +2,7 @@
 
 ![Alt text](https://github.com/NCBI-Hackathons/TheHumanPangenome/blob/master/DS/graph/ds-vis1.png?raw=true "Title")
 
-#### The path of GRCh38 through a graph! For details check the DS folder!
+#### The path of GRCh38 through a graph! (https://github.com/NCBI-Hackathons/TheHumanPangenome/tree/master/DS/README.md "For details check the DS folder!")
 
 ![Alt text](https://github.com/NCBI-Hackathons/TheHumanPangenome/blob/master/Giraffe/images/01.png?raw=true "Title")
 
