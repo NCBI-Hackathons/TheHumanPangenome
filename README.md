@@ -2,15 +2,18 @@
 
 ![Alt text](https://github.com/NCBI-Hackathons/TheHumanPangenome/blob/master/DS/graph/ds-vis1.png?raw=true "Title")
 
-#### The path of GRCh38 through a graph! For details check the DS folder! https://github.com/NCBI-Hackathons/TheHumanPangenome/tree/master/DS
+#### The path of GRCh38 through a graph! For details check the DS folder! 
+https://github.com/NCBI-Hackathons/TheHumanPangenome/tree/master/DS
 
 ![Alt text](https://github.com/NCBI-Hackathons/TheHumanPangenome/blob/master/Giraffe/images/01.png?raw=true "Title")
 
-#### A Faster, Better Short-Read Mapper with Hit Chaining. Now with more corn! See the Giraffe folder for details!  https://github.com/NCBI-Hackathons/TheHumanPangenome/tree/master/Giraffe
+#### A Faster, Better Short-Read Mapper with Hit Chaining. Now with more corn! See the Giraffe folder for details!  
+https://github.com/NCBI-Hackathons/TheHumanPangenome/tree/master/Giraffe
 
 ![Alt text](https://github.com/NCBI-Hackathons/TheHumanPangenome/blob/master/annotation/fig/annotation_easy_case.svg)
 
-#### Most Genome Annotations can be Imported from gff3 (to ggff!) quite easily!  See the annotation folder for details! https://github.com/NCBI-Hackathons/TheHumanPangenome/tree/master/annotation
+#### Most Genome Annotations can be Imported from gff3 (to ggff!) quite easily!  See the annotation folder for details! 
+https://github.com/NCBI-Hackathons/TheHumanPangenome/tree/master/annotation
 
 ![Alt text](https://github.com/NCBI-Hackathons/TheHumanPangenome/blob/master/RNA/RNA%20project-5.jpg?raw=true "Title")
 
