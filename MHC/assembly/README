@@ -1,0 +1,11 @@
+
+setup.sh: set up the conda environment for pb-assembly
+
+Once a pb-assembly conda environment is built, you can do `conda activate pb-assembly`
+to get all the dependency to run PacBio's FALCON assembler.
+
+In each folder of `H1`, `H2` and `All`, modify the `process_reads.sh` to ger
+the proper read files and run it to get `reads.fa` for assembly.
+
+The FALCON assembly can be started with `fc_run fc_run.cfg` in each folder.
+
