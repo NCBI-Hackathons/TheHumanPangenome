@@ -1,0 +1,123 @@
+2019-10-29 14:31:40 serial = 27182818284
+2019-10-29 14:31:40 email = anon
+2019-10-29 14:31:40 RTG version = RTG Tools 3.10.1 / Core f9bc0ddb3e (2019-01-21)
+2019-10-29 14:31:40 awt.toolkit = sun.lwawt.macosx.LWCToolkit
+2019-10-29 14:31:40 file.encoding = UTF-8
+2019-10-29 14:31:40 file.separator = /
+2019-10-29 14:31:40 ftp.nonProxyHosts = local|*.local|169.254/16|*.169.254/16
+2019-10-29 14:31:40 gopherProxySet = false
+2019-10-29 14:31:40 host.name = pn105046.campus.nist.gov
+2019-10-29 14:31:40 http.nonProxyHosts = local|*.local|169.254/16|*.169.254/16
+2019-10-29 14:31:40 java.awt.graphicsenv = sun.awt.CGraphicsEnvironment
+2019-10-29 14:31:40 java.awt.printerjob = sun.lwawt.macosx.CPrinterJob
+2019-10-29 14:31:40 java.class.path = /Volumes/DroboZook/bioinfo/rtg-tools-3.10.1/RTG.jar
+2019-10-29 14:31:40 java.class.version = 55.0
+2019-10-29 14:31:40 java.home = /Library/Java/JavaVirtualMachines/jdk-11.0.3.jdk/Contents/Home
+2019-10-29 14:31:40 java.io.tmpdir = /var/folders/3y/53wm_96s59b33hcr5pypxd440017zz/T/
+2019-10-29 14:31:40 java.library.path = /Volumes/DroboZook/bioinfo/rtg-tools-3.10.1
+2019-10-29 14:31:40 java.runtime.name = Java(TM) SE Runtime Environment
+2019-10-29 14:31:40 java.runtime.version = 11.0.3+12-LTS
+2019-10-29 14:31:40 java.specification.name = Java Platform API Specification
+2019-10-29 14:31:40 java.specification.vendor = Oracle Corporation
+2019-10-29 14:31:40 java.specification.version = 11
+2019-10-29 14:31:40 java.vendor = Oracle Corporation
+2019-10-29 14:31:40 java.vendor.url = http://java.oracle.com/
+2019-10-29 14:31:40 java.vendor.url.bug = http://bugreport.java.com/bugreport/
+2019-10-29 14:31:40 java.vendor.version = 18.9
+2019-10-29 14:31:40 java.version = 11.0.3
+2019-10-29 14:31:40 java.version.date = 2019-04-16
+2019-10-29 14:31:40 java.vm.info = mixed mode
+2019-10-29 14:31:40 java.vm.name = Java HotSpot(TM) 64-Bit Server VM
+2019-10-29 14:31:40 java.vm.specification.name = Java Virtual Machine Specification
+2019-10-29 14:31:40 java.vm.specification.vendor = Oracle Corporation
+2019-10-29 14:31:40 java.vm.specification.version = 11
+2019-10-29 14:31:40 java.vm.vendor = Oracle Corporation
+2019-10-29 14:31:40 java.vm.version = 11.0.3+12-LTS
+2019-10-29 14:31:40 jdk.debug = release
+2019-10-29 14:31:40 lang.version = 11.0.3
+2019-10-29 14:31:40 line.separator = 
+
+2019-10-29 14:31:40 models.dir = /Volumes/DroboZook/bioinfo/rtg-tools-3.10.1/models
+2019-10-29 14:31:40 nashorn.option.no.deprecation.warning = true
+2019-10-29 14:31:40 os.arch = x86_64
+2019-10-29 14:31:40 os.freememory = 25670451200
+2019-10-29 14:31:40 os.name = Mac OS X
+2019-10-29 14:31:40 os.totalmemory = 68719476736
+2019-10-29 14:31:40 os.version = 10.14.6
+2019-10-29 14:31:40 path.separator = :
+2019-10-29 14:31:40 processor.arch = x86_64
+2019-10-29 14:31:40 processor.count = 24
+2019-10-29 14:31:40 references.dir = /Volumes/DroboZook/bioinfo/rtg-tools-3.10.1/references
+2019-10-29 14:31:40 runtime.freememory = 1042523728
+2019-10-29 14:31:40 runtime.maxmemory = 61849206784
+2019-10-29 14:31:40 runtime.totalMemory = 1073741824
+2019-10-29 14:31:40 socksNonProxyHosts = local|*.local|169.254/16|*.169.254/16
+2019-10-29 14:31:40 sun.arch.data.model = 64
+2019-10-29 14:31:40 sun.boot.library.path = /Library/Java/JavaVirtualMachines/jdk-11.0.3.jdk/Contents/Home/lib
+2019-10-29 14:31:40 sun.cpu.endian = little
+2019-10-29 14:31:40 sun.cpu.isalist = 
+2019-10-29 14:31:40 sun.io.unicode.encoding = UnicodeBig
+2019-10-29 14:31:40 sun.java.command = /Volumes/DroboZook/bioinfo/rtg-tools-3.10.1/RTG.jar vcfeval -b /Volumes/giab/analysis/mhc/smallvarbenchmark/MHC_0525.minimap2GRCh37_190609_head_nochr.vcf.gz -c /Volumes/giab/analysis/v4-development/dv-pacbio-giab-vcfs/HG002.sequelii.case-study.grch37.vcf.gz -o /Volumes/giab/analysis/mhc/smallvarbenchmark//HG002.sequelii.case-study.grch37vsmhcref -t /Volumes/giab/data/reference_genomes/rtg_sdf/1000g_v37_phase2.sdf -e /Volumes/giab/analysis/mhc/smallvarbenchmark/MHC_highconf.bed --bed-regions /Volumes/giab/analysis/mhc/smallvarbenchmark/MHC_GRCh37.bed --ref-overlap
+2019-10-29 14:31:40 sun.java.launcher = SUN_STANDARD
+2019-10-29 14:31:40 sun.jnu.encoding = UTF-8
+2019-10-29 14:31:40 sun.management.compiler = HotSpot 64-Bit Tiered Compilers
+2019-10-29 14:31:40 sun.os.patch.level = unknown
+2019-10-29 14:31:40 talkback = true
+2019-10-29 14:31:40 usage = true
+2019-10-29 14:31:40 usage.log.hostname = true
+2019-10-29 14:31:40 usage.log.username = true
+2019-10-29 14:31:40 user.country = US
+2019-10-29 14:31:40 user.dir = /Volumes/DroboZook/aquila/hg19_NA24385
+2019-10-29 14:31:40 user.home = /Users/jzook
+2019-10-29 14:31:40 user.language = en
+2019-10-29 14:31:40 user.name = jzook
+2019-10-29 14:31:40 user.timezone = America/New_York
+2019-10-29 14:31:40 vendor = Oracle Corporation
+2019-10-29 14:31:40 gzipfix.enabled = true
+2019-10-29 14:31:40 Command line arguments: rtg vcfeval -b /Volumes/giab/analysis/mhc/smallvarbenchmark/MHC_0525.minimap2GRCh37_190609_head_nochr.vcf.gz -c /Volumes/giab/analysis/v4-development/dv-pacbio-giab-vcfs/HG002.sequelii.case-study.grch37.vcf.gz -o /Volumes/giab/analysis/mhc/smallvarbenchmark//HG002.sequelii.case-study.grch37vsmhcref -t /Volumes/giab/data/reference_genomes/rtg_sdf/1000g_v37_phase2.sdf -e /Volumes/giab/analysis/mhc/smallvarbenchmark/MHC_highconf.bed --bed-regions /Volumes/giab/analysis/mhc/smallvarbenchmark/MHC_GRCh37.bed --ref-overlap
+2019-10-29 14:31:40 Run Id: 5f4eaf98-4603-4660-b269-3c75fcd151e5
+2019-10-29 14:31:40 Referenced SDF-ID: f1765b39-de93-481a-925d-282fe62ec8a6 Type: DNA Sequences: 86 Max-Length: 249250621 Min-Length: 4262 Arm: UNKNOWN
+2019-10-29 14:31:40 Variant allele in baseline at 6:28680654 has length (2184) exceeding maximum allele length (1000), skipping.
+2019-10-29 14:31:40 Variant allele in baseline at 6:29685469 has length (2612) exceeding maximum allele length (1000), skipping.
+2019-10-29 14:31:40 Variant allele in baseline at 6:29843454 has length (5669) exceeding maximum allele length (1000), skipping.
+2019-10-29 14:31:40 Variant allele in baseline at 6:29899768 has length (1759) exceeding maximum allele length (1000), skipping.
+2019-10-29 14:31:40 Variant allele in baseline at 6:30439407 has length (2420) exceeding maximum allele length (1000), skipping.
+2019-10-29 14:31:40 Variant allele in baseline at 6:30994006 has length (1075) exceeding maximum allele length (1000), skipping.
+2019-10-29 14:31:40 Variant allele in baseline at 6:31193239 has length (1143) exceeding maximum allele length (1000), skipping.
+2019-10-29 14:31:40 Variant allele in baseline at 6:31211616 has length (1501) exceeding maximum allele length (1000), skipping.
+2019-10-29 14:31:40 Variant allele in baseline at 6:31279042 has length (9694) exceeding maximum allele length (1000), skipping.
+2019-10-29 14:31:40 Variant allele in baseline at 6:31292175 has length (1733) exceeding maximum allele length (1000), skipping.
+2019-10-29 14:31:40 Variant allele in baseline at 6:31398690 has length (5786) exceeding maximum allele length (1000), skipping.
+2019-10-29 14:31:40 Variant allele in baseline at 6:31421497 has length (3050) exceeding maximum allele length (1000), skipping.
+2019-10-29 14:31:40 Variant allele in baseline at 6:31948308 has length (32739) exceeding maximum allele length (1000), skipping.
+2019-10-29 14:31:41 Variant allele in baseline at 6:32450724 has length (3652) exceeding maximum allele length (1000), skipping.
+2019-10-29 14:31:41 Variant allele in baseline at 6:32463584 has length (4407) exceeding maximum allele length (1000), skipping.
+2019-10-29 14:31:41 Variant allele in baseline at 6:32477899 has length (19316) exceeding maximum allele length (1000), skipping.
+2019-10-29 14:31:41 Variant allele in baseline at 6:32499298 has length (1503) exceeding maximum allele length (1000), skipping.
+2019-10-29 14:31:41 Variant allele in baseline at 6:32514612 has length (1609) exceeding maximum allele length (1000), skipping.
+2019-10-29 14:31:41 Variant allele in baseline at 6:32514911 has length (1447) exceeding maximum allele length (1000), skipping.
+2019-10-29 14:31:41 Variant allele in baseline at 6:32527406 has length (25139) exceeding maximum allele length (1000), skipping.
+2019-10-29 14:31:41 Variant allele in baseline at 6:32547206 has length (7277) exceeding maximum allele length (1000), skipping.
+2019-10-29 14:31:41 Variant allele in baseline at 6:32550234 has length (42926) exceeding maximum allele length (1000), skipping.
+2019-10-29 14:31:41 Variant allele in baseline at 6:32552751 has length (2943) exceeding maximum allele length (1000), skipping.
+2019-10-29 14:31:41 Variant allele in baseline at 6:32556638 has length (39225) exceeding maximum allele length (1000), skipping.
+2019-10-29 14:31:41 Variant allele in baseline at 6:32557112 has length (2517) exceeding maximum allele length (1000), skipping.
+2019-10-29 14:31:41 Variant allele in baseline at 6:32561956 has length (2654) exceeding maximum allele length (1000), skipping.
+2019-10-29 14:31:41 Variant allele in baseline at 6:32613442 has length (1878) exceeding maximum allele length (1000), skipping.
+2019-10-29 14:31:41 Variant allele in baseline at 6:32616048 has length (4023) exceeding maximum allele length (1000), skipping.
+2019-10-29 14:31:41 Variant allele in baseline at 6:32623517 has length (1076) exceeding maximum allele length (1000), skipping.
+2019-10-29 14:31:41 Variant allele in baseline at 6:32635664 has length (1007) exceeding maximum allele length (1000), skipping.
+2019-10-29 14:31:41 Variant allele in baseline at 6:32778754 has length (1067) exceeding maximum allele length (1000), skipping.
+2019-10-29 14:31:41 Reference 6 baseline contains 31729 variants.
+2019-10-29 14:31:41 Reference 6 calls contains 26802 variants.
+2019-10-29 14:31:43 Reference 6 had maximum path complexity of 748 at 6:32504267-32504284
+2019-10-29 14:31:44 There were 31 problematic baseline variants skipped during loading (see vcfeval.log for details).
+2019-10-29 14:31:44 Fraction of calls outside evaluation regions: 0.1204 (2799/23239)
+2019-10-29 14:31:44 Representation bias correction factor for SNP 17148/17741.89047619047 = 0.96652608824367
+2019-10-29 14:31:44 Representation bias correction factor for NON_SNP 2172/1578.1095238095238 = 1.3763303289348618
+2019-10-29 14:31:44 Threshold  True-pos-baseline  True-pos-call  False-pos  False-neg  Precision  Sensitivity  F-measure
+----------------------------------------------------------------------------------------------------
+    3.000              19320          20074        366       2187     0.9821       0.8983     0.9383
+     None              19320          20074        366       2187     0.9821       0.8983     0.9383
+
+2019-10-29 14:31:44 Finished successfully in 4 s.

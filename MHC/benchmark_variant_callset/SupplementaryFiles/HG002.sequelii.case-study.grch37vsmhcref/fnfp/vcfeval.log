@@ -1,0 +1,175 @@
+2019-10-29 14:34:00 serial = 27182818284
+2019-10-29 14:34:00 email = anon
+2019-10-29 14:34:00 RTG version = RTG Tools 3.10.1 / Core f9bc0ddb3e (2019-01-21)
+2019-10-29 14:34:00 awt.toolkit = sun.lwawt.macosx.LWCToolkit
+2019-10-29 14:34:00 file.encoding = UTF-8
+2019-10-29 14:34:00 file.separator = /
+2019-10-29 14:34:00 ftp.nonProxyHosts = local|*.local|169.254/16|*.169.254/16
+2019-10-29 14:34:00 gopherProxySet = false
+2019-10-29 14:34:00 host.name = pn105046.campus.nist.gov
+2019-10-29 14:34:00 http.nonProxyHosts = local|*.local|169.254/16|*.169.254/16
+2019-10-29 14:34:00 java.awt.graphicsenv = sun.awt.CGraphicsEnvironment
+2019-10-29 14:34:00 java.awt.printerjob = sun.lwawt.macosx.CPrinterJob
+2019-10-29 14:34:00 java.class.path = /Volumes/DroboZook/bioinfo/rtg-tools-3.10.1/RTG.jar
+2019-10-29 14:34:00 java.class.version = 55.0
+2019-10-29 14:34:00 java.home = /Library/Java/JavaVirtualMachines/jdk-11.0.3.jdk/Contents/Home
+2019-10-29 14:34:00 java.io.tmpdir = /var/folders/3y/53wm_96s59b33hcr5pypxd440017zz/T/
+2019-10-29 14:34:00 java.library.path = /Volumes/DroboZook/bioinfo/rtg-tools-3.10.1
+2019-10-29 14:34:00 java.runtime.name = Java(TM) SE Runtime Environment
+2019-10-29 14:34:00 java.runtime.version = 11.0.3+12-LTS
+2019-10-29 14:34:00 java.specification.name = Java Platform API Specification
+2019-10-29 14:34:00 java.specification.vendor = Oracle Corporation
+2019-10-29 14:34:00 java.specification.version = 11
+2019-10-29 14:34:00 java.vendor = Oracle Corporation
+2019-10-29 14:34:00 java.vendor.url = http://java.oracle.com/
+2019-10-29 14:34:00 java.vendor.url.bug = http://bugreport.java.com/bugreport/
+2019-10-29 14:34:00 java.vendor.version = 18.9
+2019-10-29 14:34:00 java.version = 11.0.3
+2019-10-29 14:34:00 java.version.date = 2019-04-16
+2019-10-29 14:34:00 java.vm.info = mixed mode
+2019-10-29 14:34:00 java.vm.name = Java HotSpot(TM) 64-Bit Server VM
+2019-10-29 14:34:00 java.vm.specification.name = Java Virtual Machine Specification
+2019-10-29 14:34:00 java.vm.specification.vendor = Oracle Corporation
+2019-10-29 14:34:00 java.vm.specification.version = 11
+2019-10-29 14:34:00 java.vm.vendor = Oracle Corporation
+2019-10-29 14:34:00 java.vm.version = 11.0.3+12-LTS
+2019-10-29 14:34:00 jdk.debug = release
+2019-10-29 14:34:00 lang.version = 11.0.3
+2019-10-29 14:34:00 line.separator = 
+
+2019-10-29 14:34:00 models.dir = /Volumes/DroboZook/bioinfo/rtg-tools-3.10.1/models
+2019-10-29 14:34:00 nashorn.option.no.deprecation.warning = true
+2019-10-29 14:34:00 os.arch = x86_64
+2019-10-29 14:34:00 os.freememory = 25419460608
+2019-10-29 14:34:00 os.name = Mac OS X
+2019-10-29 14:34:00 os.totalmemory = 68719476736
+2019-10-29 14:34:00 os.version = 10.14.6
+2019-10-29 14:34:00 path.separator = :
+2019-10-29 14:34:00 processor.arch = x86_64
+2019-10-29 14:34:00 processor.count = 24
+2019-10-29 14:34:00 references.dir = /Volumes/DroboZook/bioinfo/rtg-tools-3.10.1/references
+2019-10-29 14:34:00 runtime.freememory = 1041517048
+2019-10-29 14:34:00 runtime.maxmemory = 61849206784
+2019-10-29 14:34:00 runtime.totalMemory = 1073741824
+2019-10-29 14:34:00 socksNonProxyHosts = local|*.local|169.254/16|*.169.254/16
+2019-10-29 14:34:00 sun.arch.data.model = 64
+2019-10-29 14:34:00 sun.boot.library.path = /Library/Java/JavaVirtualMachines/jdk-11.0.3.jdk/Contents/Home/lib
+2019-10-29 14:34:00 sun.cpu.endian = little
+2019-10-29 14:34:00 sun.cpu.isalist = 
+2019-10-29 14:34:00 sun.io.unicode.encoding = UnicodeBig
+2019-10-29 14:34:00 sun.java.command = /Volumes/DroboZook/bioinfo/rtg-tools-3.10.1/RTG.jar vcfeval -b /Volumes/giab/analysis/mhc/smallvarbenchmark/HG002.sequelii.case-study.grch37vsmhcref/fn.vcf.gz -c /Volumes/giab/analysis/mhc/smallvarbenchmark/HG002.sequelii.case-study.grch37vsmhcref/fp.vcf.gz -o /Volumes/giab/analysis/mhc/smallvarbenchmark/HG002.sequelii.case-study.grch37vsmhcref/fnfp -t /Volumes/giab/data/reference_genomes/rtg_sdf/1000g_v37_phase2.sdf --squash-ploidy --ref-overlap
+2019-10-29 14:34:00 sun.java.launcher = SUN_STANDARD
+2019-10-29 14:34:00 sun.jnu.encoding = UTF-8
+2019-10-29 14:34:00 sun.management.compiler = HotSpot 64-Bit Tiered Compilers
+2019-10-29 14:34:00 sun.os.patch.level = unknown
+2019-10-29 14:34:00 talkback = true
+2019-10-29 14:34:00 usage = true
+2019-10-29 14:34:00 usage.log.hostname = true
+2019-10-29 14:34:00 usage.log.username = true
+2019-10-29 14:34:00 user.country = US
+2019-10-29 14:34:00 user.dir = /Volumes/DroboZook/aquila/hg19_NA24385
+2019-10-29 14:34:00 user.home = /Users/jzook
+2019-10-29 14:34:00 user.language = en
+2019-10-29 14:34:00 user.name = jzook
+2019-10-29 14:34:00 user.timezone = America/New_York
+2019-10-29 14:34:00 vendor = Oracle Corporation
+2019-10-29 14:34:00 gzipfix.enabled = true
+2019-10-29 14:34:00 Command line arguments: rtg vcfeval -b /Volumes/giab/analysis/mhc/smallvarbenchmark/HG002.sequelii.case-study.grch37vsmhcref/fn.vcf.gz -c /Volumes/giab/analysis/mhc/smallvarbenchmark/HG002.sequelii.case-study.grch37vsmhcref/fp.vcf.gz -o /Volumes/giab/analysis/mhc/smallvarbenchmark/HG002.sequelii.case-study.grch37vsmhcref/fnfp -t /Volumes/giab/data/reference_genomes/rtg_sdf/1000g_v37_phase2.sdf --squash-ploidy --ref-overlap
+2019-10-29 14:34:00 Run Id: 772fd973-57ee-46e5-8aa3-e744163bb1ae
+2019-10-29 14:34:00 Referenced SDF-ID: f1765b39-de93-481a-925d-282fe62ec8a6 Type: DNA Sequences: 86 Max-Length: 249250621 Min-Length: 4262 Arm: UNKNOWN
+2019-10-29 14:34:00 Skipping reference sequence 1 that is used by neither baseline or calls.
+2019-10-29 14:34:00 Skipping reference sequence 2 that is used by neither baseline or calls.
+2019-10-29 14:34:00 Skipping reference sequence 3 that is used by neither baseline or calls.
+2019-10-29 14:34:00 Skipping reference sequence 4 that is used by neither baseline or calls.
+2019-10-29 14:34:00 Skipping reference sequence 5 that is used by neither baseline or calls.
+2019-10-29 14:34:00 Skipping reference sequence 7 that is used by neither baseline or calls.
+2019-10-29 14:34:00 Skipping reference sequence 8 that is used by neither baseline or calls.
+2019-10-29 14:34:00 Skipping reference sequence 9 that is used by neither baseline or calls.
+2019-10-29 14:34:00 Skipping reference sequence 10 that is used by neither baseline or calls.
+2019-10-29 14:34:00 Skipping reference sequence 11 that is used by neither baseline or calls.
+2019-10-29 14:34:00 Skipping reference sequence 12 that is used by neither baseline or calls.
+2019-10-29 14:34:00 Skipping reference sequence 13 that is used by neither baseline or calls.
+2019-10-29 14:34:00 Skipping reference sequence 14 that is used by neither baseline or calls.
+2019-10-29 14:34:00 Skipping reference sequence 15 that is used by neither baseline or calls.
+2019-10-29 14:34:00 Skipping reference sequence 16 that is used by neither baseline or calls.
+2019-10-29 14:34:00 Skipping reference sequence 17 that is used by neither baseline or calls.
+2019-10-29 14:34:00 Skipping reference sequence 18 that is used by neither baseline or calls.
+2019-10-29 14:34:00 Skipping reference sequence 19 that is used by neither baseline or calls.
+2019-10-29 14:34:00 Skipping reference sequence 20 that is used by neither baseline or calls.
+2019-10-29 14:34:00 Skipping reference sequence 21 that is used by neither baseline or calls.
+2019-10-29 14:34:00 Skipping reference sequence 22 that is used by neither baseline or calls.
+2019-10-29 14:34:00 Skipping reference sequence X that is used by neither baseline or calls.
+2019-10-29 14:34:00 Skipping reference sequence Y that is used by neither baseline or calls.
+2019-10-29 14:34:00 Skipping reference sequence MT that is used by neither baseline or calls.
+2019-10-29 14:34:00 Skipping reference sequence GL000207.1 that is used by neither baseline or calls.
+2019-10-29 14:34:00 Skipping reference sequence GL000226.1 that is used by neither baseline or calls.
+2019-10-29 14:34:00 Skipping reference sequence GL000229.1 that is used by neither baseline or calls.
+2019-10-29 14:34:00 Skipping reference sequence GL000231.1 that is used by neither baseline or calls.
+2019-10-29 14:34:00 Skipping reference sequence GL000210.1 that is used by neither baseline or calls.
+2019-10-29 14:34:00 Skipping reference sequence GL000239.1 that is used by neither baseline or calls.
+2019-10-29 14:34:00 Skipping reference sequence GL000235.1 that is used by neither baseline or calls.
+2019-10-29 14:34:00 Skipping reference sequence GL000201.1 that is used by neither baseline or calls.
+2019-10-29 14:34:00 Skipping reference sequence GL000247.1 that is used by neither baseline or calls.
+2019-10-29 14:34:00 Skipping reference sequence GL000245.1 that is used by neither baseline or calls.
+2019-10-29 14:34:00 Skipping reference sequence GL000197.1 that is used by neither baseline or calls.
+2019-10-29 14:34:00 Skipping reference sequence GL000203.1 that is used by neither baseline or calls.
+2019-10-29 14:34:00 Skipping reference sequence GL000246.1 that is used by neither baseline or calls.
+2019-10-29 14:34:00 Skipping reference sequence GL000249.1 that is used by neither baseline or calls.
+2019-10-29 14:34:00 Skipping reference sequence GL000196.1 that is used by neither baseline or calls.
+2019-10-29 14:34:00 Skipping reference sequence GL000248.1 that is used by neither baseline or calls.
+2019-10-29 14:34:00 Skipping reference sequence GL000244.1 that is used by neither baseline or calls.
+2019-10-29 14:34:00 Skipping reference sequence GL000238.1 that is used by neither baseline or calls.
+2019-10-29 14:34:00 Skipping reference sequence GL000202.1 that is used by neither baseline or calls.
+2019-10-29 14:34:00 Skipping reference sequence GL000234.1 that is used by neither baseline or calls.
+2019-10-29 14:34:00 Skipping reference sequence GL000232.1 that is used by neither baseline or calls.
+2019-10-29 14:34:00 Skipping reference sequence GL000206.1 that is used by neither baseline or calls.
+2019-10-29 14:34:00 Skipping reference sequence GL000240.1 that is used by neither baseline or calls.
+2019-10-29 14:34:00 Skipping reference sequence GL000236.1 that is used by neither baseline or calls.
+2019-10-29 14:34:00 Skipping reference sequence GL000241.1 that is used by neither baseline or calls.
+2019-10-29 14:34:00 Skipping reference sequence GL000243.1 that is used by neither baseline or calls.
+2019-10-29 14:34:00 Skipping reference sequence GL000242.1 that is used by neither baseline or calls.
+2019-10-29 14:34:00 Skipping reference sequence GL000230.1 that is used by neither baseline or calls.
+2019-10-29 14:34:00 Skipping reference sequence GL000237.1 that is used by neither baseline or calls.
+2019-10-29 14:34:00 Skipping reference sequence GL000233.1 that is used by neither baseline or calls.
+2019-10-29 14:34:00 Skipping reference sequence GL000204.1 that is used by neither baseline or calls.
+2019-10-29 14:34:00 Skipping reference sequence GL000198.1 that is used by neither baseline or calls.
+2019-10-29 14:34:00 Skipping reference sequence GL000208.1 that is used by neither baseline or calls.
+2019-10-29 14:34:00 Skipping reference sequence GL000191.1 that is used by neither baseline or calls.
+2019-10-29 14:34:00 Skipping reference sequence GL000227.1 that is used by neither baseline or calls.
+2019-10-29 14:34:00 Skipping reference sequence GL000228.1 that is used by neither baseline or calls.
+2019-10-29 14:34:00 Skipping reference sequence GL000214.1 that is used by neither baseline or calls.
+2019-10-29 14:34:00 Skipping reference sequence GL000221.1 that is used by neither baseline or calls.
+2019-10-29 14:34:00 Skipping reference sequence GL000209.1 that is used by neither baseline or calls.
+2019-10-29 14:34:00 Skipping reference sequence GL000218.1 that is used by neither baseline or calls.
+2019-10-29 14:34:00 Skipping reference sequence GL000220.1 that is used by neither baseline or calls.
+2019-10-29 14:34:00 Skipping reference sequence GL000213.1 that is used by neither baseline or calls.
+2019-10-29 14:34:00 Skipping reference sequence GL000211.1 that is used by neither baseline or calls.
+2019-10-29 14:34:00 Skipping reference sequence GL000199.1 that is used by neither baseline or calls.
+2019-10-29 14:34:00 Skipping reference sequence GL000217.1 that is used by neither baseline or calls.
+2019-10-29 14:34:00 Skipping reference sequence GL000216.1 that is used by neither baseline or calls.
+2019-10-29 14:34:00 Skipping reference sequence GL000215.1 that is used by neither baseline or calls.
+2019-10-29 14:34:00 Skipping reference sequence GL000205.1 that is used by neither baseline or calls.
+2019-10-29 14:34:00 Skipping reference sequence GL000219.1 that is used by neither baseline or calls.
+2019-10-29 14:34:00 Skipping reference sequence GL000224.1 that is used by neither baseline or calls.
+2019-10-29 14:34:00 Skipping reference sequence GL000223.1 that is used by neither baseline or calls.
+2019-10-29 14:34:00 Skipping reference sequence GL000195.1 that is used by neither baseline or calls.
+2019-10-29 14:34:00 Skipping reference sequence GL000212.1 that is used by neither baseline or calls.
+2019-10-29 14:34:00 Skipping reference sequence GL000222.1 that is used by neither baseline or calls.
+2019-10-29 14:34:00 Skipping reference sequence GL000200.1 that is used by neither baseline or calls.
+2019-10-29 14:34:00 Skipping reference sequence GL000193.1 that is used by neither baseline or calls.
+2019-10-29 14:34:00 Skipping reference sequence GL000194.1 that is used by neither baseline or calls.
+2019-10-29 14:34:00 Skipping reference sequence GL000225.1 that is used by neither baseline or calls.
+2019-10-29 14:34:00 Skipping reference sequence GL000192.1 that is used by neither baseline or calls.
+2019-10-29 14:34:00 Skipping reference sequence NC_007605 that is used by neither baseline or calls.
+2019-10-29 14:34:00 Skipping reference sequence hs37d5 that is used by neither baseline or calls.
+2019-10-29 14:34:00 Reference 6 baseline contains 2187 variants.
+2019-10-29 14:34:00 Reference 6 calls contains 366 variants.
+2019-10-29 14:34:02 Reference 6 had maximum path complexity of 12 at 6:31294416-31294885
+2019-10-29 14:34:02 Representation bias correction factor for SNP 149/220.83333333333337 = 0.6747169811320753
+2019-10-29 14:34:02 Representation bias correction factor for NON_SNP 115/43.166666666666664 = 2.664092664092664
+2019-10-29 14:34:02 Threshold  True-pos-baseline  True-pos-call  False-pos  False-neg  Precision  Sensitivity  F-measure
+----------------------------------------------------------------------------------------------------
+    3.000                264            290         76       1923     0.7923       0.1207     0.2095
+     None                264            290         76       1923     0.7923       0.1207     0.2095
+
+2019-10-29 14:34:02 Finished successfully in 2 s.
