@@ -1,0 +1,10 @@
+[M::mm_idx_gen::58.123*1.49] collected minimizers
+[M::mm_idx_gen::63.482*2.00] sorted minimizers
+[M::main::63.482*2.00] loaded/built the index for 455 target sequence(s)
+[M::mm_mapopt_update::67.560*1.94] mid_occ = 144
+[M::mm_idx_stat] kmer size: 19; skip: 19; is_hpc: 0; #seq: 455
+[M::mm_idx_stat::70.784*1.89] distinct minimizers: 214834535 (90.55% are singletons); average occurrences: 1.424; average spacing: 10.491
+[M::worker_pipeline::75.035*1.84] mapped 1 sequences
+[M::main] Version: 2.17-r941
+[M::main] CMD: /home/dnanexus/dipcall.kit/minimap2 -c --paf-no-hit -xasm5 --cs -r2k -t8 /home/dnanexus/hg38.fa /home/dnanexus/hap1_fasta.gz
+[M::main] Real time: 75.388 sec; CPU: 138.660 sec; Peak RSS: 14.810 GB
