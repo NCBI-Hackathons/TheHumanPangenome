@@ -1,8 +1,8 @@
 ROOT=/home/dnanexus/dipcall.kit
 N_THREADS=8
-MM2_IDX=/home/dnanexus/hg19.fa
+MM2_IDX=/home/dnanexus/hs37d5.fa
 MM2_OPT=-xasm5 --cs -r2k -t$(N_THREADS)
-REF_FA=/home/dnanexus/hg19.fa
+REF_FA=/home/dnanexus/hs37d5.fa
 
 all:hg19_hg002.dip.bed hg19_hg002.dip.vcf.gz
 
