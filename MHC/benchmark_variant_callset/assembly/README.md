@@ -5,7 +5,7 @@ The dipcall code was retrieved from https://github.com/lh3/dipcall/releases vers
 
 ## Operation
 
-Here is a series of command that were performed. 
+Here is a series of commands that were performed. 
 
 wget -O GCA_000001405.15_GRCh38_no_alt_analysis_set.fa.gz ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/000/001/405/GCA_000001405.15_GRCh38/seqs_for_alignment_pipelines.ucsc_ids/GCA_000001405.15_GRCh38_no_alt_analysis_set.fna.gz
 gunzip GCA_000001405.15_GRCh38_no_alt_analysis_set.fa.gz
