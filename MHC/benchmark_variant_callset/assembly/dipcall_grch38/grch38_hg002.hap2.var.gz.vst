@@ -1,12 +1,12 @@
-4662179 reference bases covered by exactly one contig
-11234 substitutions; ts/tv = 2.171
-404 1bp deletions
-405 1bp insertions
-151 2bp deletions
-152 2bp insertions
-333 [3,50) deletions
-325 [3,50) insertions
-14 [50,1000) deletions
-12 [50,1000) insertions
-4 >=1000 deletions
-1 >=1000 insertions
+4746204 reference bases covered by exactly one contig
+12773 substitutions; ts/tv = 2.171
+430 1bp deletions
+442 1bp insertions
+158 2bp deletions
+166 2bp insertions
+353 [3,50) deletions
+346 [3,50) insertions
+18 [50,1000) deletions
+20 [50,1000) insertions
+5 >=1000 deletions
+2 >=1000 insertions
