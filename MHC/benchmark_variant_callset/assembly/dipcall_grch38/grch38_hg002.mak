@@ -1,7 +1,7 @@
 ROOT=/home/dnanexus/dipcall.kit
 N_THREADS=8
 MM2_IDX=/home/dnanexus/GCA_000001405.15_GRCh38_no_alt_analysis_set.fa
-MM2_OPT=-xasm5 -z400,200 --cs -r2k -t$(N_THREADS)
+MM2_OPT=-xasm5 -z200000,10000 --cs -r2k -t$(N_THREADS)
 REF_FA=/home/dnanexus/GCA_000001405.15_GRCh38_no_alt_analysis_set.fa
 
 all:grch38_hg002.dip.bed grch38_hg002.dip.vcf.gz

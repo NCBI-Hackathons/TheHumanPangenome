@@ -1,7 +1,7 @@
 # Assembly and Dipcall output
 
 ## Code
-The dipcall code was retrieved from https://github.com/lh3/dipcall/releases version v0.1 with GitHub commit 7746f33. We modify the https://github.com/lh3/dipcall/blob/master/run-dipcall#L40 by adding -z400,200 to increase mappability around MHC region
+The dipcall code was retrieved from https://github.com/lh3/dipcall/releases version v0.1 with GitHub commit 7746f33. We modify the https://github.com/lh3/dipcall/blob/master/run-dipcall#L40 by adding -z200000,10000 to increase mappability around MHC region. The same results are also archieve by changing -z to 20000,10000. The number of detected variants is reduced for parameters 200000,1000 200000,200 20000,200 and such number is reduced further for 2000,200 4000,200. Lower -z<int1> would reduce number of detected variant further.
 
 ## Operation
 
@@ -16,10 +16,10 @@ make -j2 -f grch38_hg002.mak
 
 #The command `make -j2 -f hg002_denovo_grch38.mak` performs a series of operation under the hood.
 
-/home/dnanexus/dipcall.kit/minimap2 -c --paf-no-hit -xasm5 -z400,200 --cs -r2k -t8 /home/dnanexus/GCA_000001405.15_GRCh38_no_alt_analysis_set.fa /home/dnanexus/hap1_fasta.gz 2> grch38_hg002.hap1.paf.gz.log | gzip > grch38_hg002.hap1.paf.gz
-/home/dnanexus/dipcall.kit/minimap2 -c --paf-no-hit -xasm5 -z400,200 --cs -r2k -t8 /home/dnanexus/GCA_000001405.15_GRCh38_no_alt_analysis_set.fa /home/dnanexus/hap2_fasta.gz 2> grch38_hg002.hap2.paf.gz.log | gzip > grch38_hg002.hap2.paf.gz
-/home/dnanexus/dipcall.kit/minimap2 -a -xasm5 -z400,200 --cs -r2k -t8 /home/dnanexus/GCA_000001405.15_GRCh38_no_alt_analysis_set.fa /home/dnanexus/hap1_fasta.gz 2> grch38_hg002.hap1.sam.gz.log | gzip > grch38_hg002.hap1.sam.gz
-/home/dnanexus/dipcall.kit/minimap2 -a -xasm5 -z400,200 --cs -r2k -t8 /home/dnanexus/GCA_000001405.15_GRCh38_no_alt_analysis_set.fa /home/dnanexus/hap2_fasta.gz 2> grch38_hg002.hap2.sam.gz.log | gzip > grch38_hg002.hap2.sam.gz
+/home/dnanexus/dipcall.kit/minimap2 -c --paf-no-hit -xasm5 -z200000,10000 --cs -r2k -t8 /home/dnanexus/GCA_000001405.15_GRCh38_no_alt_analysis_set.fa /home/dnanexus/hap1_fasta.gz 2> grch38_hg002.hap1.paf.gz.log | gzip > grch38_hg002.hap1.paf.gz
+/home/dnanexus/dipcall.kit/minimap2 -c --paf-no-hit -xasm5 -z200000,10000 --cs -r2k -t8 /home/dnanexus/GCA_000001405.15_GRCh38_no_alt_analysis_set.fa /home/dnanexus/hap2_fasta.gz 2> grch38_hg002.hap2.paf.gz.log | gzip > grch38_hg002.hap2.paf.gz
+/home/dnanexus/dipcall.kit/minimap2 -a -xasm5 -z200000,10000 --cs -r2k -t8 /home/dnanexus/GCA_000001405.15_GRCh38_no_alt_analysis_set.fa /home/dnanexus/hap1_fasta.gz 2> grch38_hg002.hap1.sam.gz.log | gzip > grch38_hg002.hap1.sam.gz
+/home/dnanexus/dipcall.kit/minimap2 -a -xasm5 -z200000,10000 --cs -r2k -t8 /home/dnanexus/GCA_000001405.15_GRCh38_no_alt_analysis_set.fa /home/dnanexus/hap2_fasta.gz 2> grch38_hg002.hap2.sam.gz.log | gzip > grch38_hg002.hap2.sam.gz
 gzip -dc grch38_hg002.hap1.paf.gz | sort -k6,6 -k8,8n | /home/dnanexus/dipcall.kit/k8 /home/dnanexus/dipcall.kit/paftools.js call - 2> grch38_hg002.hap1.var.gz.vst | gzip > grch38_hg002.hap1.var.gz
 gzip -dc grch38_hg002.hap2.paf.gz | sort -k6,6 -k8,8n | /home/dnanexus/dipcall.kit/k8 /home/dnanexus/dipcall.kit/paftools.js call - 2> grch38_hg002.hap2.var.gz.vst | gzip > grch38_hg002.hap2.var.gz
 /home/dnanexus/dipcall.kit/k8 /home/dnanexus/dipcall.kit/dipcall-aux.js samflt grch38_hg002.hap1.sam.gz | /home/dnanexus/dipcall.kit/samtools sort -m4G --threads 4 -o grch38_hg002.hap1.bam -
