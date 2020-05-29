@@ -1,0 +1,83 @@
+2020-04-02 17:49:18 serial = 27182818284
+2020-04-02 17:49:18 email = anon
+2020-04-02 17:49:18 RTG version = RTG Tools 3.10.1 / Core f9bc0ddb3e (2019-01-21)
+2020-04-02 17:49:18 file.encoding = UTF-8
+2020-04-02 17:49:18 file.separator = /
+2020-04-02 17:49:18 host.name = PN105860.campus.nist.gov
+2020-04-02 17:49:18 java.class.path = /Applications/bioinfo/rtg-tools-3.10.1/RTG.jar
+2020-04-02 17:49:18 java.class.version = 57.0
+2020-04-02 17:49:18 java.home = /Library/Java/JavaVirtualMachines/jdk-13.0.2.jdk/Contents/Home
+2020-04-02 17:49:18 java.io.tmpdir = /var/folders/3y/53wm_96s59b33hcr5pypxd440017zz/T/
+2020-04-02 17:49:18 java.library.path = /Applications/bioinfo/rtg-tools-3.10.1
+2020-04-02 17:49:18 java.runtime.name = Java(TM) SE Runtime Environment
+2020-04-02 17:49:18 java.runtime.version = 13.0.2+8
+2020-04-02 17:49:18 java.specification.name = Java Platform API Specification
+2020-04-02 17:49:18 java.specification.vendor = Oracle Corporation
+2020-04-02 17:49:18 java.specification.version = 13
+2020-04-02 17:49:18 java.vendor = Oracle Corporation
+2020-04-02 17:49:18 java.vendor.url = https://java.oracle.com/
+2020-04-02 17:49:18 java.vendor.url.bug = https://bugreport.java.com/bugreport/
+2020-04-02 17:49:18 java.version = 13.0.2
+2020-04-02 17:49:18 java.version.date = 2020-01-14
+2020-04-02 17:49:18 java.vm.compressedOopsMode = Zero based
+2020-04-02 17:49:18 java.vm.info = mixed mode, sharing
+2020-04-02 17:49:18 java.vm.name = Java HotSpot(TM) 64-Bit Server VM
+2020-04-02 17:49:18 java.vm.specification.name = Java Virtual Machine Specification
+2020-04-02 17:49:18 java.vm.specification.vendor = Oracle Corporation
+2020-04-02 17:49:18 java.vm.specification.version = 13
+2020-04-02 17:49:18 java.vm.vendor = Oracle Corporation
+2020-04-02 17:49:18 java.vm.version = 13.0.2+8
+2020-04-02 17:49:18 jdk.debug = release
+2020-04-02 17:49:18 lang.version = 13.0.2
+2020-04-02 17:49:18 line.separator = 
+
+2020-04-02 17:49:18 models.dir = /Applications/bioinfo/rtg-tools-3.10.1/models
+2020-04-02 17:49:18 nashorn.option.no.deprecation.warning = true
+2020-04-02 17:49:18 os.arch = x86_64
+2020-04-02 17:49:18 os.freememory = 3746361344
+2020-04-02 17:49:18 os.name = Mac OS X
+2020-04-02 17:49:18 os.totalmemory = 17179869184
+2020-04-02 17:49:18 os.version = 10.14.6
+2020-04-02 17:49:18 path.separator = :
+2020-04-02 17:49:18 processor.arch = x86_64
+2020-04-02 17:49:18 processor.count = 8
+2020-04-02 17:49:18 references.dir = /Applications/bioinfo/rtg-tools-3.10.1/references
+2020-04-02 17:49:18 runtime.freememory = 249904928
+2020-04-02 17:49:18 runtime.maxmemory = 15462301696
+2020-04-02 17:49:18 runtime.totalMemory = 272629760
+2020-04-02 17:49:18 sun.arch.data.model = 64
+2020-04-02 17:49:18 sun.boot.library.path = /Library/Java/JavaVirtualMachines/jdk-13.0.2.jdk/Contents/Home/lib
+2020-04-02 17:49:18 sun.cpu.endian = little
+2020-04-02 17:49:18 sun.io.unicode.encoding = UnicodeBig
+2020-04-02 17:49:18 sun.java.command = /Applications/bioinfo/rtg-tools-3.10.1/RTG.jar vcfeval -b /Volumes/giab/analysis/mhc/smallvarbenchmark/dipcall/repeat_resolved_3.dip.vcf.gz -c /Volumes/giab/analysis/v4-development/NIST_v4.1_SmallVariantDraftBenchmark_12182019/GRCh37/HG002_GRCh37_1_22_v4.1_draft_benchmark.vcf.gz -o /Volumes/giab/analysis/mhc/smallvarbenchmark/dipcall/v4.1vsdipcallmhcrefbothbeds -t /Volumes/giab/data/reference_genomes/rtg_sdf/1000g_v37_phase2.sdf --bed-regions /Volumes/giab/analysis/mhc/smallvarbenchmark/dipcall/MHC_highconf.bed -e /Volumes/giab/analysis/v4-development/NIST_v4.1_SmallVariantDraftBenchmark_12182019/GRCh37/HG002_GRCh37_1_22_v4.1_draft_benchmark.bed --ref-overlap
+2020-04-02 17:49:18 sun.java.launcher = SUN_STANDARD
+2020-04-02 17:49:18 sun.jnu.encoding = UTF-8
+2020-04-02 17:49:18 sun.management.compiler = HotSpot 64-Bit Tiered Compilers
+2020-04-02 17:49:18 talkback = true
+2020-04-02 17:49:18 usage = true
+2020-04-02 17:49:18 usage.log.hostname = true
+2020-04-02 17:49:18 usage.log.username = true
+2020-04-02 17:49:18 user.country = US
+2020-04-02 17:49:18 user.dir = /Users/jzook
+2020-04-02 17:49:18 user.home = /Users/jzook
+2020-04-02 17:49:18 user.language = en
+2020-04-02 17:49:18 user.name = jzook
+2020-04-02 17:49:18 user.timezone = America/New_York
+2020-04-02 17:49:18 vendor = Oracle Corporation
+2020-04-02 17:49:18 gzipfix.enabled = true
+2020-04-02 17:49:18 Command line arguments: rtg vcfeval -b /Volumes/giab/analysis/mhc/smallvarbenchmark/dipcall/repeat_resolved_3.dip.vcf.gz -c /Volumes/giab/analysis/v4-development/NIST_v4.1_SmallVariantDraftBenchmark_12182019/GRCh37/HG002_GRCh37_1_22_v4.1_draft_benchmark.vcf.gz -o /Volumes/giab/analysis/mhc/smallvarbenchmark/dipcall/v4.1vsdipcallmhcrefbothbeds -t /Volumes/giab/data/reference_genomes/rtg_sdf/1000g_v37_phase2.sdf --bed-regions /Volumes/giab/analysis/mhc/smallvarbenchmark/dipcall/MHC_highconf.bed -e /Volumes/giab/analysis/v4-development/NIST_v4.1_SmallVariantDraftBenchmark_12182019/GRCh37/HG002_GRCh37_1_22_v4.1_draft_benchmark.bed --ref-overlap
+2020-04-02 17:49:18 Run Id: f67f1934-8dcd-4c4b-bab8-1b0bbe09b94c
+2020-04-02 17:49:19 Referenced SDF-ID: f1765b39-de93-481a-925d-282fe62ec8a6 Type: DNA Sequences: 86 Max-Length: 249250621 Min-Length: 4262 Arm: UNKNOWN
+2020-04-02 17:49:35 Reference 6 baseline contains 22368 variants.
+2020-04-02 17:49:35 Reference 6 calls contains 21470 variants.
+2020-04-02 17:49:53 Reference 6 had maximum path complexity of 369 at 6:31322204-31322228
+2020-04-02 17:49:57 There were 21067 variants not thresholded in ROC data files due to missing or invalid GQ (FORMAT) values.
+2020-04-02 17:49:57 Fraction of calls outside evaluation regions: 0.0117 (249/21369)
+2020-04-02 17:49:58 Representation bias correction factor for SNP 20356/18554.105555555554 = 1.097115672811558
+2020-04-02 17:49:59 Representation bias correction factor for NON_SNP 1760/3561.8944444444437 = 0.4941190783306637
+2020-04-02 17:50:00 Threshold  True-pos-baseline  True-pos-call  False-pos  False-neg  Precision  Sensitivity  F-measure
+----------------------------------------------------------------------------------------------------
+   52.000                 53             53          0      22101     1.0000       0.0024     0.0048
+     None              22116          21086         34         38     0.9984       0.9983     0.9983
+
+2020-04-02 17:50:01 Finished successfully in 43 s.

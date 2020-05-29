@@ -1,0 +1,129 @@
+2020-04-02 17:39:36 serial = 27182818284
+2020-04-02 17:39:36 email = anon
+2020-04-02 17:39:36 RTG version = RTG Tools 3.10.1 / Core f9bc0ddb3e (2019-01-21)
+2020-04-02 17:39:36 file.encoding = UTF-8
+2020-04-02 17:39:36 file.separator = /
+2020-04-02 17:39:36 host.name = PN105860.campus.nist.gov
+2020-04-02 17:39:36 java.class.path = /Applications/bioinfo/rtg-tools-3.10.1/RTG.jar
+2020-04-02 17:39:36 java.class.version = 57.0
+2020-04-02 17:39:36 java.home = /Library/Java/JavaVirtualMachines/jdk-13.0.2.jdk/Contents/Home
+2020-04-02 17:39:36 java.io.tmpdir = /var/folders/3y/53wm_96s59b33hcr5pypxd440017zz/T/
+2020-04-02 17:39:36 java.library.path = /Applications/bioinfo/rtg-tools-3.10.1
+2020-04-02 17:39:36 java.runtime.name = Java(TM) SE Runtime Environment
+2020-04-02 17:39:36 java.runtime.version = 13.0.2+8
+2020-04-02 17:39:36 java.specification.name = Java Platform API Specification
+2020-04-02 17:39:36 java.specification.vendor = Oracle Corporation
+2020-04-02 17:39:36 java.specification.version = 13
+2020-04-02 17:39:36 java.vendor = Oracle Corporation
+2020-04-02 17:39:36 java.vendor.url = https://java.oracle.com/
+2020-04-02 17:39:36 java.vendor.url.bug = https://bugreport.java.com/bugreport/
+2020-04-02 17:39:36 java.version = 13.0.2
+2020-04-02 17:39:36 java.version.date = 2020-01-14
+2020-04-02 17:39:36 java.vm.compressedOopsMode = Zero based
+2020-04-02 17:39:36 java.vm.info = mixed mode, sharing
+2020-04-02 17:39:36 java.vm.name = Java HotSpot(TM) 64-Bit Server VM
+2020-04-02 17:39:36 java.vm.specification.name = Java Virtual Machine Specification
+2020-04-02 17:39:36 java.vm.specification.vendor = Oracle Corporation
+2020-04-02 17:39:36 java.vm.specification.version = 13
+2020-04-02 17:39:36 java.vm.vendor = Oracle Corporation
+2020-04-02 17:39:36 java.vm.version = 13.0.2+8
+2020-04-02 17:39:36 jdk.debug = release
+2020-04-02 17:39:36 lang.version = 13.0.2
+2020-04-02 17:39:36 line.separator = 
+
+2020-04-02 17:39:36 models.dir = /Applications/bioinfo/rtg-tools-3.10.1/models
+2020-04-02 17:39:36 nashorn.option.no.deprecation.warning = true
+2020-04-02 17:39:36 os.arch = x86_64
+2020-04-02 17:39:36 os.freememory = 28569600
+2020-04-02 17:39:36 os.name = Mac OS X
+2020-04-02 17:39:36 os.totalmemory = 17179869184
+2020-04-02 17:39:36 os.version = 10.14.6
+2020-04-02 17:39:36 path.separator = :
+2020-04-02 17:39:36 processor.arch = x86_64
+2020-04-02 17:39:36 processor.count = 8
+2020-04-02 17:39:36 references.dir = /Applications/bioinfo/rtg-tools-3.10.1/references
+2020-04-02 17:39:36 runtime.freememory = 249904960
+2020-04-02 17:39:36 runtime.maxmemory = 15462301696
+2020-04-02 17:39:36 runtime.totalMemory = 272629760
+2020-04-02 17:39:36 sun.arch.data.model = 64
+2020-04-02 17:39:36 sun.boot.library.path = /Library/Java/JavaVirtualMachines/jdk-13.0.2.jdk/Contents/Home/lib
+2020-04-02 17:39:36 sun.cpu.endian = little
+2020-04-02 17:39:36 sun.io.unicode.encoding = UnicodeBig
+2020-04-02 17:39:36 sun.java.command = /Applications/bioinfo/rtg-tools-3.10.1/RTG.jar vcfeval -b /Volumes/giab/analysis/mhc/smallvarbenchmark/dipcall/repeat_resolved_3.dip.vcf.gz -c /Volumes/giab/analysis/mhc/smallvarbenchmark/dipcall/repeat_resolved_3.dip.vcf.gz -o /Volumes/giab/analysis/mhc/smallvarbenchmark/dipcall/mhcvsself -t /Volumes/giab/data/reference_genomes/rtg_sdf/1000g_v37_phase2.sdf --bed-regions /Volumes/giab/analysis/mhc/smallvarbenchmark/MHC_GRCh37.bed --ref-overlap
+2020-04-02 17:39:36 sun.java.launcher = SUN_STANDARD
+2020-04-02 17:39:36 sun.jnu.encoding = UTF-8
+2020-04-02 17:39:36 sun.management.compiler = HotSpot 64-Bit Tiered Compilers
+2020-04-02 17:39:36 talkback = true
+2020-04-02 17:39:36 usage = true
+2020-04-02 17:39:36 usage.log.hostname = true
+2020-04-02 17:39:36 usage.log.username = true
+2020-04-02 17:39:36 user.country = US
+2020-04-02 17:39:36 user.dir = /Users/jzook
+2020-04-02 17:39:36 user.home = /Users/jzook
+2020-04-02 17:39:36 user.language = en
+2020-04-02 17:39:36 user.name = jzook
+2020-04-02 17:39:36 user.timezone = America/New_York
+2020-04-02 17:39:36 vendor = Oracle Corporation
+2020-04-02 17:39:36 gzipfix.enabled = true
+2020-04-02 17:39:36 Command line arguments: rtg vcfeval -b /Volumes/giab/analysis/mhc/smallvarbenchmark/dipcall/repeat_resolved_3.dip.vcf.gz -c /Volumes/giab/analysis/mhc/smallvarbenchmark/dipcall/repeat_resolved_3.dip.vcf.gz -o /Volumes/giab/analysis/mhc/smallvarbenchmark/dipcall/mhcvsself -t /Volumes/giab/data/reference_genomes/rtg_sdf/1000g_v37_phase2.sdf --bed-regions /Volumes/giab/analysis/mhc/smallvarbenchmark/MHC_GRCh37.bed --ref-overlap
+2020-04-02 17:39:36 Run Id: a8af541f-7f4f-43b9-903d-a0e54c0aee0f
+2020-04-02 17:39:37 Referenced SDF-ID: f1765b39-de93-481a-925d-282fe62ec8a6 Type: DNA Sequences: 86 Max-Length: 249250621 Min-Length: 4262 Arm: UNKNOWN
+2020-04-02 17:39:41 VCF header does not contain a FORMAT field named GQ
+2020-04-02 17:39:43 Variant allele in calls at 6:28680654 has length (2182) exceeding maximum allele length (1000), skipping.
+2020-04-02 17:39:43 Variant allele in calls at 6:29685469 has length (2612) exceeding maximum allele length (1000), skipping.
+2020-04-02 17:39:43 Variant allele in baseline at 6:28680654 has length (2182) exceeding maximum allele length (1000), skipping.
+2020-04-02 17:39:43 Variant allele in calls at 6:29899768 has length (1759) exceeding maximum allele length (1000), skipping.
+2020-04-02 17:39:43 Variant allele in baseline at 6:29685469 has length (2612) exceeding maximum allele length (1000), skipping.
+2020-04-02 17:39:43 Variant allele in calls at 6:30439407 has length (2420) exceeding maximum allele length (1000), skipping.
+2020-04-02 17:39:43 Variant allele in calls at 6:30994006 has length (1075) exceeding maximum allele length (1000), skipping.
+2020-04-02 17:39:43 Variant allele in calls at 6:31010095 has length (3686) exceeding maximum allele length (1000), skipping.
+2020-04-02 17:39:43 Variant allele in baseline at 6:29899768 has length (1759) exceeding maximum allele length (1000), skipping.
+2020-04-02 17:39:43 Variant allele in calls at 6:31193239 has length (1144) exceeding maximum allele length (1000), skipping.
+2020-04-02 17:39:43 Variant allele in calls at 6:31211616 has length (1501) exceeding maximum allele length (1000), skipping.
+2020-04-02 17:39:43 Variant allele in baseline at 6:30439407 has length (2420) exceeding maximum allele length (1000), skipping.
+2020-04-02 17:39:43 Variant allele in calls at 6:31279008 has length (9704) exceeding maximum allele length (1000), skipping.
+2020-04-02 17:39:43 Variant allele in calls at 6:31292175 has length (1733) exceeding maximum allele length (1000), skipping.
+2020-04-02 17:39:43 Variant allele in baseline at 6:30994006 has length (1075) exceeding maximum allele length (1000), skipping.
+2020-04-02 17:39:43 Variant allele in baseline at 6:31010095 has length (3686) exceeding maximum allele length (1000), skipping.
+2020-04-02 17:39:43 Variant allele in baseline at 6:31193239 has length (1144) exceeding maximum allele length (1000), skipping.
+2020-04-02 17:39:43 Variant allele in baseline at 6:31211616 has length (1501) exceeding maximum allele length (1000), skipping.
+2020-04-02 17:39:43 Variant allele in calls at 6:31396764 has length (3174) exceeding maximum allele length (1000), skipping.
+2020-04-02 17:39:43 Variant allele in calls at 6:31421497 has length (2890) exceeding maximum allele length (1000), skipping.
+2020-04-02 17:39:43 Variant allele in baseline at 6:31279008 has length (9704) exceeding maximum allele length (1000), skipping.
+2020-04-02 17:39:43 Variant allele in baseline at 6:31292175 has length (1733) exceeding maximum allele length (1000), skipping.
+2020-04-02 17:39:43 Variant allele in baseline at 6:31396764 has length (3174) exceeding maximum allele length (1000), skipping.
+2020-04-02 17:39:43 Variant allele in baseline at 6:31421497 has length (2890) exceeding maximum allele length (1000), skipping.
+2020-04-02 17:39:43 Variant allele in calls at 6:32613442 has length (1878) exceeding maximum allele length (1000), skipping.
+2020-04-02 17:39:43 Variant allele in calls at 6:32616047 has length (2922) exceeding maximum allele length (1000), skipping.
+2020-04-02 17:39:43 Variant allele in calls at 6:32619053 has length (1076) exceeding maximum allele length (1000), skipping.
+2020-04-02 17:39:43 Variant allele in calls at 6:32623524 has length (1101) exceeding maximum allele length (1000), skipping.
+2020-04-02 17:39:43 Variant allele in calls at 6:32635664 has length (1007) exceeding maximum allele length (1000), skipping.
+2020-04-02 17:39:43 Variant allele in calls at 6:32778754 has length (1067) exceeding maximum allele length (1000), skipping.
+2020-04-02 17:39:43 Variant allele in baseline at 6:32613442 has length (1878) exceeding maximum allele length (1000), skipping.
+2020-04-02 17:39:43 Variant allele in baseline at 6:32616047 has length (2922) exceeding maximum allele length (1000), skipping.
+2020-04-02 17:39:43 Variant allele in baseline at 6:32619053 has length (1076) exceeding maximum allele length (1000), skipping.
+2020-04-02 17:39:43 Variant allele in baseline at 6:32623524 has length (1101) exceeding maximum allele length (1000), skipping.
+2020-04-02 17:39:43 Variant allele in baseline at 6:32635664 has length (1007) exceeding maximum allele length (1000), skipping.
+2020-04-02 17:39:43 Variant allele in baseline at 6:32778754 has length (1067) exceeding maximum allele length (1000), skipping.
+2020-04-02 17:39:43 Reference 6 baseline contains 25795 variants.
+2020-04-02 17:39:43 Reference 6 calls contains 25795 variants.
+2020-04-02 17:40:18 Evaluation too complex (50002 unresolved paths, 127638 iterations) at reference region 6:29903733-29903877. Variants in this region will not be included in results.
+2020-04-02 17:40:19 Evaluation too complex (50001 unresolved paths, 82778 iterations) at reference region 6:31310688-31310951. Variants in this region will not be included in results.
+2020-04-02 17:40:19 Evaluation too complex (50002 unresolved paths, 49931 iterations) at reference region 6:31395645-31395910. Variants in this region will not be included in results.
+2020-04-02 17:40:19 Evaluation too complex (50002 unresolved paths, 127121 iterations) at reference region 6:31396494-31396633. Variants in this region will not be included in results.
+2020-04-02 17:40:19 Evaluation too complex (50001 unresolved paths, 80196 iterations) at reference region 6:31396801-31396881. Variants in this region will not be included in results.
+2020-04-02 17:40:21 Evaluation too complex (50002 unresolved paths, 49794 iterations) at reference region 6:32593702-32594013. Variants in this region will not be included in results.
+2020-04-02 17:40:25 Evaluation too complex (50001 unresolved paths, 49882 iterations) at reference region 6:32632439-32632599. Variants in this region will not be included in results.
+2020-04-02 17:40:25 Evaluation too complex (50001 unresolved paths, 101355 iterations) at reference region 6:32670171-32670179. Variants in this region will not be included in results.
+2020-04-02 17:40:26 Reference 6 had maximum path complexity of 50003 at 6:29903733-29903960
+2020-04-02 17:40:29 There were 18 problematic baseline variants skipped during loading (see vcfeval.log for details).
+2020-04-02 17:40:29 There were 18 problematic called variants skipped during loading (see vcfeval.log for details).
+2020-04-02 17:40:29 There were 25694 variants not thresholded in ROC data files due to missing or invalid GQ (FORMAT) values.
+2020-04-02 17:40:29 Representation bias correction factor for SNP 22151/22151.0 = 1.0
+2020-04-02 17:40:29 Representation bias correction factor for NON_SNP 3543/3543.0 = 1.0
+2020-04-02 17:40:30 Could not maximize F-measure from ROC data, only un-thresholded statistics will be computed. Consider selecting a different scoring attribute with --vcf-score-field
+2020-04-02 17:40:30 Threshold  True-pos-baseline  True-pos-call  False-pos  False-neg  Precision  Sensitivity  F-measure
+----------------------------------------------------------------------------------------------------
+     None              25694          25694          0          0     1.0000       1.0000     1.0000
+
+2020-04-02 17:40:31 Finished successfully in 54 s.

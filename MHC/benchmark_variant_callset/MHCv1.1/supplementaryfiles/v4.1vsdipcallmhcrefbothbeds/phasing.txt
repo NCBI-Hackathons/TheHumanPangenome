@@ -1,0 +1,3 @@
+Correct phasings: 2
+Incorrect phasings: 2
+Unresolvable phasings: 0
